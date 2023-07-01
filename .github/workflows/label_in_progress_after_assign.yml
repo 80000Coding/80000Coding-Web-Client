@@ -4,6 +4,10 @@ on:
     types:
       - assigned
 
+permissions:
+  contents: 'read'
+  issues: 'write
+
 jobs:
   assign_and_label:
     runs-on: ubuntu-latest
