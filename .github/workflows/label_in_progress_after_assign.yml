@@ -9,27 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Add In Progress label
-        uses: actions/setup-node@v1
+      - uses: actions/github-script@v6
         with:
-          version: 12
-      - run: npm install @octokit/action
-      - uses: actions/github-script@v5
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const { data: labels } = await octokit.rest.issues.listLabelsOnIssue({
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: context.issue.number
-            });
-
-            const inProgressLabel = labels.find(label => label.name === 'In Progress');
-
-            if (!inProgressLabel) {
-              await octokit.rest.issues.addLabels({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.issue.number,
-                labels: ['In Progress']
-              });
-            }
+              labels: ['In Progress']
+            })
