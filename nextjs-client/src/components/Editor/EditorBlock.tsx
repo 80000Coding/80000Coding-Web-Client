@@ -1,14 +1,7 @@
-import Code from '@editorjs/code'
 import EditorJS, { OutputData } from '@editorjs/editorjs'
-import Header from '@editorjs/header'
-import Paragraph from '@editorjs/paragraph'
 import React, { memo, useEffect, useRef } from 'react'
 
-export const EDITOR_TOOLS = {
-  code: Code,
-  header: Header,
-  paragraph: Paragraph,
-}
+import { EditorTools } from './EditorTools'
 
 //props
 type Props = {
@@ -27,7 +20,7 @@ const EditorBlock = ({ data, onChangeEditor, holder, ...props }: Props) => {
     if (!ref.current) {
       const editor = new EditorJS({
         holder: holder,
-        tools: EDITOR_TOOLS,
+        tools: EditorTools,
         data,
         async onChange(api, event) {
           const data = await api.saver.save()
