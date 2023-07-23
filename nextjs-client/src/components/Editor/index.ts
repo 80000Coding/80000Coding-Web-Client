@@ -1,1 +1,3 @@
-export { default as EditorBlock } from './EditorBlock'
+import EditorBlock from './EditorBlock'
+
+export { EditorBlock }
