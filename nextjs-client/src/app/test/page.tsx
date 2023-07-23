@@ -14,16 +14,16 @@ export default function Page() {
 
   return (
     <div className='m-10 flex gap-x-8'>
-      <div className='col-span-1 w-full'>
+      <div className='w-full'>
         <h1>Editor</h1>
         <div className='rounded-md border border-black'>
           <EditorBlock data={data} onChangeEditor={setData} holder='editorjs-container' />
         </div>
       </div>
-      <div className='col-span-1 w-full'>
+      <div className='w-full'>
         <h1>Preview</h1>
         <div className='rounded-md border border-black'>
-          <div className='min-h-[338px]'>{data && <Viewer data={data} />}</div>
+          <div className='min-h-[338px] pb-[300px]'>{data && <Viewer data={data} />}</div>
         </div>
       </div>
     </div>
