@@ -10,7 +10,7 @@ type Props = {
   holder: string
 } & React.HTMLAttributes<HTMLDivElement>
 
-const EditorBlock = ({ data, onChangeEditor, holder, ...props }: Props) => {
+const BlockEditor = ({ data, onChangeEditor, holder, ...props }: Props) => {
   //add a reference to editor
   const ref = useRef<EditorJS>()
 
@@ -43,4 +43,4 @@ const EditorBlock = ({ data, onChangeEditor, holder, ...props }: Props) => {
   return <div id={holder} {...props} />
 }
 
-export default memo(EditorBlock)
+export default memo(BlockEditor)
