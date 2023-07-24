@@ -7,9 +7,10 @@ import 'prismjs/themes/prism.css'
 
 type Props = {
   code: string
+  readOnly?: boolean
 } & React.HTMLAttributes<HTMLTextAreaElement>
 
-const PrismWrapper = ({ code, className }: Props) => {
+const PrismWrapper = ({ code, className, readOnly = false }: Props) => {
   const [value, setValue] = React.useState(code)
 
   useEffect(() => {
@@ -23,6 +24,7 @@ const PrismWrapper = ({ code, className }: Props) => {
       onValueChange={setValue}
       highlight={(code) => highlight(code, languages.js, 'js')}
       padding={10}
+      readOnly={readOnly}
     />
   )
 }
