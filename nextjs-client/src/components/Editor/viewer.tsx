@@ -3,6 +3,7 @@ import editorJsHtml from 'editorjs-html'
 import striptags from 'striptags'
 
 import PrismWrapper from './PrismWrapper'
+import { useEffect } from 'react'
 
 type Props = {
   data?: OutputData
@@ -20,10 +21,15 @@ function isImageBlock(data: ParsedContent) {
 const Viewer = ({ data }: Props) => {
   const html = data ? (editorJsHtml().parse(data) as ParsedContent[]) : []
 
+  useEffect(() => {
+    console.log(data)
+  }, [data])
+
   return (
     //✔️ It's important to add key={data.time} here to re-render based on the latest data.
     <div className='prose' key={data?.time}>
-      {html.map((item, index) => {
+      {/* {html.map((item, index) => {
+        if (typeof data !== 'string') return item
         if (isCodeBlock(item))
           return (
             <div className='cdx-block ce-block__content ce-code'>
@@ -33,7 +39,7 @@ const Viewer = ({ data }: Props) => {
         else if (isImageBlock(item))
           return <div dangerouslySetInnerHTML={{ __html: item }} className='cdx-block ce-block__content image-tool__image' key={index} />
         else return <div dangerouslySetInnerHTML={{ __html: item }} className='cdx-block ce-block__content ce-paragraph' key={index} />
-      })}
+      })} */}
     </div>
   )
 }
