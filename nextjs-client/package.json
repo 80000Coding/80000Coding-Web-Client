@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@editorjs/editorjs": "^2.27.2",
@@ -35,13 +37,23 @@
     "@editorjs/image": "^2.8.1",
     "@types/editorjs__header": "^2.6.0",
     "@types/prismjs": "^1.26.0",
+    "@storybook/addon-essentials": "^7.1.0",
+    "@storybook/addon-interactions": "^7.1.0",
+    "@storybook/addon-links": "^7.1.0",
+    "@storybook/addon-onboarding": "^1.0.7",
+    "@storybook/blocks": "^7.1.0",
+    "@storybook/nextjs": "^7.1.0",
+    "@storybook/react": "^7.1.0",
+    "@storybook/testing-library": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "eslint": "8.44.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-prettier": "5.0.0",
     "eslint-plugin-simple-import-sort": "10.0.0",
+    "eslint-plugin-storybook": "^0.6.12",
     "prettier": "3.0.0",
-    "prettier-plugin-tailwindcss": "0.4.0"
+    "prettier-plugin-tailwindcss": "0.4.0",
+    "storybook": "^7.1.0"
   }
 }
