@@ -28,6 +28,12 @@ body {
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
+/* code block language select padding */
+.ce-code__textarea pre,
+.ce-code__textarea textarea {
+  padding: 32px !important;
+}
+
 h1 {
   font-size: 2rem;
   font-weight: 700;
