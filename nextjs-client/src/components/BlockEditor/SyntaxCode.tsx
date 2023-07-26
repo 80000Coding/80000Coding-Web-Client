@@ -19,7 +19,6 @@ class SyntaxCode extends Code implements BlockTool {
   drawView() {
     const holder = document.createElement('div')
 
-    holder.classList.add(this.CSS.baseClass, this.CSS.wrapper)
     createRoot(holder).render(<PrismWrapper className={cn(this.CSS.textarea, this.CSS.input)} code={this.data.code} />)
 
     return holder

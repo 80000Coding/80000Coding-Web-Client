@@ -3,7 +3,7 @@ import type { OutputData } from '@editorjs/editorjs'
 import { useEffect, useState } from 'react'
 
 import { EditorBlock } from '@/components'
-import Viewer from '@/components/Editor/viewer'
+import Viewer from '@/components/BlockEditor/viewer'
 
 export default function Page() {
   const [data, setData] = useState<OutputData>()

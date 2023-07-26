@@ -1,7 +1,7 @@
 import EditorJS, { OutputData } from '@editorjs/editorjs'
 import React, { memo, useEffect, useRef } from 'react'
 
-import { EditorTools } from './EditorTools'
+import { EditorTools, EditorTunes } from './EditorTools'
 
 //props
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
   holder: string
 } & React.HTMLAttributes<HTMLDivElement>
 
-const EditorBlock = ({ data, onChangeEditor, holder, ...props }: Props) => {
+const BlockEditor = ({ data, onChangeEditor, holder, ...props }: Props) => {
   //add a reference to editor
   const ref = useRef<EditorJS>()
 
@@ -21,6 +21,8 @@ const EditorBlock = ({ data, onChangeEditor, holder, ...props }: Props) => {
       const editor = new EditorJS({
         holder: holder,
         tools: EditorTools,
+        tunes: EditorTunes,
+        inlineToolbar: true,
         data,
         async onChange(api, event) {
           const data = await api.saver.save()
@@ -41,4 +43,4 @@ const EditorBlock = ({ data, onChangeEditor, holder, ...props }: Props) => {
   return <div id={holder} {...props} />
 }
 
-export default memo(EditorBlock)
+export default memo(BlockEditor)

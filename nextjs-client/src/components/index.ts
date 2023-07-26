@@ -1,3 +1,3 @@
-import { EditorBlock } from './Editor'
+import { EditorBlock } from './BlockEditor'
 
 export { EditorBlock }
