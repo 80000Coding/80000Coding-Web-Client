@@ -1,3 +1,4 @@
+'use client'
 import type { RemirrorProps, UseThemeProps } from '@remirror/react'
 import { EditorComponent, MarkdownToolbar, Remirror, ThemeProvider, useRemirror } from '@remirror/react'
 // import { AllStyledComponent } from '@remirror/styles/emotion'

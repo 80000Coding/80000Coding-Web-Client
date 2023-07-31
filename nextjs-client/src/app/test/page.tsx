@@ -1,6 +1,11 @@
 'use client'
-import { useEffect, useState } from 'react'
+
+import { RemirrorEditor } from '@/components/RemirrorEditor'
 
 export default function Page() {
-  return <div className='m-10 flex gap-x-8'>hello world</div>
+  return (
+    <div className='m-10 flex gap-x-8'>
+      <RemirrorEditor />
+    </div>
+  )
 }
