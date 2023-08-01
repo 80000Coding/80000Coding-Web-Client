@@ -1,6 +1,6 @@
-'use client'
+import dynamic from 'next/dynamic'
 
-import { RemirrorEditor } from '@/components/RemirrorEditor'
+const RemirrorEditor = dynamic(() => import('../../components/RemirrorEditor/RemirrorEditor'), { ssr: false })
 
 export default function Page() {
   return (

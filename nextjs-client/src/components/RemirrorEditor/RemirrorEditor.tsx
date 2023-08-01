@@ -1,8 +1,7 @@
 'use client'
 import type { RemirrorProps, UseThemeProps } from '@remirror/react'
 import { EditorComponent, MarkdownToolbar, Remirror, ThemeProvider, useRemirror } from '@remirror/react'
-// import { AllStyledComponent } from '@remirror/styles/emotion'
-import React, { FC, PropsWithChildren, useCallback } from 'react'
+import React, { PropsWithChildren, useCallback } from 'react'
 import jsx from 'refractor/lang/jsx.js'
 import typescript from 'refractor/lang/typescript.js'
 import type { CreateEditorStateProps } from 'remirror'
@@ -26,6 +25,8 @@ import {
   TableExtension,
   TrailingNodeExtension,
 } from 'remirror/extensions'
+
+import 'remirror/styles/all.css'
 
 import { basicContent } from './RemirrorEditor.const'
 
