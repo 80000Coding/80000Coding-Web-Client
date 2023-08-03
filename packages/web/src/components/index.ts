@@ -1,3 +1,2 @@
-import { EditorBlock } from './BlockEditor'
-
-export { EditorBlock }
+export * from './RemirrorEditor'
+export * from './Text'

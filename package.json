@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "workspaces": [
-    "packages/web"
+    "packages/*",
+    "apps/*"
   ],
   "devDependencies": {
     "prettier": "^3.0.0",
