@@ -1,6 +1,6 @@
 {
-  "name": "nextjs-client",
-  "version": "0.1.0",
+  "name": "@80000coding/web",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -49,8 +49,6 @@
     "eslint-plugin-prettier": "5.0.0",
     "eslint-plugin-simple-import-sort": "10.0.0",
     "eslint-plugin-storybook": "^0.6.12",
-    "prettier": "3.0.0",
-    "prettier-plugin-tailwindcss": "0.4.0",
     "storybook": "^7.1.0"
   }
 }
