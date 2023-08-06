@@ -1,18 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 type Props = {
   isChecked: boolean
+  onToggleClick: () => void
 } & React.HTMLAttributes<HTMLDivElement>
 
-const Toggle = ({ isChecked: initialChecked, className, ...rest }: Props) => {
-  const [isChecked, setIsChecked] = useState(initialChecked)
-
-  const handleClick = () => {
-    setIsChecked((prevChecked) => !prevChecked)
-  }
-
+const Toggle = ({ isChecked, onToggleClick, className, ...rest }: Props) => {
   return (
-    <div className={className} {...rest} onClick={handleClick}>
+    <div className={className} {...rest} onClick={onToggleClick}>
       {isChecked ? (
         <svg width='50' height='24' viewBox='0 0 50 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <rect x='50' y='24' width='50' height='24' rx='12' transform='rotate(180 50 24)' fill='#00D287' />

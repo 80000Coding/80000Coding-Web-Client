@@ -15,6 +15,7 @@ const meta = {
         type: 'boolean',
       },
     },
+    onToggleClick: {},
   },
 } satisfies Meta<typeof Toggle>
 
@@ -24,5 +25,6 @@ type Story = StoryObj<typeof meta>
 export const OnOff: Story = {
   args: {
     isChecked: true,
+    onToggleClick: () => {},
   },
 }
