@@ -4,15 +4,21 @@
   "description": "팔만코딩경 Web Client 레포지토리 입니다.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "turbo run build",
+    "dev": "turbo run dev --filter=@80000coding/web",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "storybook": "turbo run storybook --filter=@80000coding/web"
   },
   "author": "",
   "license": "ISC",
   "workspaces": [
-    "packages/web"
+    "packages/*",
+    "apps/*"
   ],
   "devDependencies": {
     "prettier": "^3.0.0",
-    "prettier-plugin-tailwindcss": "^0.4.1"
+    "prettier-plugin-tailwindcss": "^0.4.1",
+    "turbo": "^1.10.12"
   }
 }
