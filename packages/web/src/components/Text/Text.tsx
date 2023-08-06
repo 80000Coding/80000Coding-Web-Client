@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import React from 'react'
 
-type TextType = 'title-1' | 'title-2' | 'title-3' | 'body-1' | 'body-2' | 'body-3' | 'note-1' | 'caption-1' // 여기에 사용할 타입들을 정의합니다.
+type TextType = 'title-1' | 'title-2' | 'title-3' | 'body-1' | 'body-2' | 'body-3' | 'note-1' | 'caption-1' | 'button-1' | 'button-2' | 'button-3'// 여기에 사용할 타입들을 정의합니다.
 
 type Props = {
   type: TextType
@@ -18,6 +18,9 @@ const Text = ({ type, className, children, ...rest }: Props) => {
     'body-3': 'text-sm font-regular text-gray-700',
     'note-1': 'text-base font-regular text-gray-700',
     'caption-1': 'text-xs font-regular text-gray-300',
+    'button-1': 'text-xl font-semibold text-white',
+    'button-2': 'text-default font-semibold text-green',
+    'button-3': 'text-lg font-semibold text-green',
   }
 
   return (

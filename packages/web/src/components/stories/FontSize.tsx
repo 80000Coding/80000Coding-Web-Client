@@ -6,6 +6,7 @@ const fontSize = [
   'text-lg',
   'text-xl',
   'text-2xl',
+  'text-default'
 ]
 
 const FontSize = () => {
