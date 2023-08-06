@@ -18,9 +18,9 @@ const Text = ({ type, className, children, ...rest }: Props) => {
     'body-3': 'text-sm font-regular text-gray-700',
     'note-1': 'text-base font-regular text-gray-700',
     'caption-1': 'text-xs font-regular text-gray-300',
-    'button-1': 'text-xl font-semibold text-white',
-    'button-2': 'text-default font-semibold text-green',
-    'button-3': 'text-lg font-semibold text-green',
+    'button-1': 'text-xl font-semibold',
+    'button-2': 'text-default font-semibold ',
+    'button-3': 'text-lg font-semibold ',
   }
 
   return (

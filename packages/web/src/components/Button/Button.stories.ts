@@ -10,11 +10,16 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
+    size: {
+      control: {
+        type: 'radio',
+        options: ['lg', 'xl'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
+      }
+    },
     styleVariant: {
       control: {
         type: 'select',
-        // options: ['primary', 'outline'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
-        options: ['outline'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
+        options: ['primary', 'outline'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
       },
     },
     colorVariant: {
@@ -31,9 +36,10 @@ type Story = StoryObj<typeof meta>
 
 export const Title: Story = {
   args: {
-    styleVariant: 'outline',
+    styleVariant: 'primary',
     colorVariant: 'green',
     disabled: false,
+    size: 'xl',
     children: '탈퇴하기',
   },
 }
