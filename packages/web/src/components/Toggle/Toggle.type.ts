@@ -8,7 +8,7 @@ export type ToggleControlProps = {
   isChecked?: boolean
   onToggleClick?: (isChecked: boolean) => void
 }
-export type ToggleDefaultProps = React.HTMLAttributes<HTMLLabelElement> & {
+export type ToggleDefaultProps = Omit<React.HTMLAttributes<HTMLLabelElement>, 'color'> & {
   size?: ToggleSize
   color?: ToggleColor
   disabled?: boolean
