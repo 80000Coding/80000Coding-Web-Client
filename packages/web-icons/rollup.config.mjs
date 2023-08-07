@@ -2,7 +2,6 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 import { DEFAULT_EXTENSIONS } from '@babel/core'
-import alias from '@rollup/plugin-alias'
 import { babel } from '@rollup/plugin-babel'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import terser from '@rollup/plugin-terser'
@@ -47,7 +46,7 @@ iconFileNames.forEach((iconFileName) => {
   iconImportLines.push(`import ${iconModuleName} from '../${config.input.icons}/${iconFileName}'`)
   iconExportLines.push(`${iconModuleName},`)
   iconObjectLines.push(`'${iconName}': ${iconModuleName},`)
-  iconComponentTypes.push(`export declare const ${iconModuleName}: BezierIcon`)
+  iconComponentTypes.push(`export declare const ${iconModuleName}: IconSource`)
 })
 
 const ICONS_OBJECT = 'icons'
@@ -64,7 +63,7 @@ declare module '*.svg' {
   export default content
 }
 
-export declare type IconSource = React.FunctionComponent<React.SVGProps<SVGSVGElement>>
+export declare type IconSource = (props: React.SVGProps<SVGSVGElement>) => JSX.Element;
 
 export declare type IconName = ${iconNames.join(' | ')}
 export declare const icons: Record<IconName, IconSource>
@@ -111,17 +110,24 @@ function svgBuild(options = {}) {
           },
         },
       },
-      /**
-       * Set the `fill` attribute to `currentColor` for all `path` elements.
-       * This allows us to dynamically change the color of the SVG icon.
-       * @see https://gomakethings.com/currentcolor-and-svgs/#dynamic-svg-colors
-       */
-      // {
-      //   name: 'convertColors',
-      //   params: {
-      //     currentColor: true,
-      //   },
-      // },
+    ],
+  }
+  const svgoConfigForDynamic = {
+    plugins: [
+      {
+        name: 'preset-default',
+        params: {
+          overrides: {
+            removeViewBox: false,
+          },
+        },
+      },
+      {
+        name: 'convertColors',
+        params: {
+          currentColor: true,
+        },
+      },
     ],
   }
 
@@ -152,9 +158,9 @@ function svgBuild(options = {}) {
       }
 
       const rawSvg = fs.readFileSync(id, 'utf8')
-
+      const curSvgoConfig = id.startsWith(iconBasePath + '/dynamic') ? svgoConfigForDynamic : svgoConfig
       const { data: optimizedSvgCode } = optimize(rawSvg, {
-        ...svgoConfig,
+        ...curSvgoConfig,
         path: id,
       })
 
