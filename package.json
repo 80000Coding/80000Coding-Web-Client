@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev --filter=@80000coding/web",
+    "dev": "turbo run dev",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "storybook": "turbo run storybook --filter=@80000coding/web",
