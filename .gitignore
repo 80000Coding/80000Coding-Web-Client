@@ -134,3 +134,9 @@ dist
 build/**
 dist/**
 .next/**
+
+# build files
+dist/
+
+# Rollup Plugin Visualizer
+stats.html
