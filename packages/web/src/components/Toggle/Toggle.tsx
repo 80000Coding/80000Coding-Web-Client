@@ -1,25 +1,37 @@
-import React from 'react'
+import cn from 'classnames'
+import React, { useState } from 'react'
 
-type Props = {
-  isChecked: boolean
-  onToggleClick: () => void
-} & React.HTMLAttributes<HTMLDivElement>
+import { toggleSliderColor, toggleSliderSize } from './Toggle.const'
+import type { Props } from './Toggle.type'
 
-const Toggle = ({ isChecked, onToggleClick, className, ...rest }: Props) => {
+const Toggle = ({ className, isChecked, size = 'md', color = 'green', disabled = false, onToggleClick, ...rest }: Props) => {
+  const [cheked_, setChecked_] = useState(false)
+
+  const onChange = ({ target: { checked } }: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked_(checked)
+  }
+
   return (
-    <div className={className} {...rest} onClick={onToggleClick}>
-      {isChecked ? (
-        <svg width='50' height='24' viewBox='0 0 50 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-          <rect x='50' y='24' width='50' height='24' rx='12' transform='rotate(180 50 24)' fill='#00D287' />
-          <circle cx='38' cy='12' r='9' transform='rotate(180 38 12)' fill='white' />
-        </svg>
-      ) : (
-        <svg width='50' height='24' viewBox='0 0 50 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-          <rect x='50' y='24' width='50' height='24' rx='12' transform='rotate(180 50 24)' fill='#D9D9D9' />
-          <circle cx='12' cy='12' r='9' transform='rotate(180 12 12)' fill='white' />
-        </svg>
-      )}
-    </div>
+    <label className={cn('relative inline-flex cursor-pointer items-center', className)} {...rest}>
+      <input
+        type='checkbox'
+        value=''
+        className='peer sr-only'
+        checked={isChecked === undefined ? cheked_ : isChecked}
+        disabled={disabled}
+        onChange={isChecked === undefined || onToggleClick === undefined ? onChange : ({ target: { checked } }) => onToggleClick(checked)}
+      />
+      <div
+        className={cn(
+          'rounded-full bg-gray-200 transition-colors', // default styles
+          'after:absolute after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[""] ', // after selector styles
+          'peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:ring-4 peer-focus:ring-blue-300', // input checked styles
+          'dark:bg-gray-700 dark:peer-focus:ring-blue-800', // dark mode styles
+          toggleSliderSize[size],
+          toggleSliderColor[color],
+        )}
+      />
+    </label>
   )
 }
 
