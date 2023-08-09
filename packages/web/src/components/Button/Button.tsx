@@ -36,8 +36,8 @@ const Button = ({styleVariant, colorVariant, size = 'xl', loading, disabled, cla
     'lg': 'rounded-[16px] w-[100%] h-[32px] box-border',
   }
   const styleVariantToClass = {
-    'primary': `rounded-[26px] w-[100%] h-[52px] text-white box-border bg-${colorVariant}`,
-    'outline': `rounded-[26px] w-[100%] h-[52px] ${textColors[colorVariant]} border ${borderColors[colorVariant]} bg-transparent`,
+    'primary': `rounded-[26px] w-[100%] text-white box-border bg-${colorVariant}`,
+    'outline': `rounded-[26px] w-[100%] ${textColors[colorVariant]} border ${borderColors[colorVariant]} bg-transparent`,
   }
 
   const disabledStyleVariantToClass = {
