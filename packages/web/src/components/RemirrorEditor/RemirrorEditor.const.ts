@@ -39,5 +39,8 @@ playtime is just beginning
 3. List
 
 ![A random image](https://picsum.photos/seed/picsum/200/300)
+![A uploaded image](https://80000coding.s3.ap-northeast-2.amazonaws.com/image.png)
+
+
 
 `
