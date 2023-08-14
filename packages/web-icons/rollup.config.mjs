@@ -25,8 +25,10 @@ const config = {
 }
 
 const iconBasePath = new URL(`./${config.input.icons}`, import.meta.url).pathname
+const iconAdditionalPath = ['category', 'dynamic', 'static']
 
-const iconFileNames = fs.readdirSync(config.input.icons, 'utf-8')
+// const iconFileNames = fs.readdirSync(config.input.icons, 'utf-8')
+const iconFileNames = iconAdditionalPath.map((path) => fs.readdirSync(`${config.input.icons}/${path}`, 'utf-8')).flat()
 
 const iconNames = []
 const iconImportLines = []
@@ -41,9 +43,11 @@ function toPascalCase(str) {
 iconFileNames.forEach((iconFileName) => {
   const iconName = iconFileName.replace('.svg', '')
   const iconModuleName = `${toPascalCase(iconName)}Icon`
+  const iconAdditionalPath = iconFileName.split('-')[0]
 
   iconNames.push(`'${iconName}'`)
-  iconImportLines.push(`import ${iconModuleName} from '../${config.input.icons}/${iconFileName}'`)
+  // iconImportLines.push(`import ${iconModuleName} from '../${config.input.icons}/${iconFileName}'`)
+  iconImportLines.push(`import ${iconModuleName} from '../${config.input.icons}/${iconAdditionalPath}/${iconFileName}'`)
   iconExportLines.push(`${iconModuleName},`)
   iconObjectLines.push(`'${iconName}': ${iconModuleName},`)
   iconComponentTypes.push(`export declare const ${iconModuleName}: IconSource`)
@@ -202,6 +206,7 @@ function svgBuild(options = {}) {
       /**
        * Create optimized SVG asset files in that path.
        */
+
       optimizedSvgs.forEach(({ name, svg }) => {
         this.emitFile({
           type: 'asset',
@@ -257,7 +262,8 @@ export default defineConfig({
   plugins: [
     virtual({ 'src/index.ts': entryModuleContent }),
     nodeResolve({ extensions }),
-    svgBuild({ include: `${iconBasePath}/*.svg` }),
+    // svgBuild({ include: `${iconBasePath}/*.svg` }), filter option 변경
+    svgBuild({ include: `${iconBasePath}/**/*.svg` }),
     babel({
       exclude: 'node_modules/**',
       extensions,
