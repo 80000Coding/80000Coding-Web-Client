@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "turbo run build",
+    "clean": "turbo run clean && rm -rf node_modules .turbo",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "test": "turbo run test",
-    "storybook": "turbo run storybook --filter=@80000coding/web",
-    "clean": "turbo run clean && rm -rf node_modules .turbo"
+    "start": "npm run start -w @80000coding/web",
+    "storybook": "turbo run storybook --filter=@80000coding/web"
   },
   "author": "",
   "license": "ISC",
