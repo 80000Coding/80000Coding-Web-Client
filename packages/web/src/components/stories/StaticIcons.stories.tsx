@@ -1,9 +1,9 @@
-import { StaticCategoryNetworkIcon } from '@80000coding/web-icons'
+import { StaticAllResultIcon } from '@80000coding/web-icons'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   title: 'Design System/StaticIcons',
-  component: StaticCategoryNetworkIcon,
+  component: StaticAllResultIcon,
   parameters: {
     layout: 'centered',
   },
@@ -12,7 +12,7 @@ const meta = {
     width: { control: 'text' },
     height: { control: 'text' },
   },
-} satisfies Meta<typeof StaticCategoryNetworkIcon>
+} satisfies Meta<typeof StaticAllResultIcon>
 
 export default meta
 type Story = StoryObj<typeof meta>

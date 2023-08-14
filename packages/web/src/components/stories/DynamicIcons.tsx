@@ -1,4 +1,4 @@
-import { DynamicCategoryNetworkIcon } from '@80000coding/web-icons'
+import { DynamicAddIcon } from '@80000coding/web-icons'
 import React from 'react'
 
 type Props = {
@@ -9,13 +9,13 @@ type Props = {
 const DynamicIcons = ({ width, height, color = 'blue' }: Props) => {
   const iconColor = {
     green: 'text-green',
-    darkgreen: 'text-darkgreen',
+    darkgreen: 'text-green-dark',
     blue: 'text-blue',
     violet: 'text-violet',
     red: 'text-red',
     black: 'text-black',
   }
-  return <DynamicCategoryNetworkIcon width={width} height={height} className={iconColor[color]} />
+  return <DynamicAddIcon width={width} height={height} className={iconColor[color]} />
 }
 
 export default DynamicIcons
