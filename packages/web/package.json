@@ -17,13 +17,8 @@
     "@80000coding/web-icons": "^1.0.0",
     "@remirror/pm": "^2.0.7",
     "@remirror/react": "^2.0.34",
-    "@types/node": "20.4.1",
-    "@types/react": "18.2.14",
-    "@types/react-dom": "18.2.6",
     "autoprefixer": "10.4.14",
     "classnames": "^2.3.2",
-    "eslint-config-next": "13.4.9",
-    "eslint-plugin-unused-imports": "2.0.0",
     "next": "13.4.9",
     "open-graph-scraper": "^6.2.2",
     "postcss": "8.4.25",
@@ -32,9 +27,7 @@
     "react-dom": "18.2.0",
     "react-simple-code-editor": "^0.13.1",
     "remirror": "^2.0.34",
-    "striptags": "^3.2.0",
-    "tailwindcss": "3.3.2",
-    "typescript": "5.1.6"
+    "striptags": "^3.2.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.1.0",
@@ -45,14 +38,20 @@
     "@storybook/nextjs": "^7.1.0",
     "@storybook/react": "^7.1.0",
     "@storybook/testing-library": "^0.2.0",
+    "@types/node": "20.4.1",
     "@types/prismjs": "^1.26.0",
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.2.6",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "eslint": "8.44.0",
+    "eslint-config-next": "13.4.9",
     "eslint-config-prettier": "8.8.0",
-    "eslint-plugin-prettier": "5.0.0",
     "eslint-plugin-simple-import-sort": "10.0.0",
     "eslint-plugin-storybook": "^0.6.12",
-    "storybook": "^7.1.0"
+    "eslint-plugin-unused-imports": "2.0.0",
+    "storybook": "^7.1.0",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.1.6"
   }
 }

@@ -1,12 +1,7 @@
 {
   "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:@typescript-eslint/recommended", "eslint-config-prettier"],
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint",
-    "unused-imports",
-    "simple-import-sort"
-    //, "prettier" 삭제
-  ],
+  "plugins": ["@typescript-eslint", "unused-imports", "simple-import-sort"],
   "rules": {
     "no-console": "warn",
     "no-use-before-define": ["error", { "functions": false, "classes": true, "variables": true }],
@@ -25,7 +20,6 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/no-unescaped-entities": "off",
     "react/react-in-jsx-scope": "off",
-    // "prettier/prettier": ["warn"] 삭제,
     "no-var": "off",
     "@typescript-eslint/no-inferrable-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
