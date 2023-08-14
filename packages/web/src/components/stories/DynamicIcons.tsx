@@ -2,11 +2,10 @@ import { DynamicAddIcon } from '@80000coding/web-icons'
 import React from 'react'
 
 type Props = {
-  width?: string
-  height?: string
+  size?: 'sm' | 'md' | 'lg'
   color?: 'green' | 'darkgreen' | 'blue' | 'violet' | 'red' | 'black'
 }
-const DynamicIcons = ({ width, height, color = 'blue' }: Props) => {
+const DynamicIcons = ({ size = 'md', color = 'blue' }: Props) => {
   const iconColor = {
     green: 'text-green',
     darkgreen: 'text-green-dark',
@@ -15,7 +14,12 @@ const DynamicIcons = ({ width, height, color = 'blue' }: Props) => {
     red: 'text-red',
     black: 'text-black',
   }
-  return <DynamicAddIcon width={width} height={height} className={iconColor[color]} />
+  const iconSize = {
+    sm: 'icon-sm',
+    md: 'icon-md',
+    lg: 'icon-lg',
+  }
+  return <DynamicAddIcon  className={iconColor[color] + " " + iconSize[size]} />
 }
 
 export default DynamicIcons
