@@ -39,7 +39,7 @@ npx changeset
 2. space 키을 사용해 선택 후, return 키로 다음으로 넘어갑니다.
 3. major, minor, patch 중 선택 합니다.
 
-```json
+```javascript
 /**
  * major, minor, patch는 아래와 같은 의미를 가집니다.
  * ex) 버전이 1.0.0일 때,
