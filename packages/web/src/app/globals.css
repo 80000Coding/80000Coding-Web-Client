@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+ .icon-sm {
+    width: 24px;
+    height: 24px;
+ }
+  .icon-md {
+      width: 28px;
+      height: 28px;
+  }
+  .icon-lg {
+      width: 36px;
+      height: 36px;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
