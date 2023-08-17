@@ -13,19 +13,32 @@ const meta = {
     size: {
       control: {
         type: 'radio',
-        options: ['lg', 'xl'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
+        options: ['S', 'M', 'L'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
       }
     },
-    styleVariant: {
+    variant: {
       control: {
         type: 'select',
         options: ['primary', 'outline'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
       },
     },
-    colorVariant: {
+    color: {
       control: {
         type: 'select',
-        options: ['green', 'red', 'blue', 'violet'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
+        options: [
+          'green',
+          'red',
+          'blue',
+          'violet',
+          'lightGreen',
+          'lightRed',
+          'lightBlue',
+          'lightViolet',
+          'darkGreen',
+          'darkRed',
+          'darkBlue',
+          'darkViolet'
+        ], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
       }
     }
   },
@@ -36,10 +49,11 @@ type Story = StoryObj<typeof meta>
 
 export const Title: Story = {
   args: {
-    styleVariant: 'primary',
-    colorVariant: 'green',
+    variant: 'primary',
+    color: 'green',
     disabled: false,
-    size: 'xl',
+    size: 'M',
+    text: '타이틀~',
     children: '탈퇴하기',
   },
 }

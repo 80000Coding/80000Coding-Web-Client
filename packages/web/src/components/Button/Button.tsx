@@ -4,22 +4,51 @@ import React from 'react'
 import Text from '../Text/Text'
 
 type ButtonStyleVariant = 'primary' | 'outline'
-type ButtonColorVariant = 'green' | 'red' | 'blue' | 'violet'
-type ButtonSize = 'xl' | 'default' | 'lg' 
+type ButtonColorVariant = 'green' | 'red' | 'blue' | 'violet' | 'lightGreen' | 'darkGreen' | 'lightRed' | 'darkRed' | 'lightBlue' | 'darkBlue' | 'lightViolet' | 'darkViolet'
+type ButtonSize = 'S' | 'M' | 'L'
+
 
 type Props = {
-  styleVariant: ButtonStyleVariant
-  colorVariant: ButtonColorVariant
-  size?: ButtonSize
-  loading?: boolean
-  disabled: boolean
+  text: string
+  variant: ButtonStyleVariant
+  diabled: boolean
+  loading: boolean
+  size: ButtonSize
+  color: ButtonColorVariant
+  leftIcon: React.ReactNode
+  rightIcon: React.ReactNode
+  style: React.CSSProperties
+  onClieck: () => void
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
+
+const backgroundColors = {
+  'green': 'bg-green',
+  'red': 'bg-red',
+  'blue': 'bg-blue',
+  'violet': 'bg-violet',
+  'lightGreen': 'bg-green-light',
+  'lightRed': 'bg-red-light',
+  'lightBlue': 'bg-blue-light',
+  'lightViolet': 'bg-violet-light',
+  'darkGreen': 'bg-green-dark',
+  'darkRed': 'bg-red-dark',
+  'darkBlue': 'bg-blue-dark',
+  'darkViolet': 'bg-violet-dark',
+}
 
 const borderColors = {
   'green': 'border-green',
   'red': 'border-red',
   'blue': 'border-blue',
   'violet': 'border-violet',
+  'lightGreen': 'border-green-light',
+  'lightRed': 'border-red-light',
+  'lightBlue': 'border-blue-light',
+  'lightViolet': 'border-violet-light',
+  'darkGreen': 'border-green-dark',
+  'darkRed': 'border-red-dark',
+  'darkBlue': 'border-blue-dark',
+  'darkViolet': 'border-violet-dark',
 }
 
 const textColors = {
@@ -27,17 +56,25 @@ const textColors = {
   'red': 'text-red',
   'blue': 'text-blue',
   'violet': 'text-violet',
+  'lightGreen': 'text-green-light',
+  'lightRed': 'text-red-light',
+  'lightBlue': 'text-blue-light',
+  'lightViolet': 'text-violet-light',
+  'darkGreen': 'text-green-dark',
+  'darkRed': 'text-red-dark',
+  'darkBlue': 'text-blue-dark',
+  'darkViolet': 'text-violet-dark',
 }
 
-const Button = ({styleVariant, colorVariant, size = 'xl', loading, disabled, className, children, ...rest}: Props) => {
+const Button = ({text, variant, disabled, loading, size, color, leftIcon, rightIcon, style, onClick, className, children, ...rest}: Props) => {
   const sizeToClass = {
-    'xl': 'rounded-[26px] w-[100%] h-[52px] box-border',
-    'default': 'rounded-[24px] w-[100%] h-[48px] box-border',
-    'lg': 'rounded-[16px] w-[100%] h-[32px] box-border',
+    'S': 'rounded-[16px] w-[100%] h-[32px] box-border',
+    'M': 'rounded-[24px] w-[100%] h-[48px] box-border',
+    'L': 'rounded-[26px] w-[100%] h-[52px] box-border',
   }
-  const styleVariantToClass = {
-    'primary': `rounded-[26px] w-[100%] text-white box-border bg-${colorVariant}`,
-    'outline': `rounded-[26px] w-[100%] ${textColors[colorVariant]} border ${borderColors[colorVariant]} bg-transparent`,
+  const variantToClass = {
+    'primary': `w-[100%] text-white box-border ${backgroundColors[color]}`,
+    'outline': `w-[100%] ${textColors[color]} border ${borderColors[color]} bg-transparent`,
   }
 
   const disabledStyleVariantToClass = {
@@ -48,27 +85,22 @@ const Button = ({styleVariant, colorVariant, size = 'xl', loading, disabled, cla
 
   const textStyles = () => {
     switch (size) {
-      case 'xl':
+      case 'L':
         return 'button-1'
-      case 'default':
+      case 'M':
         return 'button-2'
-      case 'lg':
+      case 'S':
         return 'button-3'
       default:
         return 'button-1'
     }
   }
 
-  // const colorVariantToClass = {
-  //   'green': 'bg-green',
-  //   'red': 'bg-red',
-  //   'blue': 'bg-blue',
-  //   'violet': 'bg-violet',
-  // }
-
   return (
-    <button className={cn(sizeToClass[size], styleVariantToClass[styleVariant], disabled&&disabledStyleVariantToClass[styleVariant], className)} {...rest} disabled={disabled}>
-      <Text type={textStyles()}>{children}</Text>
+    <button className={cn(sizeToClass[size], variantToClass[variant], disabled&&disabledStyleVariantToClass[variant], className)} {...rest} disabled={disabled}>
+      {/* left-icon */}
+      <Text type={textStyles()}>{text?.length > 0 ? text : children}</Text>
+      {/* right-icon */}
     </button>
   )
 
