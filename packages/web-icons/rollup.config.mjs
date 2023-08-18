@@ -150,8 +150,9 @@ function svgBuild(options = {}) {
       }
 
       const rawSvg = fs.readFileSync(id, 'utf8')
-      if (!id.startsWith(iconBasePath + '/dynamic')) {
-        svgoConfig.plugins.push({
+      const curSvgoConfig = { plugins: [...svgoConfig.plugins] }
+      if (id.startsWith(iconBasePath + '/dynamic')) {
+        curSvgoConfig.plugins.push({
           name: 'convertColors',
           params: {
             currentColor: true,
@@ -159,7 +160,7 @@ function svgBuild(options = {}) {
         })
       }
       const { data: optimizedSvgCode } = optimize(rawSvg, {
-        ...svgoConfig,
+        ...curSvgoConfig,
         path: id,
       })
 
