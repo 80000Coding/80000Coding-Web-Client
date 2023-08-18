@@ -114,22 +114,10 @@ function svgBuild(options = {}) {
           },
         },
       },
-    ],
-  }
-  const svgoConfigForDynamic = {
-    plugins: [
       {
-        name: 'preset-default',
+        name: 'addClassesToSVGElement',
         params: {
-          overrides: {
-            removeViewBox: false,
-          },
-        },
-      },
-      {
-        name: 'convertColors',
-        params: {
-          currentColor: true,
+          className: 'icon-md',
         },
       },
     ],
@@ -162,7 +150,15 @@ function svgBuild(options = {}) {
       }
 
       const rawSvg = fs.readFileSync(id, 'utf8')
-      const curSvgoConfig = id.startsWith(iconBasePath + '/dynamic') ? svgoConfigForDynamic : svgoConfig
+      const curSvgoConfig = { plugins: [...svgoConfig.plugins] }
+      if (id.startsWith(iconBasePath + '/dynamic')) {
+        curSvgoConfig.plugins.push({
+          name: 'convertColors',
+          params: {
+            currentColor: true,
+          },
+        })
+      }
       const { data: optimizedSvgCode } = optimize(rawSvg, {
         ...curSvgoConfig,
         path: id,
