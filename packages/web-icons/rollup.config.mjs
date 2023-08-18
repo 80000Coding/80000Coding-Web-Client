@@ -114,6 +114,12 @@ function svgBuild(options = {}) {
           },
         },
       },
+      {
+        name: 'addClassesToSVGElement',
+        params: {
+          className: 'icon-md',
+        },
+      },
     ],
   }
   const svgoConfigForDynamic = {
