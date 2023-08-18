@@ -122,24 +122,6 @@ function svgBuild(options = {}) {
       },
     ],
   }
-  const svgoConfigForDynamic = {
-    plugins: [
-      {
-        name: 'preset-default',
-        params: {
-          overrides: {
-            removeViewBox: false,
-          },
-        },
-      },
-      {
-        name: 'convertColors',
-        params: {
-          currentColor: true,
-        },
-      },
-    ],
-  }
 
   /**
    * @type {import('@svgr/babel-plugin-transform-svg-component').Template}
@@ -168,9 +150,16 @@ function svgBuild(options = {}) {
       }
 
       const rawSvg = fs.readFileSync(id, 'utf8')
-      const curSvgoConfig = id.startsWith(iconBasePath + '/dynamic') ? svgoConfigForDynamic : svgoConfig
+      if (!id.startsWith(iconBasePath + '/dynamic')) {
+        svgoConfig.plugins.push({
+          name: 'convertColors',
+          params: {
+            currentColor: true,
+          },
+        })
+      }
       const { data: optimizedSvgCode } = optimize(rawSvg, {
-        ...curSvgoConfig,
+        ...svgoConfig,
         path: id,
       })
 
