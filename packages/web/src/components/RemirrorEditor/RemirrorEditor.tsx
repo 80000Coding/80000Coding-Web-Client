@@ -1,6 +1,6 @@
 'use client'
 import type { RemirrorProps, UseThemeProps } from '@remirror/react'
-import { EditorComponent, MarkdownToolbar, Remirror, ThemeProvider, useRemirror } from '@remirror/react'
+import { EditorComponent, MarkdownToolbar, Remirror, ThemeProvider, useHelpers, useRemirror } from '@remirror/react'
 import React, { PropsWithChildren, useCallback } from 'react'
 import jsx from 'refractor/lang/jsx.js'
 import typescript from 'refractor/lang/typescript.js'
@@ -29,12 +29,35 @@ import {
 import 'remirror/styles/all.css'
 
 import { basicContent } from './RemirrorEditor.const'
+import { upload } from './upload'
 
 export interface ReactEditorProps
   extends Pick<CreateEditorStateProps, 'stringHandler'>,
     Pick<RemirrorProps, 'initialContent' | 'editable' | 'autoFocus' | 'hooks'> {
   placeholder?: string
   theme?: UseThemeProps['theme']
+}
+
+function Save() {
+  const { getMarkdown } = useHelpers()
+  const onSave = () => {
+    const markdown = getMarkdown()
+    if (!markdown) return
+    // 모든 이미지 추출
+    const imagePaths = markdown.match(/!\[.*?\]\((.*?)\)/g)?.map((match) => match.match(/!\[.*?\]\((.*?)\)/)[1])
+    console.log(imagePaths)
+    /**
+     * 이미지 업로드
+     * 이미지 경로 중, data:image/... 형식만 업로드
+     * 이미지 경로 중, http://... 형식은 업로드하지 않음
+     */
+    const newImagePaths = upload(imagePaths)
+    // markdown에서 이미지 경로를 업로드된 경로로 변경
+    // const newMarkdown = replace();
+    // markdown backend로 전송
+    // send(newMarkdown)
+  }
+  return <button onClick={onSave}>Save</button>
 }
 
 type Props = PropsWithChildren<Partial<Omit<ReactEditorProps, 'stringHandler'>>>
@@ -63,10 +86,6 @@ const RemirrorEditor = ({ placeholder = 'start', children, theme, ...rest }: Pro
       new TrailingNodeExtension(),
       new TableExtension(),
       new MarkdownExtension({ copyAsMarkdown: false }),
-      /**
-       * `HardBreakExtension` allows us to create a newline inside paragraphs.
-       * e.g. in a list item
-       */
       new HardBreakExtension(),
     ],
     [placeholder],
@@ -86,6 +105,7 @@ const RemirrorEditor = ({ placeholder = 'start', children, theme, ...rest }: Pro
           <MarkdownToolbar />
           <EditorComponent />
           {children}
+          <Save />
         </Remirror>
       </ThemeProvider>
     </div>
