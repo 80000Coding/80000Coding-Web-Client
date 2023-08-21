@@ -1,9 +1,9 @@
 'use client'
 
+import { Toggle } from '@80000coding/ui'
 import { useState } from 'react'
 
 import Header from '@/components/common/header'
-import { Toggle } from '@/components/Toggle'
 
 export default function Home() {
   const [isChecked, setIsChecked] = useState(false)
