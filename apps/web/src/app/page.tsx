@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 
+import Header from '@/components/common/header'
 import { Toggle } from '@/components/Toggle'
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
 
   return (
     <main>
-      {/* <Header /> */}
+      <Header />
 
       <Toggle isChecked={isChecked} onToggleClick={handleClick}></Toggle>
       <Toggle />
