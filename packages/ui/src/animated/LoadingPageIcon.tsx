@@ -10,3 +10,5 @@ const LoadingPageIcon = ({ className, ...props }: Props) => {
 }
 
 export default LoadingPageIcon
+
+LoadingPageIcon.displayName = 'LoadingPageIcon'

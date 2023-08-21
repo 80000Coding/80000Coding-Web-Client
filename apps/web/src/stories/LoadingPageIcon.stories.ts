@@ -1,15 +1,14 @@
+import { LoadingPageIcon } from '@80000coding/ui'
 import type { Meta, StoryObj } from '@storybook/react'
 
-import LoadingButtonIcon from './LoadingButtonIcon'
-
 const meta = {
-  title: 'Animated/LoadingButtonIcon',
-  component: LoadingButtonIcon,
+  title: 'Animated/LoadingPageIcon',
+  component: LoadingPageIcon,
   parameters: {
     layout: 'centered',
   },
   argTypes: {},
-} satisfies Meta<typeof LoadingButtonIcon>
+} satisfies Meta<typeof LoadingPageIcon>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -17,6 +16,5 @@ type Story = StoryObj<typeof meta>
 export const Main: Story = {
   args: {
     className: 'w-12 h-12',
-    color: 'green',
   },
 }

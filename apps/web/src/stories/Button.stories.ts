@@ -1,6 +1,5 @@
+import { Button } from '@80000coding/ui'
 import type { Meta, StoryObj } from '@storybook/react'
-
-import Button from './Button'
 
 const meta = {
   title: 'Design System/Button',
@@ -14,7 +13,7 @@ const meta = {
       control: {
         type: 'radio',
         options: ['S', 'M', 'L'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
-      }
+      },
     },
     variant: {
       control: {
@@ -37,10 +36,10 @@ const meta = {
           'darkGreen',
           'darkRed',
           'darkBlue',
-          'darkViolet'
+          'darkViolet',
         ], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
-      }
-    }
+      },
+    },
   },
 } satisfies Meta<typeof Button>
 

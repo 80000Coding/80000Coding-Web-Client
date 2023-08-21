@@ -9,3 +9,5 @@ const LoadingButtonIcon = ({ className, ...props }: Props) => {
 }
 
 export default LoadingButtonIcon
+
+LoadingButtonIcon.displayName = 'LoadingButtonIcon'

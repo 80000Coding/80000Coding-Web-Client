@@ -19,7 +19,7 @@ const DynamicIcons = ({ size = 'md', color = 'blue' }: Props) => {
     md: 'icon-md',
     lg: 'icon-lg',
   }
-  return <DynamicAddIcon  className={iconColor[color] + " " + iconSize[size]} />
+  return <DynamicAddIcon className={iconColor[color] + ' ' + iconSize[size]} />
 }
 
 export default DynamicIcons

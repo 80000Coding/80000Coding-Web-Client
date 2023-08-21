@@ -14,8 +14,7 @@
     },
     "lint": {},
     "storybook": {
-      "dependsOn": ["^build"],
-      "inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts", "test/**/*.tsx"]
+      "dependsOn": ["^build"]
     },
     "dev": {
       "cache": false,
