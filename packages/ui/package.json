@@ -41,6 +41,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@80000coding/web-icons": "1.0.1",
     "classnames": "^2.3.2"
   }
 }
