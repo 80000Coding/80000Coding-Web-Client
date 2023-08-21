@@ -2,9 +2,9 @@ import cn from 'classnames'
 import React, { useState } from 'react'
 
 import { toggleSliderColor, toggleSliderSize } from './Toggle.const'
-import type { Props } from './Toggle.type'
+import type { ToggleProps } from './Toggle.type'
 
-const Toggle = ({ className, isChecked, size = 'md', color = 'green', disabled = false, onToggleClick, ...rest }: Props) => {
+const Toggle = ({ className, isChecked, size = 'md', color = 'green', disabled = false, onToggleClick, ...rest }: ToggleProps) => {
   const [cheked_, setChecked_] = useState(false)
 
   const onChange = ({ target: { checked } }: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,3 +35,5 @@ const Toggle = ({ className, isChecked, size = 'md', color = 'green', disabled =
 }
 
 export default Toggle
+
+Toggle.displayName = 'Toggle'

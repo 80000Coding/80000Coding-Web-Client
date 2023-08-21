@@ -1,6 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+const { nextui } = require('@nextui-org/react')
+
 module.exports = {
-  content: ['./src/pages/**/*.{js,ts,jsx,tsx,mdx}', './src/components/**/*.{js,ts,jsx,tsx,mdx}', './src/app/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}', // packages/ui 패키지를 위한 임시 경로 추가
+    '../../node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     colors: {
       white: '#FFFFFF',
@@ -51,7 +59,7 @@ module.exports = {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       animation: {
-        'spin-with-delay': 'spin-quarter 3s ease-out infinite forwards',
+        'spin-with-delay': 'spin-quarter 2s ease-out infinite forwards',
       },
       keyframes: {
         'spin-quarter': {
@@ -64,5 +72,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [nextui()],
 }

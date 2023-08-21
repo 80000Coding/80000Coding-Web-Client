@@ -13,4 +13,4 @@ export type ToggleDefaultProps = Omit<React.HTMLAttributes<HTMLLabelElement>, 'c
   color?: ToggleColor
   disabled?: boolean
 }
-export type Props = ToggleDefaultProps & ToggleControlProps
+export type ToggleProps = ToggleDefaultProps & ToggleControlProps

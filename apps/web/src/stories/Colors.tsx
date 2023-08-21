@@ -1,3 +1,5 @@
+import React from 'react'
+
 const colors = [
   'bg-white',
   'bg-gray-100',
@@ -9,18 +11,18 @@ const colors = [
   'bg-gray-700',
   'bg-gray-800',
   'bg-gray-900',
-  'bg-lightgreen',
+  'bg-green-light',
   'bg-green',
-  'bg-darkgreen',
-  'bg-lightblue',
+  'bg-green-dark',
+  'bg-blue-light',
   'bg-blue',
-  'bg-darkblue',
-  'bg-lightviolet',
+  'bg-blue-dark',
+  'bg-violet-light',
   'bg-violet',
-  'bg-darkviolet',
-  'bg-lightred',
+  'bg-violet-dark',
+  'bg-red-light',
   'bg-red',
-  'bg-darkred',
+  'bg-red-dark',
   'bg-black',
 ]
 
@@ -32,7 +34,7 @@ const Colors = () => {
           <div className='flex h-full w-[200px] items-center justify-center'>
             <span>{color}</span>
           </div>
-          <div className={`flex h-full w-[200px] items-center justify-center ${color}`}></div>
+          <div className={`flex h-full w-[200px] items-center justify-center ${color}`}>a</div>
         </div>
       ))}
     </div>

@@ -1,14 +1,11 @@
 'use client'
 
-import { useCallback, useState } from 'react'
+import { Toggle, Button, LoadingButtonIcon, LoadingPageIcon } from '@80000coding/ui'
+import { useState } from 'react'
 
-import { Toggle } from '@/components/Toggle'
+import Header from '@/components/common/header'
 
 export default function Home() {
-  const abc = useCallback(() => {
-    console.log('hihi')
-  }, [])
-
   const [isChecked, setIsChecked] = useState(false)
 
   const handleClick = () => {
@@ -16,8 +13,10 @@ export default function Home() {
   }
 
   return (
-    <main className='flex bg-gray-500 text-gray-500 hover:text-gray-700'>
-      Hello World
+    <main>
+      {/* <Header /> */}
+      <LoadingButtonIcon />
+      <LoadingPageIcon />
       <Toggle isChecked={isChecked} onToggleClick={handleClick}></Toggle>
       <Toggle />
     </main>
