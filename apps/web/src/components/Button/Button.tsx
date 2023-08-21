@@ -12,12 +12,12 @@ type Props = {
   text: string
   variant: ButtonStyleVariant
   diabled: boolean
+  warning: boolean
   loading: boolean
   size: ButtonSize
   color: ButtonColorVariant
   leftIcon: React.ReactNode
   rightIcon: React.ReactNode
-  style: React.CSSProperties
   onClieck: () => void
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
@@ -66,22 +66,25 @@ const textColors = {
   'darkViolet': 'text-violet-dark',
 }
 
-const Button = ({text, variant, disabled, loading, size, color, leftIcon, rightIcon, style, onClick, className, children, ...rest}: Props) => {
+const getColor = (color: ButtonColorVariant, warning: boolean) => {
+  return warning ? 'darkRed' : color
+}
+
+const Button = ({text, variant, disabled, warning, loading, size, color, leftIcon, rightIcon, onClick, className, children, ...rest}: Props) => {
   const sizeToClass = {
     'S': 'rounded-[16px] w-[100%] h-[32px] box-border',
     'M': 'rounded-[24px] w-[100%] h-[48px] box-border',
     'L': 'rounded-[26px] w-[100%] h-[52px] box-border',
   }
   const variantToClass = {
-    'primary': `w-[100%] text-white box-border ${backgroundColors[color]}`,
-    'outline': `w-[100%] ${textColors[color]} border ${borderColors[color]} bg-transparent`,
+    'primary': `w-[100%] text-white box-border ${backgroundColors[getColor(color, warning)]}`,
+    'outline': `w-[100%] ${textColors[getColor(color, warning)]} border ${borderColors[getColor(color, warning)]} bg-transparent`,
   }
 
   const disabledStyleVariantToClass = {
     'primary': `disabled:bg-gray-200`,
     'outline': `disabled:text-gray-200 disabled:border-gray-200`,
   }
-
 
   const textStyles = () => {
     switch (size) {
@@ -98,9 +101,9 @@ const Button = ({text, variant, disabled, loading, size, color, leftIcon, rightI
 
   return (
     <button className={cn(sizeToClass[size], variantToClass[variant], disabled&&disabledStyleVariantToClass[variant], className)} {...rest} disabled={disabled}>
-      {/* left-icon */}
+      {/* left-icon은 여기로 */}
       <Text type={textStyles()}>{text?.length > 0 ? text : children}</Text>
-      {/* right-icon */}
+      {/* right-icon은 여기로 */}
     </button>
   )
 

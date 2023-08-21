@@ -40,6 +40,11 @@ const meta = {
           'darkViolet'
         ], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
       }
+    },
+    className: {
+      control: {
+        type: 'text',
+      }
     }
   },
 } satisfies Meta<typeof Button>
@@ -52,6 +57,7 @@ export const Title: Story = {
     variant: 'primary',
     color: 'green',
     disabled: false,
+    warning: false,
     size: 'M',
     text: '타이틀~',
     children: '탈퇴하기',
