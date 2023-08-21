@@ -1,6 +1,6 @@
 'use client'
 
-import { Toggle } from '@80000coding/ui'
+import { Toggle, Button, LoadingButtonIcon, LoadingPageIcon } from '@80000coding/ui'
 import { useState } from 'react'
 
 import Header from '@/components/common/header'
@@ -14,8 +14,9 @@ export default function Home() {
 
   return (
     <main>
-      <Header />
-
+      {/* <Header /> */}
+      <LoadingButtonIcon />
+      <LoadingPageIcon />
       <Toggle isChecked={isChecked} onToggleClick={handleClick}></Toggle>
       <Toggle />
     </main>
