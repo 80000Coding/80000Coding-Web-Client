@@ -1,4 +1,4 @@
-import { DynamicBackIcon, DynamicCloseIcon, DynamicMenuIcon, DynamicProfileIcon } from '@80000coding/web-icons'
+import { DynamicBackIcon, DynamicCloseIcon, DynamicMenuIcon, StaticProfileIcon } from '@80000coding/web-icons'
 import {
   StaticCategoryIcon,
   StaticHelpIcon,
@@ -82,7 +82,7 @@ export default function Header() {
               showFallback
               /** TODO: 유저 프로필 이미지로 변경, 자동으로 undefined 됨 */
               src={isSignedIn ? 'https://80000coding.s3.ap-northeast-2.amazonaws.com/image.png' : undefined}
-              fallback={<DynamicProfileIcon className='h-10 w-10' />}
+              fallback={<StaticProfileIcon className='h-10 w-10' />}
             />
             <Text type='title-1' children={isSignedIn ? '홍길동' : '로그인하기'} className='mr-1 leading-4' />
             <DynamicBackIcon className='h-3.5 w-3.5 rotate-180' />
