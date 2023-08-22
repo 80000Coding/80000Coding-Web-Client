@@ -51,10 +51,6 @@ module.exports = {
       lg: '14px',
       xl: '17px',
       xs: '10px',
-      default: '16px',
-    },
-    fontFamily: {
-      noto: ['var(--font-noto)']
     },
     lineHeight: {
       DEFAULT: 1,
@@ -80,5 +76,5 @@ module.exports = {
       },
     },
   },
-  plugins: [nextui(),],
+  plugins: [nextui()],
 }
