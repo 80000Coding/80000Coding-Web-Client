@@ -53,6 +53,16 @@ module.exports = {
       xs: '10px',
       default: '16px',
     },
+    fontFamily: {
+      'medium': 'NotoSansKR-Medium',
+      'regular': 'NotoSansKR-Regular',
+      'bold': 'NotoSansKR-Bold',
+    },
+    lineHeight: {
+      DEFAULT: 1,
+      'A': 1.55,
+      'B': 1.7
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -72,5 +82,7 @@ module.exports = {
       },
     },
   },
-  plugins: [nextui()],
+  plugins: [
+    nextui(),
+    require('@tailwindcss/typography'),],
 }

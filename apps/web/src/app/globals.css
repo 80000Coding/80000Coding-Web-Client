@@ -2,18 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './typo.css';
+
 @layer components {
- .icon-sm {
+  .icon-sm {
     width: 24px;
     height: 24px;
- }
+  }
   .icon-md {
-      width: 28px;
-      height: 28px;
+    width: 28px;
+    height: 28px;
   }
   .icon-lg {
-      width: 36px;
-      height: 36px;
+    width: 36px;
+    height: 36px;
   }
 }
 
