@@ -45,7 +45,7 @@ module.exports = {
       },
     },
     fontSize: {
-      '2xl': '32px',
+      '2xl': '20px',
       sm: '11px',
       base: '12px',
       lg: '14px',
@@ -54,9 +54,7 @@ module.exports = {
       default: '16px',
     },
     fontFamily: {
-      'medium': 'NotoSansKR-Medium',
-      'regular': 'NotoSansKR-Regular',
-      'bold': 'NotoSansKR-Bold',
+      noto: ['var(--font-noto)']
     },
     lineHeight: {
       DEFAULT: 1,

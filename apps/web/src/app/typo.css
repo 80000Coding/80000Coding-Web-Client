@@ -1,80 +1,80 @@
 /* Typo(Text Styles) */
 
 .large-title-1 {
-  @apply text-2xl font-bold;
+  @apply font-noto text-2xl font-bold font-bold;
 }
 
 .large-title-1A {
-  @apply leading-A text-2xl font-bold;
+  @apply leading-A font-noto text-2xl font-bold;
 }
 
 .title-1 {
-  @apply text-xl font-bold;
+  @apply font-noto text-xl font-bold;
 }
 .title-2 {
-  @apply text-xl font-medium;
+  @apply font-noto text-xl font-medium;
 }
 .title-3 {
-  @apply font-regular text-xl;
+  @apply font-noto text-xl font-normal;
 }
 .title-1A {
-  @apply leading-A text-xl font-bold;
+  @apply leading-A font-noto text-xl font-bold;
 }
 .title-2A {
-  @apply leading-A text-xl font-medium;
+  @apply leading-A font-noto text-xl font-medium;
 }
 .title-3A {
-  @apply leading-A font-regular text-xl;
+  @apply leading-A font-noto text-xl font-normal;
 }
 
 .body-1 {
-  @apply text-lg font-bold;
+  @apply font-noto text-lg font-bold;
 }
 .body-2 {
-  @apply text-lg font-medium;
+  @apply font-noto text-lg font-medium;
 }
 .body-3 {
-  @apply font-regular text-lg;
+  @apply font-noto text-lg font-normal;
 }
 .body-1A {
-  @apply leading-A text-lg font-bold;
+  @apply leading-A font-noto text-lg font-bold;
 }
 .body-2A {
-  @apply leading-A text-lg font-medium;
+  @apply leading-A font-noto text-lg font-medium;
 }
 .body-3A {
-  @apply leading-A font-regular text-lg;
+  @apply leading-A font-noto text-lg;
 }
 .body-3B {
-  @apply leading-B font-regular text-lg;
+  @apply leading-B font-noto text-lg;
 }
 
 .note-1 {
-  @apply text-base font-bold;
+  @apply font-noto text-base font-bold;
 }
 .note-2 {
-  @apply text-base font-medium;
+  @apply font-noto text-base font-medium;
 }
 .note-3 {
-  @apply font-regular text-base;
+  @apply font-noto text-base font-normal;
 }
 
 .caption-1 {
-  @apply text-sm font-bold;
+  @apply font-noto text-sm font-bold;
 }
 .caption-2 {
-  @apply text-sm font-medium;
+  @apply font-noto text-sm font-medium;
 }
 .caption-3 {
-  @apply font-regular text-sm;
+  @apply font-noto text-sm font-normal;
 }
 
 .caption-1A {
-  @apply leading-A text-sm font-bold;
+  @apply leading-A font-noto text-sm font-bold;
 }
 .caption-2A {
-  @apply leading-A text-sm font-medium;
+  @apply leading-A font-noto text-sm font-medium;
 }
 .caption-3A {
-  @apply leading-A font-regular text-sm;
+  @apply leading-A font-noto text-sm;
 }
