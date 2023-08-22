@@ -20,13 +20,13 @@ type ButtonSize = 'S' | 'M' | 'L'
 type Props = {
   text: string
   variant: ButtonStyleVariant
-  diabled: boolean
-  warning: boolean
-  loading: boolean
-  size: ButtonSize
+  diabled?: boolean
+  warning?: boolean
+  loading?: boolean
+  size?: ButtonSize
   color: ButtonColorVariant
-  leftIcon: React.ReactNode
-  rightIcon: React.ReactNode
+  leftIcon?: React.ReactNode
+  rightIcon?: React.ReactNode
   onClieck: () => void
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
@@ -82,10 +82,10 @@ const getColor = (color: ButtonColorVariant, warning: boolean) => {
 const Button = ({
   text,
   variant,
-  disabled,
-  warning,
-  loading,
-  size,
+  disabled = false,
+  warning = false,
+  loading = false,
+  size = 'M',
   color,
   leftIcon,
   rightIcon,
