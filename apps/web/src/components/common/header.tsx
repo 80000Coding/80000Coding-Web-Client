@@ -12,8 +12,6 @@ import { Avatar, Navbar, NavbarBrand, NavbarContent, NavbarMenu, NavbarMenuItem,
 import Link from 'next/link'
 import { useState } from 'react'
 
-import { Text } from '../Text'
-
 const DEFAULT_MENU_ITEMS = [
   {
     url: '/categories',
@@ -84,7 +82,7 @@ export default function Header() {
               src={isSignedIn ? 'https://80000coding.s3.ap-northeast-2.amazonaws.com/image.png' : undefined}
               fallback={<StaticProfileIcon className='h-10 w-10' />}
             />
-            <Text type='title-1' children={isSignedIn ? '홍길동' : '로그인하기'} className='mr-1 leading-4' />
+            <div className='title-1 mr-1' children={isSignedIn ? '홍길동' : '로그인하기'} />
             <DynamicBackIcon className='h-3.5 w-3.5 rotate-180' />
           </Link>
 
@@ -95,7 +93,7 @@ export default function Header() {
                   <Link href={url}>
                     <div className='flex items-center gap-x-4'>
                       <Icon />
-                      <Text type='title-2' children={label} />
+                      <div className='title-2' children={label} />
                     </div>
                   </Link>
                 </NavbarMenuItem>
@@ -109,7 +107,7 @@ export default function Header() {
                 <Link href={url}>
                   <div className='flex items-center gap-x-4'>
                     <Icon />
-                    <Text type='title-2' children={label} />
+                    <div className='title-2' children={label} />
                   </div>
                 </Link>
               </NavbarMenuItem>
@@ -123,7 +121,7 @@ export default function Header() {
                   <Link href={url}>
                     <div className='flex items-center gap-x-4'>
                       <Icon />
-                      <Text type='title-2' children={label} />
+                      <div className='title-2' children={label} />
                     </div>
                   </Link>
                 </NavbarMenuItem>
@@ -133,7 +131,7 @@ export default function Header() {
         </div>
 
         <Link href='##' className='mb-[73px] w-fit'>
-          <Text type='body-3' className='text-center underline' children='PWA 설치해서 이용하기' />
+          <div className='body-3 text-center underline' children='PWA 설치해서 이용하기' />
         </Link>
       </NavbarMenu>
     </Navbar>

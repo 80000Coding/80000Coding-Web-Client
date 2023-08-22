@@ -1,0 +1,80 @@
+/* Typo(Text Styles) */
+
+.large-title-1 {
+  @apply font-noto text-2xl font-bold;
+}
+
+.large-title-1A {
+  @apply font-noto leading-A text-2xl font-bold;
+}
+
+.title-1 {
+  @apply font-noto text-xl font-bold;
+}
+.title-2 {
+  @apply font-noto text-xl font-medium;
+}
+.title-3 {
+  @apply font-noto text-xl font-normal;
+}
+.title-1A {
+  @apply font-noto leading-A text-xl font-bold;
+}
+.title-2A {
+  @apply font-noto leading-A text-xl font-medium;
+}
+.title-3A {
+  @apply font-noto leading-A text-xl font-normal;
+}
+
+.body-1 {
+  @apply font-noto text-lg font-bold;
+}
+.body-2 {
+  @apply font-noto text-lg font-medium;
+}
+.body-3 {
+  @apply font-noto text-lg font-normal;
+}
+.body-1A {
+  @apply font-noto leading-A text-lg font-bold;
+}
+.body-2A {
+  @apply font-noto leading-A text-lg font-medium;
+}
+.body-3A {
+  @apply font-noto leading-A text-lg;
+}
+.body-3B {
+  @apply font-noto leading-B text-lg;
+}
+
+.note-1 {
+  @apply font-noto text-base font-bold;
+}
+.note-2 {
+  @apply font-noto text-base font-medium;
+}
+.note-3 {
+  @apply font-noto text-base font-normal;
+}
+
+.caption-1 {
+  @apply font-noto text-sm font-bold;
+}
+.caption-2 {
+  @apply font-noto text-sm font-medium;
+}
+.caption-3 {
+  @apply font-noto text-sm font-normal;
+}
+
+.caption-1A {
+  @apply font-noto leading-A text-sm font-bold;
+}
+.caption-2A {
+  @apply font-noto leading-A text-sm font-medium;
+}
+.caption-3A {
+  @apply font-noto leading-A text-sm;
+}
