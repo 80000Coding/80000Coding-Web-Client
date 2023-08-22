@@ -1,21 +1,7 @@
 import cn from 'classnames'
 import React from 'react'
 
-type ButtonStyleVariant = 'primary' | 'outline'
-type ButtonColorVariant =
-  | 'green'
-  | 'red'
-  | 'blue'
-  | 'violet'
-  | 'lightGreen'
-  | 'darkGreen'
-  | 'lightRed'
-  | 'darkRed'
-  | 'lightBlue'
-  | 'darkBlue'
-  | 'lightViolet'
-  | 'darkViolet'
-type ButtonSize = 'S' | 'M' | 'L'
+import { ButtonColorVariant, ButtonSize, ButtonStyleVariant } from './Button.types'
 
 type Props = {
   text: string
@@ -27,7 +13,7 @@ type Props = {
   color: ButtonColorVariant
   leftIcon?: React.ReactNode
   rightIcon?: React.ReactNode
-  onClieck: () => void
+  onClick: React.MouseEventHandler<HTMLButtonElement>
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 const backgroundColors = {
@@ -112,13 +98,13 @@ const Button = ({
   const textStyles = () => {
     switch (size) {
       case 'L':
-        return 'button-1'
+        return 'Title-1'
       case 'M':
-        return 'button-2'
+        return 'Body-1'
       case 'S':
-        return 'button-3'
+        return 'Note-3'
       default:
-        return 'button-1'
+        return 'Body-1'
     }
   }
 
@@ -129,9 +115,11 @@ const Button = ({
       disabled={disabled}
     >
       {/* left-icon은 여기로 */}
-      <div>{text?.length > 0 ? text : children}</div>
+      <div className={cn(textStyles())}>{text?.length > 0 ? text : children}</div>
       {/* right-icon은 여기로 */}
     </button>
   )
 }
 export default Button
+
+Button.displayName = 'Button'

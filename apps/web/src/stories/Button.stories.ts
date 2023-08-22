@@ -11,33 +11,36 @@ const meta = {
   argTypes: {
     size: {
       control: {
-        type: 'radio',
-        options: ['S', 'M', 'L'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
+        type: 'text',
+        // type: 'radio',
+        // options: ['S', 'M', 'L'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
       },
     },
     variant: {
       control: {
-        type: 'select',
-        options: ['primary', 'outline'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
+        type: 'text',
+        // type: 'select',
+        // options: ['primary', 'outline'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
       },
     },
     color: {
       control: {
-        type: 'select',
-        options: [
-          'green',
-          'red',
-          'blue',
-          'violet',
-          'lightGreen',
-          'lightRed',
-          'lightBlue',
-          'lightViolet',
-          'darkGreen',
-          'darkRed',
-          'darkBlue',
-          'darkViolet',
-        ], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
+        type: 'text',
+        // type: 'select',
+        // options: [
+        //   'green',
+        //   'red',
+        //   'blue',
+        //   'violet',
+        //   'lightGreen',
+        //   'lightRed',
+        //   'lightBlue',
+        //   'lightViolet',
+        //   'darkGreen',
+        //   'darkRed',
+        //   'darkBlue',
+        //   'darkViolet',
+        // ], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
       },
     },
   },
