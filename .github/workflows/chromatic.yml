@@ -1,11 +1,14 @@
 # Workflow name
 name: 'Chromatic Deployment'
 
-# Event for the workflow
 on:
   push:
     branches:
-      - dev
+      - main
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - apps/web/**
 
 # List of jobs
 jobs:
