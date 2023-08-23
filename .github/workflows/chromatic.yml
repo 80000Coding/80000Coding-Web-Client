@@ -9,6 +9,7 @@ on:
     types: [opened, reopened, synchronize]
     paths:
       - apps/web/**
+      - packages/ui/**
 
 # List of jobs
 jobs:
