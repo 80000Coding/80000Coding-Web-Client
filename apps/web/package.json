@@ -3,13 +3,14 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
+    "dev": "next dev",
     "start": "next start",
-    "lint": "next lint",
-    "clean": "run-s 'clean:*'",
+    "lint": "run-s 'lint:*'",
+    "lint:eslint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "clean": "run-s 'clean:*'",
     "clean:build": "rm -rf dist",
     "clean:cache": "rm -rf node_modules .turbo .eslintcache",
     "chromatic": "npx chromatic --project-token=chpt_e6e5c08f47b0947"
