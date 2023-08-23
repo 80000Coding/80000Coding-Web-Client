@@ -96,6 +96,7 @@ jobs:
           edit-mode: replace
 
       - name: Discord notification
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
