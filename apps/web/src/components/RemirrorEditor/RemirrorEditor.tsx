@@ -44,14 +44,14 @@ function Save() {
     const markdown = getMarkdown()
     if (!markdown) return
     // 모든 이미지 추출
-    const imagePaths = markdown.match(/!\[.*?\]\((.*?)\)/g)?.map((match) => match.match(/!\[.*?\]\((.*?)\)/)[1])
-    console.log(imagePaths)
+    // const imagePaths = markdown.match(/!\[.*?\]\((.*?)\)/g)?.map((match) => match.match(/!\[.*?\]\((.*?)\)/)[1])
+    // console.log(imagePaths)
     /**
      * 이미지 업로드
      * 이미지 경로 중, data:image/... 형식만 업로드
      * 이미지 경로 중, http://... 형식은 업로드하지 않음
      */
-    const newImagePaths = upload(imagePaths)
+    // const newImagePaths = upload(imagePaths)
     // markdown에서 이미지 경로를 업로드된 경로로 변경
     // const newMarkdown = replace();
     // markdown backend로 전송
