@@ -1,11 +1,14 @@
-# Workflow name
-name: 'Chromatic Deployment'
+name: Chromatic
 
-# Event for the workflow
 on:
   push:
     branches:
-      - dev
+      - main
+  pull_request:
+    types: [opened, reopened, synchronize]
+    paths:
+      - apps/web/**
+      - packages/ui/**
 
 # List of jobs
 jobs:
@@ -13,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Cache node modules
         id: cache-npm
@@ -37,7 +42,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: turbo run build --filter=@80000coding/ui
+        run: npm run build:packages
 
       - name: Publish to Chromatic
         uses: chromaui/action@v1
@@ -47,3 +52,16 @@ jobs:
           exitZeroOnChanges: true
           skip: dependabot/**
           projectToken: chpt_e6e5c08f47b0947
+
+      - name: Save PR number and Chromatic build outputs
+        run: |
+          mkdir -p ./pr
+          echo "${{ github.event.pull_request.number }}" > ./pr/prNumber
+          echo "${{ steps.chromatic.outputs.storybookUrl }}" > ./pr/storybookUrl
+          echo "${{ steps.chromatic.outputs.buildUrl }}" > ./pr/buildUrl
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: pr
+          path: pr/
