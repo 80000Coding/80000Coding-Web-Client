@@ -94,3 +94,13 @@ jobs:
           issue-number: ${{ steps.pr-number.outputs.result }}
           body: ${{ steps.template.outputs.result }}
           edit-mode: replace
+
+      - name: Discord notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: |
+            🚀 Storybook build is ready for review!
+            storybookUrl: ${{ steps.storybook-url.outputs.result }}
+            buildUrl: ${{ steps.build-url.outputs.result }}
