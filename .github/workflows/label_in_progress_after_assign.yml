@@ -1,0 +1,24 @@
+name: Assign and Label In Progress
+on:
+  issues:
+    types:
+      - assigned
+
+permissions:
+  contents: 'read'
+  issues: 'write'
+
+jobs:
+  assign_and_label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add In Progress label
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['In Progress']
+            })

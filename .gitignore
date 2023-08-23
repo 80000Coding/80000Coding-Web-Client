@@ -128,3 +128,15 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# turborepo
+.turbo
+build/**
+dist/**
+.next/**
+
+# build files
+dist/
+
+# Rollup Plugin Visualizer
+stats.html
