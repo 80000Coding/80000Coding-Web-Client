@@ -49,7 +49,7 @@ type Story = StoryObj<typeof meta>
 export const Title: Story = {
   args: {
     variant: 'primary',
-    color: 'blue',
+    color: 'violet',
     disabled: false,
     size: 'M',
     text: '타이틀~',
