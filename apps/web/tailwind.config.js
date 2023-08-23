@@ -45,13 +45,17 @@ module.exports = {
       },
     },
     fontSize: {
-      '2xl': '32px',
+      '2xl': '20px',
       sm: '11px',
       base: '12px',
       lg: '14px',
       xl: '17px',
       xs: '10px',
-      default: '16px',
+    },
+    lineHeight: {
+      DEFAULT: 1,
+      'A': 1.55,
+      'B': 1.7
     },
     extend: {
       backgroundImage: {

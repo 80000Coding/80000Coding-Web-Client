@@ -6,7 +6,7 @@
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean && rm -rf node_modules .turbo",
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --filter @80000coding/web",
     "lint": "turbo run lint",
     "start": "npm run start -w @80000coding/web",
     "storybook": "turbo run storybook"
