@@ -52,3 +52,16 @@ jobs:
           exitZeroOnChanges: true
           skip: dependabot/**
           projectToken: chpt_e6e5c08f47b0947
+
+      - name: Save PR number and Chromatic build outputs
+        run: |
+          mkdir -p ./pr
+          echo "${{ github.event.pull_request.number }}" > ./pr/prNumber
+          echo "${{ steps.chromatic.outputs.storybookUrl }}" > ./pr/storybookUrl
+          echo "${{ steps.chromatic.outputs.buildUrl }}" > ./pr/buildUrl
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: pr
+          path: pr/
