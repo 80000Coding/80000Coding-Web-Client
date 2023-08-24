@@ -50,16 +50,17 @@ const Button = ({
   children,
   ...rest
 }: Props) => {
+  const sizeToClass = {
+    S: 'rounded-[16px] h-[32px] note-3',
+    M: 'rounded-[24px] h-[48px] body-1',
+    L: 'rounded-[26px] h-[52px] title-1',
+  }
+
   const buttonColor = warning ? 'darkRed' : color
 
-  const sizeToClass = {
-    S: 'rounded-[16px] h-[32px] box-border note-3',
-    M: 'rounded-[24px] h-[48px] box-border body-1',
-    L: 'rounded-[26px] h-[52px] box-border title-1',
-  }
   const variantToClass = {
-    primary: `w-full text-white box-border ${getColorClass('bg', buttonColor)}`,
-    outline: `w-full ${getColorClass('text', buttonColor)} border ${getColorClass('border', buttonColor)} bg-transparent`,
+    primary: `text-white ${getColorClass('bg', buttonColor)}`,
+    outline: `${getColorClass('text', buttonColor)} border ${getColorClass('border', buttonColor)} bg-transparent`,
   }
 
   const disabledStyleVariantToClass = {
@@ -78,10 +79,9 @@ const Button = ({
 
   return (
     <button
-      className={cn(sizeToClass[size], variantToClass[variant], disabled && disabledStyleVariantToClass[variant], className)}
+      className={cn('w-full', sizeToClass[size], variantToClass[variant], disabled && disabledStyleVariantToClass[variant], className)}
       {...rest}
       disabled={disabled}
-      onClick={onClick}
     >
       <div className='align-center flex flex-row items-center justify-center gap-[2px]'>
         <IconComponent Icon={leftIcon} />
