@@ -12,6 +12,7 @@ module.exports = {
   theme: {
     colors: {
       white: '#FFFFFF',
+      black: '#000000',
       gray: {
         100: '#FAFAFF',
         200: '#EBEBF2',
@@ -54,8 +55,8 @@ module.exports = {
     },
     lineHeight: {
       DEFAULT: 1,
-      'A': 1.55,
-      'B': 1.7
+      A: 1.55,
+      B: 1.7,
     },
     extend: {
       backgroundImage: {
