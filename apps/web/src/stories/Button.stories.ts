@@ -43,6 +43,16 @@ const meta = {
         // ], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
       },
     },
+    disabled: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    warning: {
+      control: {
+        type: 'boolean',
+      },
+    },
   },
 } satisfies Meta<typeof Button>
 
@@ -56,7 +66,7 @@ export const Title: Story = {
     disabled: false,
     warning: false,
     size: 'M',
-    text: '타이틀~',
+    text: '타이틀',
     children: '탈퇴하기',
   },
 }
