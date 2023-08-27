@@ -1,6 +1,7 @@
 'use client'
 
 import Header from '@/components/common/header'
+import Filters from '@/components/main/filters'
 import MainQuickPanel from '@/components/main/main-quick-panel'
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
 
       <div>
         <MainQuickPanel />
+        <Filters />
       </div>
     </main>
   )
