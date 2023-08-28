@@ -6,6 +6,8 @@ import { useCallback, useState } from 'react'
 
 import { as } from '@/lib/utils/as'
 
+import useFilterRouter from './use-filter-router'
+
 const categories = [
   { id: 1, label: '전체' },
   { id: 2, label: '네트워크' },
@@ -30,21 +32,22 @@ const categories = [
 ]
 
 export default function CategoryFilter() {
+  const { moveToParams } = useFilterRouter()
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
   const searchParams = useSearchParams()
   const category = as<number>(searchParams.get('category') || 0)
-  const defaultCategory = categories[category] ?? categories[0]
+  const defaultCategory = categories[category - 1] ?? categories[0]
   const [selectedCategory, setSelectedCategory] = useState(defaultCategory)
 
   const handleCategoryClick = useCallback((index: number) => {
     setSelectedCategory(categories[index])
-    console.log(index)
   }, [])
 
   const handleCategorySubmit = useCallback(() => {
     console.log(selectedCategory)
     onClose()
-  }, [selectedCategory, onClose])
+    moveToParams({ category: selectedCategory.id })
+  }, [selectedCategory, onClose, moveToParams])
 
   return (
     <>

@@ -6,6 +6,8 @@ import { useCallback, useState } from 'react'
 
 import { as } from '@/lib/utils/as'
 
+import useFilterRouter from './use-filter-router'
+
 export type SORT_KEYS = 'ID' | 'LIKE' | 'VIEW' | 'SCRAP'
 
 const SORT_OPTION_MAP = new Map<SORT_KEYS, string>([
@@ -33,6 +35,7 @@ export function getOption(key: SORT_KEYS = 'ID') {
 }
 
 export default function SortFilter() {
+  const { moveToParams } = useFilterRouter()
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
   const searchParams = useSearchParams()
   const sort = as<SORT_KEYS>(searchParams.get('sort') || 'ID')
@@ -42,13 +45,13 @@ export default function SortFilter() {
 
   const handleSortClick = useCallback((index: number) => {
     setSelectedSort(SORT_OPTIONS[index])
-    console.log(index)
   }, [])
 
   const handleSortsubmit = useCallback(() => {
     console.log(selectedSort)
     onClose()
-  }, [selectedSort, onClose])
+    moveToParams({ sort: selectedSort.key })
+  }, [selectedSort, onClose, moveToParams])
 
   return (
     <>

@@ -6,6 +6,8 @@ import { useCallback, useState } from 'react'
 
 import { as } from '@/lib/utils/as'
 
+import useFilterRouter from './use-filter-router'
+
 const organizations = [
   { id: 1, label: '42 Seoul' },
   { id: 2, label: 'Apple Developer Academy' },
@@ -15,21 +17,22 @@ const organizations = [
 ]
 
 export default function OrganizationFilter() {
+  const { moveToParams } = useFilterRouter()
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
   const searchParams = useSearchParams()
   const organization = as<number>(searchParams.get('org') || 0)
-  const defaultOrganization = organizations[organization] ?? organizations[0]
+  const defaultOrganization = organizations[organization - 1] ?? organizations[0]
   const [selectedOrganization, setSelectedOrganization] = useState(defaultOrganization)
 
   const handleOrganizationClick = useCallback((index: number) => {
     setSelectedOrganization(organizations[index])
-    console.log(index)
   }, [])
 
   const handleOrganizationSubmit = useCallback(() => {
     console.log(selectedOrganization)
     onClose()
-  }, [selectedOrganization, onClose])
+    moveToParams({ org: selectedOrganization.id })
+  }, [selectedOrganization, onClose, moveToParams])
 
   return (
     <>
