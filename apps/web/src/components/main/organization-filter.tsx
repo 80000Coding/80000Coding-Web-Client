@@ -6,51 +6,36 @@ import { useCallback, useState } from 'react'
 
 import { as } from '@/lib/utils/as'
 
-const categories = [
-  { id: 1, label: '전체' },
-  { id: 2, label: '네트워크' },
-  { id: 3, label: '유선 네트워크' },
-  { id: 4, label: '무선 네트워크' },
-  { id: 5, label: '웹' },
-  { id: 6, label: '컴퓨터사이언스' },
-  { id: 7, label: '운영체제' },
-  { id: 8, label: '알고리즘' },
-  { id: 9, label: '딥러닝' },
-  { id: 10, label: '그래픽스' },
-  { id: 11, label: '수학' },
-  { id: 12, label: '개발지식' },
-  { id: 13, label: '개발지식2' },
-  { id: 14, label: '개발지식3' },
-  { id: 15, label: '개발지식4' },
-  { id: 16, label: '개발지식5' },
-  { id: 17, label: '개발지식6' },
-  { id: 18, label: '개발지식7' },
-  { id: 19, label: '개발지식8' },
-  { id: 20, label: '개발지식9' },
+const organizations = [
+  { id: 1, label: '42 Seoul' },
+  { id: 2, label: 'Apple Developer Academy' },
+  { id: 3, label: 'Apple' },
+  { id: 4, label: 'Microsoft' },
+  { id: 5, label: 'Google' },
 ]
 
-export default function CategoryFilter() {
+export default function OrganizationFilter() {
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
   const searchParams = useSearchParams()
-  const category = as<number>(searchParams.get('category') || 0)
-  const defaultCategory = categories[category] ?? categories[0]
-  const [selectedCategory, setSelectedCategory] = useState(defaultCategory)
+  const organization = as<number>(searchParams.get('org') || 0)
+  const defaultOrganization = organizations[organization] ?? organizations[0]
+  const [selectedOrganization, setSelectedOrganization] = useState(defaultOrganization)
 
-  const handleCategoryClick = useCallback((index: number) => {
-    setSelectedCategory(categories[index])
+  const handleOrganizationClick = useCallback((index: number) => {
+    setSelectedOrganization(organizations[index])
     console.log(index)
   }, [])
 
-  const handleCategorySubmit = useCallback(() => {
-    console.log(selectedCategory)
+  const handleOrganizationSubmit = useCallback(() => {
+    console.log(selectedOrganization)
     onClose()
-  }, [selectedCategory, onClose])
+  }, [selectedOrganization, onClose])
 
   return (
     <>
       <button onClick={onOpen} className='flex shrink-0 items-center gap-x-2 rounded-[20px] border border-gray-300 py-2 pl-4 pr-3'>
-        <span className='body-3'>카테고리</span>
-        <span className='body-2 text-green'>{defaultCategory.label}</span>
+        <span className='body-3'>조직</span>
+        <span className='body-2 text-green'>{defaultOrganization.label}</span>
         <DynamicTrangleIcon className='mt-0.5 h-[7px] w-[7px]' />
       </button>
       <Modal
@@ -85,16 +70,16 @@ export default function CategoryFilter() {
             <>
               <ModalHeader className='relative flex justify-center px-4 py-5'>
                 <DynamicCloseIcon onClick={onClose} className='mr-auto h-5 w-5' />
-                <span className='title-1 absolute'>카테고리</span>
+                <span className='title-1 absolute'>조직</span>
               </ModalHeader>
               <ModalBody>
                 <ScrollShadow size={150} className='h-full'>
-                  <div className='flex flex-col justify-start gap-y-6'>
-                    {categories.map(({ id, label }, index) => (
+                  <div className='flex h-full flex-col justify-start gap-y-6'>
+                    {organizations.map(({ id, label }, index) => (
                       <button
                         key={id}
-                        className={classNames(id === selectedCategory.id && 'text-green', 'title-1')}
-                        onClick={() => handleCategoryClick(index)}
+                        className={classNames(id === selectedOrganization.id && 'text-green', 'title-1')}
+                        onClick={() => handleOrganizationClick(index)}
                       >
                         {label}
                       </button>
@@ -103,7 +88,7 @@ export default function CategoryFilter() {
                 </ScrollShadow>
               </ModalBody>
               <ModalFooter>
-                <button onClick={handleCategorySubmit} className='bg-green title-1 w-full rounded-3xl py-4 text-center text-white'>
+                <button onClick={handleOrganizationSubmit} className='bg-green title-1 w-full rounded-3xl py-4 text-center text-white'>
                   적용하기
                 </button>
               </ModalFooter>
