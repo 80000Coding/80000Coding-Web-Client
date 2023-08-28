@@ -9,11 +9,12 @@ import { as } from '@/lib/utils/as'
 import useFilterRouter from './use-filter-router'
 
 const organizations = [
-  { id: 1, label: '42 Seoul' },
-  { id: 2, label: 'Apple Developer Academy' },
-  { id: 3, label: 'Apple' },
-  { id: 4, label: 'Microsoft' },
-  { id: 5, label: 'Google' },
+  { id: 1, label: '전체' },
+  { id: 2, label: '42 Seoul' },
+  { id: 3, label: 'Apple Developer Academy' },
+  { id: 4, label: 'Apple' },
+  { id: 5, label: 'Microsoft' },
+  { id: 6, label: 'Google' },
 ]
 
 export default function OrganizationFilter() {
