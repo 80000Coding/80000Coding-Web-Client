@@ -67,7 +67,9 @@ export default function Header() {
     <Navbar classNames={{ wrapper: 'px-5 py-4.5' }} isBlurred={false} height='60px' onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarBrand>
-          <Image src='/logo/logo.svg' alt='logo' width={135} height={23} />
+          <a href='/'>
+            <Image src='/logo/logo.svg' alt='logo' width={135} height={23} />
+          </a>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent justify='end'>
