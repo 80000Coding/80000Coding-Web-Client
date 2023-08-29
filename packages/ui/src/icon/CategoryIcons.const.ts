@@ -6,7 +6,7 @@ export const categoryIconDisplayName: Record<CategoryIconNames, string> = {
   'category-Android': 'Android',
   'category-Apple': 'Apple',
   'category-AppleDeveloperAcademy': 'Apple Developer Academy',
-  'category-AppleOS': '',
+  'category-AppleOS': 'AppleOS',
   'category-Assembly': 'Assembly',
   'category-C': 'C',
   'category-CS': 'Computer Science',
