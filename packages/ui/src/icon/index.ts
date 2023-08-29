@@ -1,3 +1,3 @@
-export * from './category-icon'
-export * from './category-icon.const'
-export * from './category-icon.type'
+export * from './CategoryIcons'
+export * from './CategoryIcons.const'
+export * from './CategoryIcons.type'

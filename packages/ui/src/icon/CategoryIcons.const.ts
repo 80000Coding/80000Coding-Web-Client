@@ -1,4 +1,4 @@
-import type { CategoryIconNames } from './category-icon.type'
+import type { CategoryIconNames } from './CategoryIcons.type'
 
 export const categoryIconDisplayName: Record<CategoryIconNames, string> = {
   'category-42Seoul': '42Seoul',

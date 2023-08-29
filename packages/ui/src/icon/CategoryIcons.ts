@@ -1,7 +1,7 @@
 import { icons } from '@80000coding/web-icons'
 
-import { categoryIconColor, categoryIconDisplayName } from './category-icon.const'
-import { CategoryIcon, CategoryIconNames } from './category-icon.type'
+import { categoryIconColor, categoryIconDisplayName } from './CategoryIcons.const'
+import { CategoryIcon, CategoryIconNames } from './CategoryIcons.type'
 
 export const categoryIcons = Object.entries(icons)
   .filter(([key]) => key.startsWith('category'))
