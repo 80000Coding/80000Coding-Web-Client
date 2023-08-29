@@ -1,8 +1,8 @@
 'use client'
 
-import Header from '@/components/common/header'
-import Filters from '@/components/main/filters'
-import MainQuickPanel from '@/components/main/main-quick-panel'
+import Header from '@/components/common/Header'
+import Filters from '@/components/main/Filters'
+import MainQuickPanel from '@/components/main/MainQuickPanel'
 
 export default function Home() {
   return (

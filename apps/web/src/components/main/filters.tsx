@@ -1,6 +1,6 @@
-import CategoryFilter from './category-filter'
-import OrganizationFilter from './organization-filter'
-import SortFilter from './sort-filter'
+import CategoryFilter from './CategoryFilter'
+import OrganizationFilter from './OrganizationFilter'
+import SortFilter from './SortFilter'
 
 export default function Filters() {
   return (

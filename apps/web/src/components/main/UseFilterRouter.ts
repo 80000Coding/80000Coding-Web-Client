@@ -1,7 +1,7 @@
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useCallback } from 'react'
 
-import { SORT_KEYS } from './sort-filter'
+import { SORT_KEYS } from './SortFilter'
 
 export type FeedFilterQueryParams = {
   category?: number

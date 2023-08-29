@@ -6,7 +6,7 @@ import { useCallback, useState } from 'react'
 
 import { as } from '@/lib/utils/as'
 
-import useFilterRouter from './use-filter-router'
+import useFilterRouter from './UseFilterRouter'
 
 export type SORT_KEYS = 'ID' | 'LIKE' | 'VIEW' | 'SCRAP'
 

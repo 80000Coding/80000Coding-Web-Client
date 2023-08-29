@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { DEFAULT_MENU_ITEMS } from '../common/header'
+import { DEFAULT_MENU_ITEMS } from '../common/Header'
 
 export default function MainQuickPanel() {
   return (
