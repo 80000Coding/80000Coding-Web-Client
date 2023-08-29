@@ -10,7 +10,8 @@ export const categoryIcons = Object.entries(icons)
       const typesafeKey = key as CategoryIconNames
       acc[typesafeKey] = {
         displayName: categoryIconDisplayName[typesafeKey],
-        color: categoryIconColor[typesafeKey],
+        bgColor: categoryIconColor[typesafeKey].bg,
+        fgColor: categoryIconColor[typesafeKey].fg,
         source: value,
       }
       return acc
