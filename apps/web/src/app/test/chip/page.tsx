@@ -1,5 +1,5 @@
-import { Chip, IconChip, SearchChip } from '@80000coding/ui'
-import ButtonChip from '@80000coding/ui/src/chip/ButtonChip'
+import { Chip, CommentChip, IconChip, SearchChip } from '@80000coding/ui'
+
 // import { icons } from '@80000coding/web-icons'
 
 export default function Page() {
@@ -21,8 +21,8 @@ export default function Page() {
       <IconChip erasable categoryIconNames='category-TypeScript' />
       <IconChip erasable categoryIconNames='category-React' variant='primary' />
 
-      <ButtonChip />
-      <ButtonChip type='cancel' />
+      <CommentChip />
+      <CommentChip type='cancel' />
 
       <SearchChip text='최근검색내역' />
     </div>
