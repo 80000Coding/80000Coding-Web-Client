@@ -9,28 +9,33 @@ import {
   StaticScrapIcon,
 } from '@80000coding/web-icons'
 import { Avatar, Navbar, NavbarBrand, NavbarContent, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from '@nextui-org/react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
-const DEFAULT_MENU_ITEMS = [
+export const DEFAULT_MENU_ITEMS = [
   {
     url: '/categories',
     label: '카테고리 모아보기',
+    shortLabel: '카테고리',
     icon: StaticCategoryIcon,
   },
   {
     url: '/projects',
     label: '프로젝트 둘러보기',
+    shortLabel: '프로젝트',
     icon: StaticProjectIcon,
   },
   {
     url: '/hotpost',
     label: '오늘의 게시글 보기',
+    shortLabel: '인기글',
     icon: StaticHotpostIcon,
   },
   {
     url: '/rangkings',
     label: '컨트리뷰터 랭킹 보기',
+    shortLabel: '랭킹',
     icon: StaticRankingIcon,
   },
 ]
@@ -62,7 +67,9 @@ export default function Header() {
     <Navbar classNames={{ wrapper: 'px-5 py-4.5' }} isBlurred={false} height='60px' onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarBrand>
-          <img src='/logo/logo.svg' alt='logo' />
+          <a href='/'>
+            <Image src='/logo/logo.svg' alt='logo' width={135} height={23} />
+          </a>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent justify='end'>
@@ -82,7 +89,7 @@ export default function Header() {
               src={isSignedIn ? 'https://80000coding.s3.ap-northeast-2.amazonaws.com/image.png' : undefined}
               fallback={<StaticProfileIcon className='h-10 w-10' />}
             />
-            <div className='title-1 mr-1' children={isSignedIn ? '홍길동' : '로그인하기'} />
+            <div className='title-1 mr-1'>{isSignedIn ? '홍길동' : '로그인하기'}</div>
             <DynamicBackIcon className='h-3.5 w-3.5 rotate-180' />
           </Link>
 
@@ -93,7 +100,7 @@ export default function Header() {
                   <Link href={url}>
                     <div className='flex items-center gap-x-4'>
                       <Icon />
-                      <div className='title-2' children={label} />
+                      <div className='title-2'>{label}</div>
                     </div>
                   </Link>
                 </NavbarMenuItem>
@@ -107,7 +114,7 @@ export default function Header() {
                 <Link href={url}>
                   <div className='flex items-center gap-x-4'>
                     <Icon />
-                    <div className='title-2' children={label} />
+                    <div className='title-2'>{label}</div>
                   </div>
                 </Link>
               </NavbarMenuItem>
@@ -121,7 +128,7 @@ export default function Header() {
                   <Link href={url}>
                     <div className='flex items-center gap-x-4'>
                       <Icon />
-                      <div className='title-2' children={label} />
+                      <div className='title-2'>{label}</div>
                     </div>
                   </Link>
                 </NavbarMenuItem>
@@ -131,7 +138,7 @@ export default function Header() {
         </div>
 
         <Link href='##' className='mb-[73px] w-fit'>
-          <div className='body-3 text-center underline' children='PWA 설치해서 이용하기' />
+          <div className='body-3 text-center underline'>PWA 설치해서 이용하기</div>
         </Link>
       </NavbarMenu>
     </Navbar>

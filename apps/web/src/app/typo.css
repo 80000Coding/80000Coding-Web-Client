@@ -1,7 +1,7 @@
 /* Typo(Text Styles) */
 
 .large-title-1 {
-  @apply text-2xl font-bold;
+  @apply leading text-2xl font-bold;
 }
 
 .large-title-1A {
@@ -9,13 +9,13 @@
 }
 
 .title-1 {
-  @apply text-xl font-bold;
+  @apply leading text-xl font-bold;
 }
 .title-2 {
-  @apply text-xl font-medium;
+  @apply leading text-xl font-medium;
 }
 .title-3 {
-  @apply text-xl font-normal;
+  @apply leading text-xl font-normal;
 }
 .title-1A {
   @apply leading-A text-xl font-bold;
@@ -28,13 +28,13 @@
 }
 
 .body-1 {
-  @apply text-lg font-bold;
+  @apply leading text-lg font-bold;
 }
 .body-2 {
-  @apply text-lg font-medium;
+  @apply leading text-lg font-medium;
 }
 .body-3 {
-  @apply text-lg font-normal;
+  @apply leading text-lg font-normal;
 }
 .body-1A {
   @apply leading-A text-lg font-bold;
@@ -50,23 +50,23 @@
 }
 
 .note-1 {
-  @apply text-base font-bold;
+  @apply leading text-base font-bold;
 }
 .note-2 {
-  @apply text-base font-medium;
+  @apply leading text-base font-medium;
 }
 .note-3 {
-  @apply text-base font-normal;
+  @apply leading text-base font-normal;
 }
 
 .caption-1 {
-  @apply text-sm font-bold;
+  @apply leading text-sm font-bold;
 }
 .caption-2 {
-  @apply text-sm font-medium;
+  @apply leading text-sm font-medium;
 }
 .caption-3 {
-  @apply text-sm font-normal;
+  @apply leading text-sm font-normal;
 }
 
 .caption-1A {
