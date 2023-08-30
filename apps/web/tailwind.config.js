@@ -42,6 +42,7 @@ module.exports = {
         light: '#FFA8A8',
         DEFAULT: '#FF8787',
         dark: '#C93939',
+        warning: '#FF3F3F',
       },
     },
     fontSize: {
@@ -54,8 +55,8 @@ module.exports = {
     },
     lineHeight: {
       DEFAULT: 1,
-      'A': 1.55,
-      'B': 1.7
+      A: 1.55,
+      B: 1.7,
     },
     extend: {
       backgroundImage: {
