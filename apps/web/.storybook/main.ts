@@ -8,6 +8,7 @@ const config = {
     '@storybook/addon-essentials',
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
+    'storybook-dark-mode',
     {
       name: '@storybook/addon-styling',
       options: {
