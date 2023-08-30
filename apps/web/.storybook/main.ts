@@ -1,6 +1,6 @@
 const path = require('path')
 
-/** @type { import('@storybook/react-vite').StorybookConfig } */
+/** @type { import('@storybook/nextjs').StorybookConfig } */
 const config = {
   stories: ['../**/*.mdx', '../**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
@@ -22,6 +22,9 @@ const config = {
   framework: {
     name: '@storybook/nextjs',
     options: {},
+  },
+  options: {
+    storySort: (a, b) => (a.id === b.id ? 0 : a.id.localeCompare(b.id, undefined, { numeric: true })),
   },
 }
 export default config
