@@ -1,8 +1,7 @@
-import { IconSource } from '@80000coding/web-icons'
 import cn from 'classnames'
 import React from 'react'
 
-import { ButtonColorVariant, ButtonSize, ButtonStyleVariant } from './Button.types'
+import { ButtonSize, ButtonStyleVariant } from './Button.types'
 
 type Props = {
   text?: string
@@ -11,29 +10,10 @@ type Props = {
   warning?: boolean
   loading?: boolean
   size?: ButtonSize
-  color?: ButtonColorVariant
-  leftIcon?: IconSource
-  rightIcon?: IconSource
+  leftIcon?: React.ReactNode
+  rightIcon?: React.ReactNode
   onClick?: React.MouseEventHandler<HTMLButtonElement>
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
-
-const getColorClass = (attr: string, color: ButtonColorVariant) => {
-  const colorMap = {
-    green: 'green',
-    red: 'red',
-    blue: 'blue',
-    violet: 'violet',
-    lightGreen: 'green-light',
-    lightRed: 'red-light',
-    lightBlue: 'blue-light',
-    lightViolet: 'violet-light',
-    darkGreen: 'green-dark',
-    darkRed: 'red-dark',
-    darkBlue: 'blue-dark',
-    darkViolet: 'violet-dark',
-  }
-  return `${attr}-${colorMap[color]}`
-}
 
 const Button = ({
   text,
@@ -42,7 +22,6 @@ const Button = ({
   warning = false,
   loading = false,
   size = 'M',
-  color = 'green',
   leftIcon,
   rightIcon,
   onClick,
@@ -56,11 +35,9 @@ const Button = ({
     L: 'rounded-[26px] h-[52px] title-1',
   }
 
-  const buttonColor = warning ? 'darkRed' : color
-
   const variantToClass = {
-    primary: `text-white ${getColorClass('bg', buttonColor)}`,
-    outline: `${getColorClass('text', buttonColor)} border ${getColorClass('border', buttonColor)} bg-transparent`,
+    primary: `text-white`,
+    outline: `border bg-transparent`,
   }
 
   const disabledStyleVariantToClass = {
@@ -68,25 +45,30 @@ const Button = ({
     outline: `disabled:text-gray-200 disabled:border-gray-200`,
   }
 
-  const IconComponent = ({ Icon }: { Icon: IconSource | undefined }) => {
-    if (!Icon) return null
-    return (
-      <div className='flex h-[32px] w-[32px] items-center justify-center'>
-        <Icon />
-      </div>
-    )
+  const warningStyleVariantToClass = {
+    primary: `bg-red-dark`,
+    outline: `border-red-dark text-red-dark`,
   }
 
   return (
     <button
-      className={cn('w-full', sizeToClass[size], variantToClass[variant], disabled && disabledStyleVariantToClass[variant], className)}
+      className={cn(
+        'w-full',
+        sizeToClass[size],
+        variantToClass[variant],
+        disabled && disabledStyleVariantToClass[variant],
+        warning && warningStyleVariantToClass[variant],
+        className,
+      )}
       {...rest}
       disabled={disabled}
+      onClick={onClick}
     >
       <div className='align-center flex flex-row items-center justify-center gap-[2px]'>
-        <IconComponent Icon={leftIcon} />
+        {/* { props로 React.ReactNode 받으면 어떻게 렌더링 시켜야하지? } */}
+        {leftIcon}
         <span>{text ?? children}</span>
-        <IconComponent Icon={rightIcon} />
+        {rightIcon}
       </div>
     </button>
   )
