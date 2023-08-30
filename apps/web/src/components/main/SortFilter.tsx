@@ -1,12 +1,9 @@
 import { DynamicCloseIcon, DynamicTrangleIcon } from '@80000coding/web-icons'
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ScrollShadow, useDisclosure } from '@nextui-org/react'
 import classNames from 'classnames'
-import { useSearchParams } from 'next/navigation'
 import { useCallback, useState } from 'react'
 
-import { as } from '@/lib/utils/as'
-
-import useFilterRouter from './UseFilterRouter'
+import useFilterRouter from './useFilterRouter'
 
 export type SORT_KEYS = 'ID' | 'LIKE' | 'VIEW' | 'SCRAP'
 
@@ -35,10 +32,8 @@ export function getOption(key: SORT_KEYS = 'ID') {
 }
 
 export default function SortFilter() {
-  const { moveToParams } = useFilterRouter()
+  const { moveToParams, sort } = useFilterRouter()
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
-  const searchParams = useSearchParams()
-  const sort = as<SORT_KEYS>(searchParams.get('sort') || 'ID')
   const defaultSort = getOption(sort) ?? SORT_OPTIONS[0]
 
   const [selectedSort, setSelectedSort] = useState(defaultSort)

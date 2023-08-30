@@ -1,12 +1,9 @@
 import { DynamicCloseIcon, DynamicTrangleIcon } from '@80000coding/web-icons'
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ScrollShadow, useDisclosure } from '@nextui-org/react'
 import classNames from 'classnames'
-import { useSearchParams } from 'next/navigation'
 import { useCallback, useState } from 'react'
 
-import { as } from '@/lib/utils/as'
-
-import useFilterRouter from './UseFilterRouter'
+import useFilterRouter from './useFilterRouter'
 
 const categories = [
   { id: 1, label: '전체' },
@@ -32,10 +29,8 @@ const categories = [
 ]
 
 export default function CategoryFilter() {
-  const { moveToParams } = useFilterRouter()
+  const { moveToParams, category } = useFilterRouter()
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
-  const searchParams = useSearchParams()
-  const category = as<number>(searchParams.get('category') || 0)
   const defaultCategory = categories[category - 1] ?? categories[0]
   const [selectedCategory, setSelectedCategory] = useState(defaultCategory)
 

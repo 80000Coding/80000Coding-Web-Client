@@ -1,12 +1,9 @@
 import { DynamicCloseIcon, DynamicTrangleIcon } from '@80000coding/web-icons'
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ScrollShadow, useDisclosure } from '@nextui-org/react'
 import classNames from 'classnames'
-import { useSearchParams } from 'next/navigation'
 import { useCallback, useState } from 'react'
 
-import { as } from '@/lib/utils/as'
-
-import useFilterRouter from './UseFilterRouter'
+import useFilterRouter from './useFilterRouter'
 
 const organizations = [
   { id: 1, label: '전체' },
@@ -18,10 +15,8 @@ const organizations = [
 ]
 
 export default function OrganizationFilter() {
-  const { moveToParams } = useFilterRouter()
+  const { moveToParams, organization } = useFilterRouter()
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure()
-  const searchParams = useSearchParams()
-  const organization = as<number>(searchParams.get('org') || 0)
   const defaultOrganization = organizations[organization - 1] ?? organizations[0]
   const [selectedOrganization, setSelectedOrganization] = useState(defaultOrganization)
 
