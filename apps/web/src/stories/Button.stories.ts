@@ -10,7 +10,7 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     size: {
-      options: ['S', 'M', 'L'],
+      options: ['sm', 'md', 'lg'],
       control: {
         type: 'radio',
       },
@@ -47,7 +47,7 @@ export const Title: Story = {
     variant: 'primary',
     disabled: false,
     warning: false,
-    size: 'M',
+    size: 'md',
     text: '타이틀',
     children: '탈퇴하기',
     className: 'bg-green',

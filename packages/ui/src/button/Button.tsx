@@ -1,38 +1,35 @@
 import cn from 'classnames'
 import React from 'react'
 
-import { ButtonSize, ButtonStyleVariant } from './Button.types'
+type ButtonStyleVariant = 'primary' | 'outline'
+type ButtonSize = 'sm' | 'md' | 'lg'
 
 type Props = {
   text?: string
   variant?: ButtonStyleVariant
-  diabled?: boolean
   warning?: boolean
   loading?: boolean
   size?: ButtonSize
   leftIcon?: React.ReactNode
   rightIcon?: React.ReactNode
-  onClick?: React.MouseEventHandler<HTMLButtonElement>
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 const Button = ({
   text,
   variant = 'primary',
-  disabled = false,
   warning = false,
   loading = false,
-  size = 'M',
+  size = 'md',
   leftIcon,
   rightIcon,
-  onClick,
   className,
   children,
   ...rest
 }: Props) => {
   const sizeToClass = {
-    S: 'rounded-[16px] h-[32px] note-3',
-    M: 'rounded-[24px] h-[48px] body-1',
-    L: 'rounded-[26px] h-[52px] title-1',
+    sm: 'rounded-[16px] h-[32px] note-3',
+    md: 'rounded-[24px] h-[48px] body-1',
+    lg: 'rounded-[26px] h-[52px] title-1',
   }
 
   const variantToClass = {
@@ -52,21 +49,18 @@ const Button = ({
   return (
     <button
       className={cn(
-        'w-full',
-        'px-[24px]',
+        'w-full px-[24px]',
         sizeToClass[size],
         variantToClass[variant],
-        disabled && disabledStyleVariantToClass[variant],
+        disabledStyleVariantToClass[variant],
         warning && warningStyleVariantToClass[variant],
         className,
       )}
       {...rest}
-      disabled={disabled}
-      onClick={onClick}
     >
       <div className='align-center flex flex-row items-center justify-center gap-[2px]'>
         {leftIcon}
-        <span className='text-elipsis overflex-hidden whitespace-nowrap'>{text ?? children}</span>
+        <span className='overflow-hidden text-ellipsis whitespace-nowrap'>{text ?? children}</span>
         {rightIcon}
       </div>
     </button>
