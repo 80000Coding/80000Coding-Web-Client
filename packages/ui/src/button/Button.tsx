@@ -49,7 +49,6 @@ const Button = ({
     primary: `bg-red-dark`,
     outline: `border-red-dark text-red-dark`,
   }
-
   return (
     <button
       className={cn(
@@ -65,7 +64,6 @@ const Button = ({
       onClick={onClick}
     >
       <div className='align-center flex flex-row items-center justify-center gap-[2px]'>
-        {/* { props로 React.ReactNode 받으면 어떻게 렌더링 시켜야하지? } */}
         {leftIcon}
         <span>{text ?? children}</span>
         {rightIcon}

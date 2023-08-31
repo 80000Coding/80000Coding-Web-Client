@@ -10,13 +10,13 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     size: {
-      options: ['S', 'M', 'L'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
+      options: ['S', 'M', 'L'],
       control: {
         type: 'radio',
       },
     },
     variant: {
-      options: ['primary', 'outline'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
+      options: ['primary', 'outline'],
       control: {
         type: 'select',
       },
