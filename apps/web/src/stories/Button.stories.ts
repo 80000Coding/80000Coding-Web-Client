@@ -10,34 +10,30 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     size: {
+      options: ['sm', 'md', 'lg'],
       control: {
         type: 'radio',
-        options: ['S', 'M', 'L'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
       },
     },
     variant: {
+      options: ['primary', 'outline'],
       control: {
         type: 'select',
-        options: ['primary', 'outline'], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
       },
     },
-    color: {
+    disabled: {
       control: {
-        type: 'select',
-        options: [
-          'green',
-          'red',
-          'blue',
-          'violet',
-          'lightGreen',
-          'lightRed',
-          'lightBlue',
-          'lightViolet',
-          'darkGreen',
-          'darkRed',
-          'darkBlue',
-          'darkViolet',
-        ], // 사용 가능한 타입들을 선택 옵션으로 제공합니다.
+        type: 'boolean',
+      },
+    },
+    warning: {
+      control: {
+        type: 'boolean',
+      },
+    },
+    className: {
+      control: {
+        type: 'text',
       },
     },
   },
@@ -49,10 +45,11 @@ type Story = StoryObj<typeof meta>
 export const Title: Story = {
   args: {
     variant: 'primary',
-    color: 'red',
     disabled: false,
-    size: 'M',
-    text: '타이틀~',
+    warning: false,
+    size: 'md',
+    text: '타이틀',
     children: '탈퇴하기',
+    className: 'bg-green',
   },
 }
