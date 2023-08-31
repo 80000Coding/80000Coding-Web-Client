@@ -53,6 +53,7 @@ const Button = ({
     <button
       className={cn(
         'w-full',
+        'px-[24px]',
         sizeToClass[size],
         variantToClass[variant],
         disabled && disabledStyleVariantToClass[variant],
@@ -65,7 +66,7 @@ const Button = ({
     >
       <div className='align-center flex flex-row items-center justify-center gap-[2px]'>
         {leftIcon}
-        <span>{text ?? children}</span>
+        <span className='text-elipsis overflex-hidden whitespace-nowrap'>{text ?? children}</span>
         {rightIcon}
       </div>
     </button>
