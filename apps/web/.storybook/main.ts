@@ -1,33 +1,31 @@
-// import type { StorybookConfig } from '@storybook/nextjs'
-// const config: StorybookConfig = {
-//   stories: ['../src/stories/*.mdx', '../src/stories/*.stories.@(js|jsx|mjs|ts|tsx)'],
-//   addons: [
-//     '@storybook/addon-links',
-//     '@storybook/addon-essentials',
-//     '@storybook/addon-onboarding',
-//     '@storybook/addon-interactions',
-//     '@storybook/addon-styling',
-//   ],
-//   framework: {
-//     name: '@storybook/nextjs',
-//     options: {},
-//   },
-//   docs: {
-//     autodocs: 'tag',
-//   },
-// }
-// export default config
+const path = require('path')
 
-/** @type { import('@storybook/react-vite').StorybookConfig } */
+/** @type { import('@storybook/nextjs').StorybookConfig } */
 const config = {
   stories: ['../**/*.mdx', '../**/*.stories.@(js|jsx|mjs|ts|tsx)'],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-onboarding', '@storybook/addon-interactions'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-onboarding',
+    '@storybook/addon-interactions',
+    'storybook-dark-mode',
+    {
+      name: '@storybook/addon-styling',
+      options: {
+        // Check out https://github.com/storybookjs/addon-styling/blob/main/docs/api.md
+        // For more details on this addon's options.
+        postCss: {
+          implementation: require.resolve('postcss'),
+        },
+      },
+    },
+  ],
   framework: {
-    name: '@storybook/react-vite',
+    name: '@storybook/nextjs',
     options: {},
   },
-  docs: {
-    autodocs: 'tag',
+  options: {
+    storySort: (a, b) => (a.id === b.id ? 0 : a.id.localeCompare(b.id, undefined, { numeric: true })),
   },
 }
 export default config

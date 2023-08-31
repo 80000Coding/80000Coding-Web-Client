@@ -16,10 +16,12 @@
     "storybook": {
       "dependsOn": ["^build"]
     },
+    "build-storybook": {
+      "dependsOn": ["^build"]
+    },
     "dev": {
       "cache": false,
-      "persistent": true,
-      "dependsOn": ["^build"]
+      "persistent": true
     },
     "clean": {
       "cache": false

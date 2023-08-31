@@ -1,0 +1,24 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # Lint the project
+  lint:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: check eslint
+        run: npm run lint

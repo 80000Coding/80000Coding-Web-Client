@@ -1,24 +1,18 @@
 'use client'
 
-import { Toggle, Button, LoadingButtonIcon, LoadingPageIcon } from '@80000coding/ui'
-import { useState } from 'react'
-
-import Header from '@/components/common/header'
+import Header from '@/components/common/Header'
+import Filters from '@/components/main/Filters'
+import MainQuickPanel from '@/components/main/MainQuickPanel'
 
 export default function Home() {
-  const [isChecked, setIsChecked] = useState(false)
-
-  const handleClick = () => {
-    setIsChecked((prevChecked) => !prevChecked)
-  }
-
   return (
     <main>
-      {/* <Header /> */}
-      <LoadingButtonIcon />
-      <LoadingPageIcon />
-      <Toggle isChecked={isChecked} onToggleClick={handleClick}></Toggle>
-      <Toggle />
+      <Header />
+
+      <div>
+        <MainQuickPanel />
+        <Filters />
+      </div>
     </main>
   )
 }
