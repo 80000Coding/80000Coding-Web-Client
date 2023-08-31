@@ -42,6 +42,7 @@ module.exports = {
       red: {
         light: '#FFA8A8',
         DEFAULT: '#FF8787',
+        warning: '#FF3F3F',
         dark: '#FF3F3F',
       },
     },
