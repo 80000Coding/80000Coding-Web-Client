@@ -32,11 +32,11 @@ const classes = [
 
 function Classes() {
   return (
-    <div className='m-4 grid grid-cols-2 grid-rows-1 gap-y-[1px]  bg-gray-400'>
+    <div className='grid w-full grid-cols-2 grid-rows-1 gap-y-[1px]  bg-gray-400'>
       {classes.map((typo) => (
         <React.Fragment key={typo}>
-          <div className='bg-white p-8'>{typo}</div>
-          <div className={cn(typo, 'bg-white p-8')}>
+          <div className='bg-white p-8 text-black'>{typo}</div>
+          <div className={cn(typo, 'bg-white p-8 text-black')}>
             <p className='whitespace-pre-line'>{`안녕하세요!
 			  80000Coding?`}</p>
           </div>
@@ -48,11 +48,11 @@ function Classes() {
 
 function FontFamily() {
   return (
-    <div className='m-4 grid grid-cols-2 grid-rows-1 gap-y-[1px]  bg-gray-400'>
+    <div className='grid grid-cols-2 grid-rows-1 gap-y-[1px]  bg-gray-400'>
       {fontFamilies.map((typo) => (
         <React.Fragment key={typo}>
-          <div className='bg-white p-8'>{typo}</div>
-          <div className={cn(typo, 'bg-white p-8')}>안녕하세요! 80000Coding?</div>
+          <div className='bg-white p-8 text-black'>{typo}</div>
+          <div className={cn(typo, 'bg-white p-8 text-black')}>안녕하세요! 80000Coding?</div>
         </React.Fragment>
       ))}
     </div>

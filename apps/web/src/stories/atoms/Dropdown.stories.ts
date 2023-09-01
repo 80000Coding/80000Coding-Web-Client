@@ -3,7 +3,7 @@ import { StaticDeleteIcon, StaticEditIcon } from '@80000coding/web-icons'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Design System/Dropdown',
+  title: 'Atoms/Dropdown',
   component: Dropdown,
   parameters: {
     layout: 'centered',

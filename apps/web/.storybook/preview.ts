@@ -15,7 +15,17 @@ const preview: Preview = {
     options: {
       storySort: {
         method: 'alphabetical',
-        order: ['Icons', 'Foundations', 'Atoms', ['*', ['Docs', 'Primary']], 'Molecules', 'Organisms', '*', 'Hooks'],
+        order: [
+          'Icons',
+          'Foundations',
+          ['*', ['Docs', 'Primary']],
+          'Atoms',
+          ['*', ['Docs', 'Primary']],
+          'Molecules',
+          'Organisms',
+          '*',
+          'Hooks',
+        ],
         includeNames: true,
       },
     },

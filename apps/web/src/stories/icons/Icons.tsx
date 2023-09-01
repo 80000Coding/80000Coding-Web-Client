@@ -16,7 +16,7 @@ export function Icons({ type }: IconsProps) {
       {typedIcons.map(([key, value]) => (
         <div key={key} className='flex flex-col items-center gap-4 border border-gray-200 p-4 '>
           {value({ className: 'icon-lg ' + (key.startsWith('dynamic') ? 'text-black' : '') })}
-          <span className='font-regular text-black'>{key.split('-')[1]}</span>
+          <span className='font-regular text-gray-700'>{key.split('-')[1]}</span>
         </div>
       ))}
     </div>
