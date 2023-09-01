@@ -3,20 +3,19 @@ import type { Meta, StoryObj } from '@storybook/react'
 import Colors from './Colors'
 
 const meta = {
-  title: 'Design System/Colors',
+  title: 'Foundations/Colors',
   component: Colors,
   parameters: {
     layout: 'fullscreen',
-  },
-  tags: ['autodocs'],
-  argTypes: {
-    backgroundColor: { control: 'color' },
   },
 } satisfies Meta<typeof Colors>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Primary: Story = {
+export const Light: Story = {
   args: {},
+}
+export const Dark: Story = {
+  args: { mode: 'dark' },
 }

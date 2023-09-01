@@ -12,6 +12,13 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    options: {
+      storySort: {
+        method: 'alphabetical',
+        order: ['Icons', 'Foundations', 'Atoms', ['*', ['Docs', 'Primary']], 'Molecules', 'Organisms', '*', 'Hooks'],
+        includeNames: true,
+      },
+    },
   },
 }
 

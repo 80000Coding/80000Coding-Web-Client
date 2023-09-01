@@ -2,7 +2,7 @@ import { NotificationBox } from '@80000coding/ui'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Design System/NotificationBox',
+  title: 'Atoms/NotificationBox',
   component: NotificationBox,
   parameters: {
     layout: 'centered',

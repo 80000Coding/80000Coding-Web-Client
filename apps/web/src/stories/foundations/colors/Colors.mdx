@@ -1,0 +1,26 @@
+import { Canvas, Meta } from '@storybook/blocks'
+
+import * as Colors from './Colors.stories'
+
+<Meta title='Foundations/Colors' />
+
+# Colors
+
+스타일을 추가하려면 `tailwind.config.js`에 추가하고, `Colors.stories.tsx`에 예제를 추가해주세요.
+
+### How to use
+
+```jsx
+// bg-[color]
+<div className='bg-black'>Hello World</div>
+// text-[color]
+<div className='text-black'>Hello World</div>
+```
+
+## Light Mode
+
+<Canvas of={Colors.Light} />
+
+## Dark Mode
+
+<Canvas of={Colors.Dark} />

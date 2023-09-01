@@ -1,0 +1,66 @@
+import { Canvas, Meta } from '@storybook/blocks'
+import { StaticAllResultIcon } from '@80000coding/web-icons'
+import { Icons, IconSizes } from './Icons'
+
+<Meta title='Icons/About' />
+
+# Icons
+
+아이콘을 사용하려면 `@80000coding/web-icons` 패키지를 설치해야 합니다.
+
+새로운 아이콘을 추가하려면 `@80000coding/web-icons` 패키지에 아래 타입에 맞게 추가합니다.
+
+- category : 카테고리 & 조직 아이콘
+- dynamic : 단색 아이콘. **색상을 변경할 수 있습니다.**
+- static : 다색 아이콘. **색상을 변경할 수 없습니다.**
+
+### How to use
+
+```jsx
+import { Category42SeoulIcon } from '@80000coding/web-icons'
+
+// default size class is 'icon-md'
+const MyComponent = () => <Category42SeoulIcon />
+
+// custom size class
+const MyComponent = () => <Category42SeoulIcon className='icon-lg' />
+```
+
+## Icon Sizes
+
+- **모든 아이콘의 기본 사이즈는 `28px * 28px` 입니다. `icon-md` 클래스가 기본으로 적용되어 있습니다.**
+- `icon-sm` : `24px * 24px`
+- `icon-md` : `28px * 28px`
+- `icon-lg` : `32px * 32px`
+- custom : `width` 와 `height` 를 직접 지정할 수 있습니다.
+
+<Canvas>
+  <IconSizes />
+</Canvas>
+
+## Category Icons
+
+> Component Prefix : `Category` <br />
+> File Name Prefix : `category-`
+
+<Canvas>
+  <Icons type='category' />
+</Canvas>
+
+## Dynamic Icons
+
+> Component Prefix : `Dynamic` <br />
+> File Name Prefix : `dynamic-`
+
+<Canvas>
+  <Icons type='dynamic' />
+</Canvas>
+
+## Static Icons
+
+> Component Prefix : `Static` <br />
+> File Name Prefix : `static-`
+
+<Canvas>
+  <Icons type='static' />
+</Canvas>

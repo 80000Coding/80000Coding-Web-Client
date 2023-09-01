@@ -3,7 +3,7 @@ import { icons } from '@80000coding/web-icons'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof IconChip> = {
-  title: 'Design System/Chip(Icon)',
+  title: 'Atoms/Chip/Icon',
   component: IconChip,
   parameters: {
     layout: 'centered',
