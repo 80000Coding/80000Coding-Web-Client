@@ -12,6 +12,7 @@ module.exports = {
   theme: {
     colors: {
       white: '#FFFFFF',
+      black: '#000000',
       gray: {
         100: '#FAFAFF',
         200: '#EBEBF2',
@@ -41,8 +42,8 @@ module.exports = {
       red: {
         light: '#FFA8A8',
         DEFAULT: '#FF8787',
-        dark: '#C93939',
         warning: '#FF3F3F',
+        dark: '#FF3F3F',
       },
     },
     fontSize: {
