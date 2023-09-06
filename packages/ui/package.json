@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "@80000coding/web-icons": "1.0.1",
+    "@nextui-org/react": "^2.1.10",
     "classnames": "^2.3.2"
   }
 }
