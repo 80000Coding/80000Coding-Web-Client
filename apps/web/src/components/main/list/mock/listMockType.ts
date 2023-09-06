@@ -18,7 +18,7 @@ export type ContentFeedType = {
   profile_image_url: string // 프로필 이미지
   user_id: number // 유저 아이디
   user_name: string // 유저 닉네임
-  create_dt: number // 업로드 시간
+  create_dt: string // 업로드 시간
   views: number // 조회수
   comment_count: number // 댓글 수
   mark_count: number // 북마크 수

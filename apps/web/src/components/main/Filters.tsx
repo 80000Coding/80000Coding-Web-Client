@@ -1,3 +1,5 @@
+'use client'
+
 import CategoryFilter from './CategoryFilter'
 import OrganizationFilter from './OrganizationFilter'
 import SortFilter from './SortFilter'

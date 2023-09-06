@@ -4,7 +4,7 @@ export type ContentListType = {
   content: ContentFeedType[]
 }
 
-export const listMockData = {
+export const listMockData: ContentListType = {
   content: [
     {
       content_id: 1,

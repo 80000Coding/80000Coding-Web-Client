@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 
 import { DEFAULT_MENU_ITEMS } from '../common/Header'
