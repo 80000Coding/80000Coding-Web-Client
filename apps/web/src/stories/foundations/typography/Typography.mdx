@@ -1,0 +1,32 @@
+import { Canvas, Meta } from '@storybook/blocks'
+
+import * as Typography from './Typography.stories'
+
+<Meta title='Foundations/Typography' />
+
+# Typography
+
+스타일을 추가하려면 `typo.css`에 추가하고, `Typography.stories.tsx`에 예제를 추가해주세요.
+
+### How to use
+
+```jsx
+// default style
+<p className='title-1'>Hello World</p>
+// if you want to change color
+<p className='title-1 text-green'>Hello World</p>
+```
+
+## FontFamily
+
+- only `Noto Sans KR` is available
+
+<Canvas of={Typography.FontFamily} />
+
+## Classes
+
+- no subfix means `line-height: 1`
+- subfix `A` means `line-height: 1.55`
+- subfix `B` means `line-height: 1.7`
+
+<Canvas of={Typography.Classes} />

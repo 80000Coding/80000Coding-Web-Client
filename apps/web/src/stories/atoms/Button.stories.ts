@@ -2,7 +2,7 @@ import { Button } from '@80000coding/ui'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Design System/Button',
+  title: 'Atoms/Button',
   component: Button,
   parameters: {
     layout: 'fullscreen',

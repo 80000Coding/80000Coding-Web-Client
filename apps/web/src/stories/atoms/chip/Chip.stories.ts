@@ -2,7 +2,7 @@ import { Chip } from '@80000coding/ui'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Design System/Chip',
+  title: 'Atoms/Chip/Primary',
   component: Chip,
   parameters: {
     layout: 'centered',

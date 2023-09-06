@@ -2,7 +2,7 @@ import { CommentChip } from '@80000coding/ui'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof CommentChip> = {
-  title: 'Design System/Chip(Button)',
+  title: 'Atoms/Chip/Button',
   component: CommentChip,
   parameters: {
     layout: 'centered',
