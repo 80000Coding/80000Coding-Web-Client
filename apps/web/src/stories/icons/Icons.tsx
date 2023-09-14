@@ -13,7 +13,11 @@ function createJsxString(type: IconsProps['type'], key: string) {
   return (
     '<' +
     capitalizeFirstLetter(type || '') +
-    capitalizeFirstLetter(key.split('-')[1]) +
+    key
+      .split('-')
+      .slice(1)
+      .map((s) => capitalizeFirstLetter(s))
+      .join('') +
     'Icon' +
     (type === 'dynamic' ? ' className="text-green"' : '') +
     ' />'
@@ -49,7 +53,13 @@ export function Icons({ type }: IconsProps) {
           }}
         >
           {value({ className: 'icon-lg ' + (key.startsWith('dynamic') ? 'text-black' : '') })}
-          <span className='font-regular text-gray-700'>{key.split('-')[1]}</span>
+          <span className='font-regular text-gray-700'>
+            {key
+              .split('-')
+              .slice(1)
+              .map((s) => capitalizeFirstLetter(s))
+              .join(' ')}
+          </span>
           {isCopied === key && (
             <div className='bg-blue-light/90 absolute left-0 top-0 flex h-full w-full items-center justify-center text-white'>
               <span>Copied!</span>
