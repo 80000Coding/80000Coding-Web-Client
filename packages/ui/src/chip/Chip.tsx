@@ -1,7 +1,7 @@
 import cn from 'classnames'
 
 type Props = {
-  text?: string
+  text: string
 } & Omit<React.HTMLAttributes<HTMLSpanElement>, 'children'>
 
 const Chip = ({ text, className, ...rest }: Props) => {
