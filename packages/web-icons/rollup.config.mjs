@@ -120,6 +120,10 @@ function svgBuild(options = {}) {
           className: 'icon-md',
         },
       },
+      {
+        name: 'prefixIds',
+        prifix: 'prefix',
+      },
     ],
   }
 
