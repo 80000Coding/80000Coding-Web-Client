@@ -24,20 +24,20 @@ type Story = StoryObj<typeof meta>
 export const Primary: Story = {
   args: {
     variant: 'primary',
-    categoryIconNames: 'category-React',
+    categoryIconNames: 'React',
   },
 }
 
 export const Outlined: Story = {
   args: {
     erasable: false,
-    categoryIconNames: 'category-TypeScript',
+    categoryIconNames: 'TypeScript',
   },
 }
 
 export const OutlinedErasable: Story = {
   args: {
     erasable: true,
-    categoryIconNames: 'category-TypeScript',
+    categoryIconNames: 'TypeScript',
   },
 }

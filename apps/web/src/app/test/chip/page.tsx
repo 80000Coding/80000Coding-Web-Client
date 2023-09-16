@@ -17,9 +17,9 @@ export default function Page() {
 
       <IconChip />
       <IconChip erasable />
-      <IconChip categoryIconNames='category-TypeScript' />
-      <IconChip erasable categoryIconNames='category-TypeScript' />
-      <IconChip erasable categoryIconNames='category-React' variant='primary' />
+      <IconChip categoryIconNames='TypeScript' />
+      <IconChip erasable categoryIconNames='TypeScript' />
+      <IconChip erasable categoryIconNames='React' variant='primary' />
 
       <CommentChip />
       <CommentChip type='cancel' />

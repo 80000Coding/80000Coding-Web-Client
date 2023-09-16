@@ -10,7 +10,7 @@ type IconChipProps = {
   erasable?: boolean
 } & ComponentProps<typeof Chip>
 
-const IconChip = ({ categoryIconNames = 'category-AppleDeveloperAcademy', erasable, variant = 'outline', ...rest }: IconChipProps) => {
+const IconChip = ({ categoryIconNames = 'AppleDeveloperAcademy', erasable, variant = 'outline', ...rest }: IconChipProps) => {
   const isOutline = variant === 'outline'
   const padding = isOutline ? ' py-[6px] pl-[8px] pr-[12px]' : 'py-[2px] pl-[2px] pr-[12px]'
   const iconSize = isOutline ? 'w-[20px] h-[20px]' : 'w-[17px] h-[17px]'
