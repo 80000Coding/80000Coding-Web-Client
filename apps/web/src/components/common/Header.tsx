@@ -1,12 +1,12 @@
-import { DynamicBackIcon, DynamicCloseIcon, DynamicMenuIcon, StaticProfileIcon } from '@80000coding/web-icons'
+import { DynamicBackIcon, DynamicCloseIcon, StaticMenuIcon, StaticProfileIcon } from '@80000coding/web-icons'
 import {
   StaticCategoryIcon,
-  StaticHelpIcon,
-  StaticHotpostIcon,
-  StaticLogoutIcon,
+  StaticFaqIcon,
+  StaticHotIcon,
   StaticProjectIcon,
   StaticRankingIcon,
   StaticScrapIcon,
+  StaticSignoutIcon,
 } from '@80000coding/web-icons'
 import { Avatar, Navbar, NavbarBrand, NavbarContent, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from '@nextui-org/react'
 import Image from 'next/image'
@@ -30,7 +30,7 @@ export const DEFAULT_MENU_ITEMS = [
     url: '/hotpost',
     label: '오늘의 게시글 보기',
     shortLabel: '인기글',
-    icon: StaticHotpostIcon,
+    icon: StaticHotIcon,
   },
   {
     url: '/rangkings',
@@ -49,12 +49,12 @@ const DEFAULT_SIGNED_USER_MENU_ITEMS = [
   {
     url: '/help',
     label: '문의하기',
-    icon: StaticHelpIcon,
+    icon: StaticFaqIcon,
   },
   {
     url: '/auth/logout',
     label: '로그아웃',
-    icon: StaticLogoutIcon,
+    icon: StaticSignoutIcon,
   },
 ]
 
@@ -74,7 +74,7 @@ export default function Header() {
       </NavbarContent>
       <NavbarContent justify='end'>
         <NavbarMenuToggle
-          icon={isMenuOpen ? <DynamicCloseIcon className='h-5 w-5' /> : <DynamicMenuIcon className='h-5 w-5' />}
+          icon={isMenuOpen ? <DynamicCloseIcon className='h-5 w-5' /> : <StaticMenuIcon className='h-5 w-5' />}
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           className='sm:hidden'
         />
