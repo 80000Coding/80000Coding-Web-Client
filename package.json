@@ -8,7 +8,7 @@
     "build:packages": "turbo run build --filter='./packages/*'",
     "clean": "turbo run clean",
     "clean:build": "turbo run clean:build",
-    "clean:cache": "turbo run clean:cache",
+    "clean:deps": "turbo run clean:deps",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "storybook": "turbo run storybook",

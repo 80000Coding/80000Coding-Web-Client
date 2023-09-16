@@ -29,7 +29,7 @@
     "clean:build": {
       "cache": false
     },
-    "clean:cache": {
+    "clean:deps": {
       "cache": false
     }
   }
