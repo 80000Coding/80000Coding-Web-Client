@@ -1,29 +1,29 @@
 import cn from 'classnames'
-import { ComponentProps } from 'react'
 
-import Chip from './Chip'
-import ImsiSVG from './TempIcon'
 import { CategoryIconNames, categoryIcons } from '../icon'
 
 type IconChipProps = {
+  size?: 'sm' | 'md'
   categoryIconNames?: CategoryIconNames
-  erasable?: boolean
-} & ComponentProps<typeof Chip>
+} & Omit<React.HTMLAttributes<HTMLSpanElement>, 'children'>
 
-const IconChip = ({ categoryIconNames = 'AppleDeveloperAcademy', erasable, variant = 'outline', ...rest }: IconChipProps) => {
-  const isOutline = variant === 'outline'
-  const padding = isOutline ? ' py-[6px] pl-[8px] pr-[12px]' : 'py-[2px] pl-[2px] pr-[12px]'
-  const iconSize = isOutline ? 'w-[20px] h-[20px]' : 'w-[17px] h-[17px]'
-  const textColor = isOutline ? 'text-gray-700' : categoryIcons[categoryIconNames].fgColor === '#ffffff' ? 'text-white' : 'text-black'
-  const chipStyle = isOutline
-    ? { boxShadow: `inset 0 0 0 1px ${categoryIcons[categoryIconNames].bgColor}` }
-    : { backgroundColor: categoryIcons[categoryIconNames].bgColor }
+const IconChip = ({ size = 'sm', categoryIconNames = 'AppleDeveloperAcademy-rounded', className, ...rest }: IconChipProps) => {
+  const chipClassBySize = {
+    sm: 'caption-3 pl-[23px] pr-[10px] py-[5px] bg-white',
+    md: 'caption-1 pl-[34px] pr-[12px] py-[10.5px] bg-gray-100',
+  }
+
+  const iconClassBySize = {
+    sm: 'w-[17px] h-[17px] left-[2px] top-[2px]',
+    md: 'w-[20px] h-[20px] left-[8px] top-[6px]',
+  }
+  const chipStyle = { boxShadow: `inset 0 0 0 1px ${categoryIcons[categoryIconNames].bgColor}` }
+
   return (
-    <Chip className={cn('flex items-center gap-[6px] bg-white', padding)} style={chipStyle} {...rest}>
-      {categoryIcons[categoryIconNames].source({ className: 'rounded-full ' + iconSize })}
-      <p className={cn('caption-1', textColor)}>{categoryIcons[categoryIconNames].displayName}</p>
-      {isOutline && erasable && <ImsiSVG />}
-    </Chip>
+    <span className={cn('relative rounded-full text-gray-700', chipClassBySize[size], className)} style={chipStyle} {...rest}>
+      {categoryIcons[categoryIconNames].source({ className: 'absolute ' + iconClassBySize[size] })}
+      {categoryIcons[categoryIconNames].displayName}
+    </span>
   )
 }
 
