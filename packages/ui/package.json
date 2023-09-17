@@ -16,8 +16,8 @@
     "lint": "run-s lint:*",
     "lint:eslint": "eslint .",
     "clean": "run-s clean:*",
-    "clean:build": "rm -rf dist",
-    "clean:cache": "rm -rf .turbo && rm -rf node_modules"
+    "clean:build": "rm -rf dist .turbo",
+    "clean:deps": "rm -rf"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.3",

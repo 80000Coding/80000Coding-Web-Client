@@ -6,7 +6,9 @@
   "scripts": {
     "build": "turbo run build",
     "build:packages": "turbo run build --filter='./packages/*'",
-    "clean": "turbo run clean && rm -rf node_modules .turbo",
+    "clean": "turbo run clean",
+    "clean:build": "turbo run clean:build",
+    "clean:deps": "turbo run clean:deps",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "storybook": "turbo run storybook",

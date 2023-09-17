@@ -25,6 +25,12 @@
     },
     "clean": {
       "cache": false
+    },
+    "clean:build": {
+      "cache": false
+    },
+    "clean:deps": {
+      "cache": false
     }
   }
 }

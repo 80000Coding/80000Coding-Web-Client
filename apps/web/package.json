@@ -11,8 +11,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "clean": "run-s 'clean:*'",
-    "clean:build": "rm -rf dist",
-    "clean:cache": "rm -rf node_modules .turbo .eslintcache",
+    "clean:build": "rm -rf dist .turbo .eslintcache",
+    "clean:deps": "rm -rf node_modules",
     "chromatic": "npx chromatic --project-token=chpt_e6e5c08f47b0947"
   },
   "dependencies": {
