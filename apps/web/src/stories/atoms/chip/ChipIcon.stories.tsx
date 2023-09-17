@@ -21,23 +21,16 @@ const meta: Meta<typeof IconChip> = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Primary: Story = {
+export const Small: Story = {
   args: {
-    variant: 'primary',
-    categoryIconNames: 'React',
+    size:'sm',
+    categoryIconNames: 'TypeScript-rounded',
   },
 }
 
-export const Outlined: Story = {
+export const Medium: Story = {
   args: {
-    erasable: false,
-    categoryIconNames: 'TypeScript',
-  },
-}
-
-export const OutlinedErasable: Story = {
-  args: {
-    erasable: true,
-    categoryIconNames: 'TypeScript',
+    size:'md',
+    categoryIconNames: 'TypeScript-rounded',
   },
 }

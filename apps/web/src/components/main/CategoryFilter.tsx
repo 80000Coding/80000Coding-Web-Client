@@ -1,4 +1,4 @@
-import { DynamicCloseIcon, DynamicTrangleIcon } from '@80000coding/web-icons'
+import { DynamicCloseIcon, StaticFilteringIcon } from '@80000coding/web-icons'
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ScrollShadow, useDisclosure } from '@nextui-org/react'
 import classNames from 'classnames'
 import { useCallback, useState } from 'react'
@@ -49,7 +49,7 @@ export default function CategoryFilter() {
       <button onClick={onOpen} className='flex shrink-0 items-center gap-x-2 rounded-[20px] border border-gray-300 py-2 pl-4 pr-3'>
         <span className='body-3'>카테고리</span>
         <span className='body-2 text-green'>{defaultCategory.label}</span>
-        <DynamicTrangleIcon className='mt-0.5 h-[7px] w-[7px]' />
+        <StaticFilteringIcon className='mt-0.5 h-[7px] w-[7px]' />
       </button>
       <Modal
         size='full'
