@@ -8,6 +8,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'unused-imports', 'simple-import-sort'],
   rules: {
+    '@next/next/no-img-element': 'off',
     'no-console': 'warn',
     'no-use-before-define': ['error', { functions: false, classes: true, variables: true }],
     'no-unused-vars': 'off',

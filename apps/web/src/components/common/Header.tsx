@@ -1,3 +1,4 @@
+'use client'
 import { DynamicBackIcon, DynamicCloseIcon, StaticMenuIcon, StaticProfileIcon } from '@80000coding/web-icons'
 import {
   StaticCategoryIcon,

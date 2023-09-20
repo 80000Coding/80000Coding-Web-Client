@@ -19,7 +19,7 @@ export type RefinedFeedsType = Refined<ContentFeedType> & {
   /** 댓글 수 9999 -> 9,999 */
   displayCommentCount: string
   /** 북마크 수 9999 -> 9,999 */
-  displayMarkCount: string
+  displayBookmarkCount: string
   /** 좋아요 수 9999 -> 9,999 */
   displayLikeCount: string
 }
@@ -34,7 +34,7 @@ function refine(items: ContentFeedType[]): RefinedFeedsType[] {
       displayCreatedAt: `${formatDistanceFromNowTo(create_dt)} 전`,
       displayViewCount: humanizeNumber(views),
       displayCommentCount: humanizeNumber(comment_count),
-      displayMarkCount: humanizeNumber(mark_count),
+      displayBookmarkCount: humanizeNumber(mark_count),
       displayLikeCount: humanizeNumber(like_count),
     }
   })
