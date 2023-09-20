@@ -4,6 +4,29 @@
 
 @import './typo.css';
 
+@layer base {
+  :root {
+    --light-color-gray-100: #fafaff;
+    --light-color-gray-200: #ebebf2;
+    --light-color-gray-300: #d8d9e0;
+    --light-color-gray-400: #b4b5bd;
+    --light-color-gray-500: #858692;
+    --light-color-gray-600: #555968;
+    --light-color-gray-700: #3a3f57;
+    --light-color-gray-800: #252946;
+    --light-color-gray-900: #161a3a;
+    --dark-color-gray-100: #363636;
+    --dark-color-gray-200: #4b4b4b;
+    --dark-color-gray-300: #656565;
+    --dark-color-gray-400: #7e7e7e;
+    --dark-color-gray-500: #979797;
+    --dark-color-gray-600: #b1b1b1;
+    --dark-color-gray-700: #c9c9c9;
+    --dark-color-gray-800: #dbdbdb;
+    --dark-color-gray-900: #ebebeb;
+  }
+}
+
 @layer components {
   .icon-sm {
     width: 24px;
@@ -23,19 +46,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-:root {
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background-color: rgb(var(--background-rgb));
 }
 
 /* inline toolbar 내용이 안보여서 임시로 bg color 추가해둠 */
