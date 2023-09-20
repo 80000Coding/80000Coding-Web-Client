@@ -2,6 +2,7 @@
 const { nextui } = require('@nextui-org/react')
 
 module.exports = {
+  darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -34,15 +35,28 @@ module.exports = {
       },
       colors: {
         gray: {
-          100: '#FAFAFF',
-          200: '#EBEBF2',
-          300: '#D8D9E0',
-          400: '#B4B5BD',
-          500: '#777777',
-          600: '#555968',
-          700: '#3A3F57',
-          800: '#252946',
-          900: '#161A3A',
+          dark: {
+            100: 'var(--dark-color-gray-100)',
+            200: 'var(--dark-color-gray-200)',
+            300: 'var(--dark-color-gray-300)',
+            400: 'var(--dark-color-gray-400)',
+            500: 'var(--dark-color-gray-500)',
+            600: 'var(--dark-color-gray-600)',
+            700: 'var(--dark-color-gray-700)',
+            800: 'var(--dark-color-gray-800)',
+            900: 'var(--dark-color-gray-900)',
+          },
+          light: {
+            100: 'var(--light-color-gray-100)',
+            200: 'var(--light-color-gray-200)',
+            300: 'var(--light-color-gray-300)',
+            400: 'var(--light-color-gray-400)',
+            500: 'var(--light-color-gray-500)',
+            600: 'var(--light-color-gray-600)',
+            700: 'var(--light-color-gray-700)',
+            800: 'var(--light-color-gray-800)',
+            900: 'var(--light-color-gray-900)',
+          },
         },
         green: {
           light: '#2EEFAA',

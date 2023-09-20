@@ -13,9 +13,6 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Light: Story = {
+export const All: Story = {
   args: {},
-}
-export const Dark: Story = {
-  args: { mode: 'dark' },
 }
