@@ -4,6 +4,11 @@ import '@80000coding/ui/dist/index.css'
 import '../src/app/globals.css'
 
 const preview: Preview = {
+  globalTypes: {
+    darkMode: {
+      defaultValue: true, // Enable dark mode by default on all stories
+    },
+  },
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -11,6 +16,12 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/,
       },
+    },
+    docs: {
+      story: {
+        inline: false,
+      },
+      iframeHeight: 600,
     },
     options: {
       storySort: {
