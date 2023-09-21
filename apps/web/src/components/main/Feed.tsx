@@ -1,4 +1,12 @@
-import { StaticCommnetFlatIcon, StaticLikeFlatIcon, StaticScrapFlatIcon, StaticViewFlatIcon } from '@80000coding/web-icons'
+import { Chip } from '@80000coding/ui'
+import {
+  CategorySwiftRoundedIcon,
+  CategoryTypeScriptRoundedIcon,
+  StaticCommnetFlatIcon,
+  StaticLikeFlatIcon,
+  StaticScrapFlatIcon,
+  StaticViewFlatIcon,
+} from '@80000coding/web-icons'
 import Link from 'next/link'
 
 import { RefinedFeedsType } from './useFeedLists'
@@ -21,6 +29,8 @@ export default function Feed({ item }: { item: RefinedFeedsType }) {
     profile_image_url,
     user_id,
     user_name,
+    hash_tag_list,
+    displayRestTagCount,
   } = item
 
   return (
@@ -31,7 +41,21 @@ export default function Feed({ item }: { item: RefinedFeedsType }) {
         <div className='title-1A line-clamp-1'>{title}</div>
         <div className='body-3A mb-7 mt-3 line-clamp-2 text-gray-600'>{body}</div>
 
-        {/** category tag */}
+        <div className='flex justify-between'>
+          <div className='flex items-center gap-x-1'>
+            {/** FIXME: icon 응답값으로 수정 */}
+            <CategorySwiftRoundedIcon className='h-[21px] w-[21px]' />
+            <CategoryTypeScriptRoundedIcon className='h-[21px] w-[21px]' />
+          </div>
+          <div className='flex items-center gap-x-2'>
+            {hash_tag_list.slice(0, 2).map(({ hash_tag_id, hash_tag_name }) => (
+              <Link href={'##'} key={hash_tag_id} onClick={(e) => e.stopPropagation()} className='flex'>
+                <Chip text={`#${hash_tag_name}`} />
+              </Link>
+            ))}
+            {displayRestTagCount && <Chip text={displayRestTagCount} />}
+          </div>
+        </div>
       </div>
 
       <div className='flex items-center justify-between px-4 py-3'>

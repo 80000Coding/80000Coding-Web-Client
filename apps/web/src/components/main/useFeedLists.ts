@@ -22,11 +22,13 @@ export type RefinedFeedsType = Refined<ContentFeedType> & {
   displayBookmarkCount: string
   /** 좋아요 수 9999 -> 9,999 */
   displayLikeCount: string
+  /** 축약된 태그 개수 ex) 노출 태그 2개 제외한 나머지는 +X 로 표시 */
+  displayRestTagCount: string
 }
 
 function refine(items: ContentFeedType[]): RefinedFeedsType[] {
   return items.map((item) => {
-    const { create_dt, views, comment_count, mark_count, like_count } = item
+    const { create_dt, views, comment_count, mark_count, like_count, hash_tag_list } = item
 
     return {
       _raw: item,
@@ -36,6 +38,7 @@ function refine(items: ContentFeedType[]): RefinedFeedsType[] {
       displayCommentCount: humanizeNumber(comment_count),
       displayBookmarkCount: humanizeNumber(mark_count),
       displayLikeCount: humanizeNumber(like_count),
+      displayRestTagCount: hash_tag_list.length > 2 ? `+${hash_tag_list.length - 2}` : '',
     }
   })
 }

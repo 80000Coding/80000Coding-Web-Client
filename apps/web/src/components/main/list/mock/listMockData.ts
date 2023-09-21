@@ -76,10 +76,6 @@ export const listMockData: ContentListType = {
           hash_tag_id: 3,
           hash_tag_name: 'hashTag',
         },
-        {
-          hash_tag_id: 4,
-          hash_tag_name: '해시태그',
-        },
       ],
       profile_image_url: 'https://80000coding.s3.ap-northeast-2.amazonaws.com/image.png',
       user_id: 1,
@@ -109,18 +105,6 @@ export const listMockData: ContentListType = {
         {
           hash_tag_id: 1,
           hash_tag_name: 'hash',
-        },
-        {
-          hash_tag_id: 2,
-          hash_tag_name: 'tag',
-        },
-        {
-          hash_tag_id: 3,
-          hash_tag_name: 'hashTag',
-        },
-        {
-          hash_tag_id: 4,
-          hash_tag_name: '해시태그',
         },
       ],
       profile_image_url: 'https://80000coding.s3.ap-northeast-2.amazonaws.com/image.png',
@@ -155,14 +139,6 @@ export const listMockData: ContentListType = {
         {
           hash_tag_id: 2,
           hash_tag_name: 'tag',
-        },
-        {
-          hash_tag_id: 3,
-          hash_tag_name: 'hashTag',
-        },
-        {
-          hash_tag_id: 4,
-          hash_tag_name: '해시태그',
         },
       ],
       profile_image_url: 'https://80000coding.s3.ap-northeast-2.amazonaws.com/image.png',
