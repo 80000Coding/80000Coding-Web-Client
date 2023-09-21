@@ -1,3 +1,4 @@
+'use client'
 import { Chip, IconChip } from '@80000coding/ui'
 
 // import { icons } from '@80000coding/web-icons'
