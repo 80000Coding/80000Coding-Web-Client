@@ -51,7 +51,7 @@ export default function SortFilter() {
   return (
     <>
       <button onClick={onOpen} className='flex shrink-0 items-center gap-x-2 rounded-[20px] border border-gray-300 py-2 pl-4 pr-3'>
-        <span className='body-3'>정렬</span>
+        <span className='body-3 text-gray-600'>정렬</span>
         <span className='body-2 text-green'>{defaultSort.label}</span>
         <StaticFilteringIcon className='mt-0.5 h-[7px] w-[7px]' />
       </button>

@@ -47,7 +47,7 @@ export default function CategoryFilter() {
   return (
     <>
       <button onClick={onOpen} className='flex shrink-0 items-center gap-x-2 rounded-[20px] border border-gray-300 py-2 pl-4 pr-3'>
-        <span className='body-3'>카테고리</span>
+        <span className='body-3 text-gray-600'>카테고리</span>
         <span className='body-2 text-green'>{defaultCategory.label}</span>
         <StaticFilteringIcon className='mt-0.5 h-[7px] w-[7px]' />
       </button>
