@@ -1,12 +1,5 @@
-import { Chip } from '@80000coding/ui'
-import {
-  CategorySwiftRoundedIcon,
-  CategoryTypeScriptRoundedIcon,
-  StaticCommnetFlatIcon,
-  StaticLikeFlatIcon,
-  StaticScrapFlatIcon,
-  StaticViewFlatIcon,
-} from '@80000coding/web-icons'
+import { CategoryIconNames, categoryIcons, Chip } from '@80000coding/ui'
+import { StaticCommnetFlatIcon, StaticLikeFlatIcon, StaticScrapFlatIcon, StaticViewFlatIcon } from '@80000coding/web-icons'
 import Link from 'next/link'
 
 import { RefinedFeedsType } from './useFeedLists'
@@ -30,6 +23,7 @@ export default function Feed({ item }: { item: RefinedFeedsType }) {
     user_id,
     user_name,
     hash_tag_list,
+    category_tag_list,
     displayRestTagCount,
   } = item
 
@@ -43,15 +37,13 @@ export default function Feed({ item }: { item: RefinedFeedsType }) {
 
         <div className='flex justify-between'>
           <div className='flex items-center gap-x-1'>
-            {/** FIXME: icon 응답값으로 수정 */}
-            <CategorySwiftRoundedIcon className='h-[21px] w-[21px]' />
-            <CategoryTypeScriptRoundedIcon className='h-[21px] w-[21px]' />
+            {category_tag_list.map(({ category_name }) => (
+              <div key={category_name}>{categoryIcons[category_name as CategoryIconNames]?.source({ className: 'w-[21px] h-[21px]' })}</div>
+            ))}
           </div>
           <div className='flex items-center gap-x-2'>
             {hash_tag_list.slice(0, 2).map(({ hash_tag_id, hash_tag_name }) => (
-              <Link href={'##'} key={hash_tag_id} onClick={(e) => e.stopPropagation()} className='flex'>
-                <Chip text={`#${hash_tag_name}`} />
-              </Link>
+              <Chip key={hash_tag_id} text={`#${hash_tag_name}`} />
             ))}
             {displayRestTagCount && <Chip text={displayRestTagCount} />}
           </div>

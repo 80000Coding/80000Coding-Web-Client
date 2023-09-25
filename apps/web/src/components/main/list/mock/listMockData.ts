@@ -14,11 +14,11 @@ export const listMockData: ContentListType = {
       category_tag_list: [
         {
           category_id: 1,
-          category_name: 'networkWired',
+          category_name: 'NetworkWired',
         },
         {
           category_id: 2,
-          category_name: 'networkWireless',
+          category_name: 'NetworkWireless',
         },
       ],
       hash_tag_list: [
@@ -56,11 +56,11 @@ export const listMockData: ContentListType = {
       category_tag_list: [
         {
           category_id: 1,
-          category_name: 'networkWired',
+          category_name: 'Microsoft-rounded',
         },
         {
           category_id: 2,
-          category_name: 'networkWireless',
+          category_name: 'NGINX',
         },
       ],
       hash_tag_list: [
@@ -94,11 +94,11 @@ export const listMockData: ContentListType = {
       category_tag_list: [
         {
           category_id: 1,
-          category_name: 'networkWired',
+          category_name: 'NextJs',
         },
         {
           category_id: 2,
-          category_name: 'networkWireless',
+          category_name: 'Nodejs',
         },
       ],
       hash_tag_list: [
@@ -124,11 +124,11 @@ export const listMockData: ContentListType = {
       category_tag_list: [
         {
           category_id: 1,
-          category_name: 'networkWired',
+          category_name: 'Notion',
         },
         {
           category_id: 2,
-          category_name: 'networkWireless',
+          category_name: 'Python',
         },
       ],
       hash_tag_list: [

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 import { formatDistanceFromNowTo } from '@/lib/utils/date/formatDistanceFromNowTo'
-import { humanizeNumber } from '@/lib/utils/number/humanizeNumber'
 
 import { ContentListType } from './list/mock/listMockData'
 import { ContentFeedType } from './list/mock/listMockType'
@@ -34,10 +33,10 @@ function refine(items: ContentFeedType[]): RefinedFeedsType[] {
       _raw: item,
       ...item,
       displayCreatedAt: `${formatDistanceFromNowTo(create_dt)} 전`,
-      displayViewCount: humanizeNumber(views),
-      displayCommentCount: humanizeNumber(comment_count),
-      displayBookmarkCount: humanizeNumber(mark_count),
-      displayLikeCount: humanizeNumber(like_count),
+      displayViewCount: views.toLocaleString(),
+      displayCommentCount: comment_count.toLocaleString(),
+      displayBookmarkCount: mark_count.toLocaleString(),
+      displayLikeCount: like_count.toLocaleString(),
       displayRestTagCount: hash_tag_list.length > 2 ? `+${hash_tag_list.length - 2}` : '',
     }
   })
