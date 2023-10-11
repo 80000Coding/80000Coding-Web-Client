@@ -1,9 +1,10 @@
 'use client'
-import { InputSearch } from '@80000coding/ui'
+import { InputComment, InputSearch } from '@80000coding/ui'
 import { useState } from 'react'
 
 export default function Page() {
   const [value, setValue] = useState('')
+  const [commentValue, setComment] = useState('')
 
   return (
     <div className='flex h-screen w-screen flex-col items-start gap-2 p-10'>
@@ -20,6 +21,7 @@ export default function Page() {
       ></Input> */}
       <InputSearch value={value} setValue={setValue}></InputSearch>
       <InputSearch value={value} setValue={setValue} isBackBtn={true}></InputSearch>
+      <InputComment value={commentValue} setValue={setComment}></InputComment>
     </div>
   )
 }
