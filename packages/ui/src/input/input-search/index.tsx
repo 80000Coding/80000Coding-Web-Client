@@ -1,28 +1,44 @@
-import { DynamicSearchIcon, StaticCloseIcon } from '@80000coding/web-icons'
+import { DynamicBackIcon, DynamicDeleteIcon, DynamicSearchIcon } from '@80000coding/web-icons'
 import { Input as Input$1 } from '@nextui-org/react'
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 
 export type InputSearchProps = {
   value: string
   setValue: Dispatch<SetStateAction<string>>
+  isBackBtn?: boolean
 } & Omit<React.ComponentProps<typeof Input$1>, 'classNames'>
 
-export function InputSearch({ value, setValue, isInvalid = false, ...rest }: InputSearchProps) {
+export function InputSearch({ value, setValue, isInvalid = false, isBackBtn = false, ...rest }: InputSearchProps) {
   // const [value, setValue] = useState('')
+
   const onClear = () => {
-    value = ''
-    console.log('click')
+    setValue('')
   }
+
+  const onSearch = () => {
+    console.log('search')
+  }
+
+  const onClickGoBack = () => {
+    console.log('Go Back!')
+  }
+
+  const [isFocus, setIsFocus] = useState(false)
+
   return (
     <Input$1
       labelPlacement='outside'
       value={value}
+      startContent={isBackBtn && <DynamicBackIcon onClick={onClickGoBack} className='text-gray-500' />}
       endContent={
         <div className='flex-column flex'>
-          {value !== '' && <StaticCloseIcon onClick={onClear}></StaticCloseIcon>}
-          <DynamicSearchIcon></DynamicSearchIcon>
+          {value !== '' && isFocus && <DynamicDeleteIcon className='text-gray-500' onClick={onClear}></DynamicDeleteIcon>}
+          <DynamicSearchIcon className='text-green ml-[16px]' onClick={onSearch}></DynamicSearchIcon>
         </div>
       }
+      onFocusChange={(e) => {
+        setIsFocus(e)
+      }}
       onValueChange={setValue}
       isInvalid={isInvalid}
       type='text'
@@ -33,7 +49,17 @@ export function InputSearch({ value, setValue, isInvalid = false, ...rest }: Inp
         description: ['mx-[12px]', 'caption-2'],
         input: ['!bg-white', 'text-black', 'placeholder:text-gray-300', 'body-3', 'h-100'],
         innerWrapper: [],
-        inputWrapper: ['items-start', '!bg-white', 'border', '!cursor-text', 'rounded-[20px]', 'px-[20px]', 'py-[13px]'],
+        inputWrapper: [
+          'items-start',
+          '!bg-white',
+          'border',
+          'hover:border-green',
+          'focus-within:border-green',
+          '!cursor-text',
+          'rounded-[20px]',
+          'px-[20px]',
+          'py-[13px]',
+        ],
       }}
     />
   )

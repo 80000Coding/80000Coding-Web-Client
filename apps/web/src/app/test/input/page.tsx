@@ -19,6 +19,7 @@ export default function Page() {
         isCorrect={value === '가나다라'}
       ></Input> */}
       <InputSearch value={value} setValue={setValue}></InputSearch>
+      <InputSearch value={value} setValue={setValue} isBackBtn={true}></InputSearch>
     </div>
   )
 }
