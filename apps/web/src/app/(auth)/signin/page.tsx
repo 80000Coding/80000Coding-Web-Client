@@ -5,7 +5,7 @@ import { CategoryGithubRoundedIcon, StaticLogoSymbolIcon } from '@80000coding/we
 import { useRouter } from 'next/navigation'
 import { useCallback } from 'react'
 
-import TopbarWithXIcon from '@/components/common/TopbarWithXIcon'
+import TopbarWithXIcon from '@/components/shared/TopbarWithXIcon'
 
 export default function SigninPage() {
   const router = useRouter()
