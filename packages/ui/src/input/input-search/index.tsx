@@ -32,7 +32,7 @@ export function InputSearch({ value, setValue, isInvalid = false, isBackBtn = fa
       startContent={isBackBtn && <DynamicBackIcon onClick={onClickGoBack} className='text-gray-500' />}
       endContent={
         <div className='flex-column flex'>
-          {value !== '' && isFocus && <DynamicDeleteIcon className='text-gray-500' onClick={onClear}></DynamicDeleteIcon>}
+          {value !== '' && <DynamicDeleteIcon className='text-gray-500' onClick={onClear}></DynamicDeleteIcon>}
           <DynamicSearchIcon className='text-green ml-[16px]' onClick={onSearch}></DynamicSearchIcon>
         </div>
       }
