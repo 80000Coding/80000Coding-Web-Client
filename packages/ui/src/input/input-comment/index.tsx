@@ -36,13 +36,14 @@ export function InputComment({
       }}
       /* styles */
       maxRows={3}
+      minRows={1}
       type='text'
       radius='full'
       labelPlacement='outside'
       classNames={{
         label: ['mx-[12px]', 'body-2'],
-        input: ['!bg-white', 'text-black', 'placeholder:text-gray-300', 'body-3'],
-        innerWrapper: ['px-[0px]', 'py-[0px]'],
+        input: ['!bg-white', 'text-black', 'placeholder:text-gray-300', 'body-3', 'px-[0px]', 'py-[0]'],
+        innerWrapper: [],
         inputWrapper: [
           'items-start',
           '!bg-white',
@@ -53,7 +54,7 @@ export function InputComment({
           '!cursor-text',
           'rounded-[20px]',
           'px-[20px]',
-          'py-[13px]',
+          'py-[10px]',
         ],
       }}
       {...rest}
