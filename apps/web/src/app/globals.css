@@ -4,6 +4,16 @@
 
 @import './typo.css';
 
+html,
+body,
+:root {
+  height: 100%;
+}
+
+body > [data-overlay-container] {
+  height: 100%;
+}
+
 @layer base {
   :root {
     --light-color-gray-100: #fafaff;
