@@ -4,7 +4,7 @@ import Filters from '@/components/main/Filters'
 import { listMockData } from '@/components/main/list/mock/listMockData'
 import MainQuickPanel from '@/components/main/MainQuickPanel'
 
-export default async function Home() {
+export default function Home() {
   const result = listMockData
 
   return (
