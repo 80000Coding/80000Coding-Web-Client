@@ -26,8 +26,8 @@ export function Input({
   const [isFocus, setIsFocus] = useState(false)
   const description = displayLength ? (
     <>
-      <span className='absolute top-[12px]'>{description$1}</span>
-      <span className='absolute right-[12px] top-[12px]'>{(value?.length || 0) + '/20'}</span>
+      <span>{description$1}</span>
+      <span>{(value?.length || 0) + '/20'}</span>
     </>
   ) : (
     description$1
@@ -35,8 +35,8 @@ export function Input({
 
   const errorMessage = displayLength ? (
     <>
-      <span className='absolute top-[12px]'>{errorMessage$1}</span>
-      <span className='absolute right-[12px] top-[12px] text-gray-400'>{(value?.length || 0) + '/20'}</span>
+      <span>{errorMessage$1}</span>
+      <span className='text-gray-400'>{(value?.length || 0) + '/20'}</span>
     </>
   ) : (
     errorMessage$1
@@ -64,9 +64,9 @@ export function Input({
       labelPlacement='outside'
       endContent={isCorrect && !isFocus && <StaticConfirmIcon className='pointer-events-none absolute right-[13px]' />}
       classNames={{
-        label: ['mx-[12px] body-2 text-gray-600'],
-        description: ['w-full', 'text-gray-400', 'caption-2', 'left-[12px]'],
-        errorMessage: ['w-full', 'text-red-warning', 'caption-2', 'left-[12px]'],
+        label: ['body-2 text-gray-600'],
+        description: 'w-full text-gray-400 caption-2 flex justify-between',
+        errorMessage: 'w-full text-red-warning caption-2 flex justify-between',
         input: ['!bg-white', 'text-black', 'placeholder:text-gray-300', 'body-3', 'h-100'],
         innerWrapper: [],
         inputWrapper: [
@@ -81,7 +81,7 @@ export function Input({
           'px-[20px]',
           'py-[13px]',
         ],
-        mainWrapper: 'pb-[28px]', // 28px = padding 12px + lineheight 16px
+        helperWrapper: 'px-0 pb-0 pt-3',
       }}
       {...rest}
     />
