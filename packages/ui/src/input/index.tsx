@@ -14,7 +14,7 @@ export function Input({
   value,
   setValue,
   isInvalid = false,
-  placeholder = 'placeholder',
+  placeholder = ' ',
   errorMessage: errorMessage$1 = 'Please enter a valid value',
   displayLength = true,
   description: description$1 = 'Please enter a value',
@@ -27,7 +27,7 @@ export function Input({
   const description = displayLength ? (
     <>
       <span className='absolute top-[12px]'>{description$1}</span>
-      <span className='absolute right-[12px] top-[12px]'>{value?.length + '/20'}</span>
+      <span className='absolute right-[12px] top-[12px]'>{value?.length || 0 + '/20'}</span>
     </>
   ) : (
     description$1
@@ -36,7 +36,7 @@ export function Input({
   const errorMessage = displayLength ? (
     <>
       <span className='absolute top-[12px]'>{errorMessage$1}</span>
-      <span className='absolute right-[12px] top-[12px] text-gray-400'>{value?.length + '/20'}</span>
+      <span className='absolute right-[12px] top-[12px] text-gray-400'>{value?.length || 0 + '/20'}</span>
     </>
   ) : (
     errorMessage$1
