@@ -27,7 +27,7 @@ export function Input({
   const description = displayLength ? (
     <>
       <span className='absolute top-[12px]'>{description$1}</span>
-      <span className='absolute right-[12px] top-[12px]'>{value.length + '/20'}</span>
+      <span className='absolute right-[12px] top-[12px]'>{value?.length + '/20'}</span>
     </>
   ) : (
     description$1
@@ -36,7 +36,7 @@ export function Input({
   const errorMessage = displayLength ? (
     <>
       <span className='absolute top-[12px]'>{errorMessage$1}</span>
-      <span className='absolute right-[12px] top-[12px] text-gray-400'>{value.length + '/20'}</span>
+      <span className='absolute right-[12px] top-[12px] text-gray-400'>{value?.length + '/20'}</span>
     </>
   ) : (
     errorMessage$1
@@ -64,7 +64,7 @@ export function Input({
       labelPlacement='outside'
       endContent={isCorrect && !isFocus && <StaticConfirmIcon className='pointer-events-none absolute right-[13px]' />}
       classNames={{
-        label: ['mx-[12px]', 'body-2'],
+        label: ['mx-[12px] body-2 text-gray-600'],
         description: ['w-full', 'text-gray-400', 'caption-2', 'left-[12px]'],
         errorMessage: ['w-full', 'text-red-warning', 'caption-2', 'left-[12px]'],
         input: ['!bg-white', 'text-black', 'placeholder:text-gray-300', 'body-3', 'h-100'],
