@@ -20,7 +20,7 @@ export default function SigninPage() {
   }, [])
 
   return (
-    <div className='flex h-full w-full flex-col'>
+    <div className='flex h-[100dvh] w-full flex-col'>
       <TopbarWithXIcon title='로그인' onClose={handleClick} />
       <div className='mx-5 mt-40 flex flex-1 flex-col items-center'>
         <StaticLogoSymbolIcon className='h-20 w-20' />
