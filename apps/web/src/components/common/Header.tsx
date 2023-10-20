@@ -62,7 +62,7 @@ const DEFAULT_SIGNED_USER_MENU_ITEMS = [
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   /** 임시 login 상태값 */
-  const isSignedIn = true
+  const isSignedIn = false
 
   return (
     <Navbar classNames={{ wrapper: 'px-5 py-4.5' }} isBlurred={false} height='60px' onMenuOpenChange={setIsMenuOpen}>
@@ -82,7 +82,7 @@ export default function Header() {
       </NavbarContent>
       <NavbarMenu className='flex flex-col items-center px-5'>
         <div className='w-full flex-1 divide-y divide-gray-300'>
-          <Link href={isSignedIn ? '/profile/id' : '/login'} className='flex items-center px-[5px] py-6'>
+          <Link href={isSignedIn ? '/profile/id' : '/signin'} className='flex items-center px-[5px] py-6'>
             <Avatar
               className='mr-2.5'
               showFallback
