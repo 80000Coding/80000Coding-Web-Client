@@ -46,7 +46,7 @@ export function InputSearch({ value, setValue, isInvalid = false, isBackBtn = fa
       placeholder='검색어를 입력하세요'
       radius='full'
       classNames={{
-        label: ['body-2 text-gray-600'],
+        label: ['body-2 text-gray-600 pb-3'],
         description: ['px-0 pb-0 pt-3 caption-2'],
         input: ['!bg-white', 'text-black', 'placeholder:text-gray-300', 'body-3', 'h-100'],
         innerWrapper: [],

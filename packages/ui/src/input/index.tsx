@@ -64,7 +64,7 @@ export function Input({
       labelPlacement='outside'
       endContent={isCorrect && !isFocus && <StaticConfirmIcon className='pointer-events-none absolute right-[13px]' />}
       classNames={{
-        label: ['body-2 text-gray-600'],
+        label: ['body-2 text-gray-600 pb-3'],
         description: 'w-full text-gray-400 caption-2 flex justify-between',
         errorMessage: 'w-full text-red-warning caption-2 flex justify-between',
         input: ['!bg-white', 'text-black', 'placeholder:text-gray-300', 'body-3', 'h-100'],
