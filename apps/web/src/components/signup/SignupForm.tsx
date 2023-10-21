@@ -1,8 +1,9 @@
 'use client'
 
-import { Input } from '@80000coding/ui'
+import { Input, Toggle } from '@80000coding/ui'
 import { StaticCloseIcon, StaticEditIcon } from '@80000coding/web-icons'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { Checkbox, Divider } from '@nextui-org/react'
 import Image from 'next/image'
 import { useCallback, useMemo, useRef, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
@@ -58,14 +59,24 @@ export default function SignupForm() {
 
   const nickname = watch('nickname')
   const profileSrc = watch('profileSrc')
+  const privatePolicyAgreed = watch('privatePolicyAgreed')
+  const emailReceiveAgreed = watch('emailReceiveAgreed')
+  const pushReceiveAgreed = watch('pushReceiveAgreed')
 
-  const setCustomValue = (id: keyof SignupFormValues, value: any) => {
-    setValue(id, value, {
-      shouldDirty: true,
-      shouldTouch: true,
-      shouldValidate: true,
-    })
-  }
+  const disabledState =
+    (step === STEPS.FISRT && (!nickname || !!errors['nickname'] || !!errors['profileSrc'])) ||
+    (step === STEPS.LAST && (!privatePolicyAgreed || !emailReceiveAgreed || !pushReceiveAgreed))
+
+  const setCustomValue = useCallback(
+    (id: keyof SignupFormValues, value: any) => {
+      setValue(id, value, {
+        shouldDirty: true,
+        shouldTouch: true,
+        shouldValidate: true,
+      })
+    },
+    [setValue],
+  )
 
   const onBack = useCallback(() => {
     setStep((value) => value - 1)
@@ -130,21 +141,21 @@ export default function SignupForm() {
         {
           /** FIXME: api 연결되면 s3 이미지 응답값으로 변경 */
         }
-        setValue('profileSrc', 'file', { shouldDirty: true })
+        setCustomValue('profileSrc', 'file')
       }
     },
-    [setValue, setError],
+    [setCustomValue, setError],
   )
 
   const handleProfileImgRemoved = useCallback(() => {
     setAttachedImage(undefined)
-    setValue('profileSrc', undefined, { shouldDirty: true })
-  }, [setValue])
+    setCustomValue('profileSrc', undefined)
+  }, [setCustomValue])
 
   const onSubmit: SubmitHandler<SignupFormValues> = (data) => {
     if (step !== STEPS.LAST) return onNext()
 
-    setLoading(true)
+    // setLoading(true)
     console.log(data)
     setLoading(false)
   }
@@ -218,7 +229,47 @@ export default function SignupForm() {
   )
 
   if (step === STEPS.LAST) {
-    bodyContent = <div>2번 모달</div>
+    bodyContent = (
+      <div className='px-5 pt-4'>
+        <h1 className='title-1 mb-10 text-gray-600'>프로필 설정하기</h1>
+
+        <div className='space-y-6'>
+          <div className='body-1 text-gray-600'>소셜 인증 제공자를 이용한 가입시 유의사항</div>
+          <div className='sub-body-3A text-gray-400'>
+            이용약관에 대한 설명입니다. 잘 읽고 동의하시면 체크박스에 체크해주세요 이용약관에 대한 설명입니다. 잘 읽고 동의하시면 체크박스에
+            체크해주세요이용약관에 대한 설명입니다. 잘 읽고 동의하시면 체크박스에 체크해주세요 이용약관에 대한 설명입니다. 잘 읽고
+            동의하시면 체크박스에 체크해주세요 이용약관에 대한 설명입니다.{' '}
+          </div>
+        </div>
+        <div className='text-blue sub-body-3 mb-8 mt-[50px] space-y-4'>
+          {/** TODO: 모달? 탭? */}
+          <div>서비스 이용 약관</div>
+          <div>개인정보처리방침</div>
+        </div>
+        <Checkbox
+          radius='sm'
+          size='sm'
+          classNames={{ label: 'leading text-sm font-normal text-gray-400' }}
+          isSelected={privatePolicyAgreed}
+          onChange={(e) => setCustomValue('privatePolicyAgreed', e.target.checked)}
+        >
+          이용약관에 관한 모든 내용을 숙지하였고, 회원가입을 할게요.
+        </Checkbox>
+
+        <Divider className='mb-9 mt-8 bg-gray-300' />
+
+        <div className='space-y-6'>
+          <div className='flex items-center justify-between'>
+            <div className='body-2'>이메일 수신 동의</div>
+            <Toggle isChecked={emailReceiveAgreed} onToggleClick={(value) => setCustomValue('emailReceiveAgreed', value)} />
+          </div>
+          <div className='flex items-center justify-between'>
+            <div className='body-2'>푸시 메시지 수신 동의</div>
+            <Toggle isChecked={pushReceiveAgreed} onToggleClick={(value) => setCustomValue('pushReceiveAgreed', value)} />
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -228,7 +279,7 @@ export default function SignupForm() {
       secondayActionLabel={secondaryActionLabel}
       onSecondaryAction={step === STEPS.FISRT ? undefined : onBack}
       body={bodyContent}
-      disabled={loading || !nickname || !!errors['nickname'] || !!errors['profileSrc']}
+      disabled={loading || disabledState}
       secondaryActionDisabled={loading}
     />
   )
