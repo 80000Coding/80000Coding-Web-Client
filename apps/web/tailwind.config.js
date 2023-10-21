@@ -13,17 +13,21 @@ module.exports = {
   ],
   theme: {
     fontSize: {
+      '3xl': '22px',
       '2xl': '20px',
-      sm: '11px',
-      base: '12px',
-      lg: '14px',
-      xl: '17px',
+      xl: '18px',
+      lg: '16px',
+      base: '14px',
+      sm: '12px',
       xs: '10px',
     },
     lineHeight: {
       DEFAULT: 1,
-      A: 1.55,
-      B: 1.7,
+      A1: 1.4,
+      A2: 1.5,
+      A3: 1.55,
+      A4: 1.6,
+      B: 1.85,
     },
     extend: {
       animation: {
