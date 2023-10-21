@@ -15,7 +15,7 @@ export default function SignupPage() {
   }, [router])
 
   return (
-    <div className='flex h-full w-full flex-col'>
+    <div className='flex h-[100dvh] w-full flex-col'>
       <TopbarWithXIcon title='회원가입' onClose={handleClick} />
       <SignupForm />
     </div>
