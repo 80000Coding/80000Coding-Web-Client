@@ -52,7 +52,7 @@ export function Input({
       errorMessage={isInvalid && errorMessage}
       /* status */
       isInvalid={isInvalid}
-      isClearable={isFocus || !isCorrect}
+      isClearable={true}
       /* actions */
       onValueChange={setValue}
       onFocusChange={(e) => {
@@ -62,7 +62,7 @@ export function Input({
       type='text'
       radius='full'
       labelPlacement='outside'
-      endContent={isCorrect && !isFocus && <StaticConfirmIcon className='pointer-events-none absolute right-[13px]' />}
+      endContent={isCorrect && !isFocus && <StaticConfirmIcon className='pointer-events-none' />}
       classNames={{
         label: ['body-2 text-gray-600 pb-3'],
         description: 'w-full text-gray-400 caption-2 flex justify-between',
@@ -70,7 +70,7 @@ export function Input({
         input: ['!bg-white', 'text-black', 'placeholder:text-gray-300', 'body-3', 'h-100'],
         innerWrapper: [],
         inputWrapper: [
-          'items-start',
+          'items-center',
           '!bg-white',
           'border',
           isInvalid ? 'border-red-warning' : isCorrect ? 'border-green' : 'border-gray-300',
