@@ -41,7 +41,7 @@ export function InputComment({
       radius='full'
       labelPlacement='outside'
       classNames={{
-        label: ['mx-[12px]', 'body-2'],
+        label: ['body-2 text-gray-600 pb-3'],
         input: ['!bg-white', 'text-black', 'placeholder:text-gray-300', 'body-3', 'px-[0px]', 'py-[0]'],
         innerWrapper: [],
         inputWrapper: [

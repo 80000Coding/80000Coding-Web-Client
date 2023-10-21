@@ -8,7 +8,7 @@ export type InputSearchProps = {
   isBackBtn?: boolean
 } & Omit<React.ComponentProps<typeof Input$1>, 'classNames'>
 
-export function InputSearch({ value, setValue, isInvalid = false, isBackBtn = false, ...rest }: InputSearchProps) {
+export function InputSearch({ value, setValue, isInvalid = false, isBackBtn = false, label, ...rest }: InputSearchProps) {
   // const [value, setValue] = useState('')
 
   const onClear = () => {
@@ -29,6 +29,7 @@ export function InputSearch({ value, setValue, isInvalid = false, isBackBtn = fa
     <Input$1
       labelPlacement='outside'
       value={value}
+      label={label}
       startContent={isBackBtn && <DynamicBackIcon onClick={onClickGoBack} className='text-gray-500' />}
       endContent={
         <div className='flex-column flex'>
@@ -45,8 +46,8 @@ export function InputSearch({ value, setValue, isInvalid = false, isBackBtn = fa
       placeholder='검색어를 입력하세요'
       radius='full'
       classNames={{
-        label: ['mx-[12px]', 'body-2'],
-        description: ['mx-[12px]', 'caption-2'],
+        label: ['body-2 text-gray-600 pb-3'],
+        description: ['px-0 pb-0 pt-3 caption-2'],
         input: ['!bg-white', 'text-black', 'placeholder:text-gray-300', 'body-3', 'h-100'],
         innerWrapper: [],
         inputWrapper: [
@@ -61,6 +62,7 @@ export function InputSearch({ value, setValue, isInvalid = false, isBackBtn = fa
           'py-[13px]',
         ],
       }}
+      {...rest}
     />
   )
 }
