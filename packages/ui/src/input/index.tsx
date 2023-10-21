@@ -26,7 +26,7 @@ export function Input({
   const [isFocus, setIsFocus] = useState(false)
   const description = displayLength ? (
     <>
-      <span>{description$1}</span>
+      <span className={isCorrect ? 'text-green' : ''}>{description$1}</span>
       <span>{(value?.length || 0) + '/20'}</span>
     </>
   ) : (
