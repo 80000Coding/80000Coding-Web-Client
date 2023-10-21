@@ -1,14 +1,21 @@
 'use client'
 
 import { Input } from '@80000coding/ui'
-import { StaticEditIcon } from '@80000coding/web-icons'
+import { StaticCloseIcon, StaticEditIcon } from '@80000coding/web-icons'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Image from 'next/image'
 import { useCallback, useMemo, useRef, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import * as z from 'zod'
 
+import { getSizeUnit } from '@/lib/utils/humanize-size'
+
 import SubmitContainer from '../shared/SubmitContainer'
+
+const PROFILE_IMAGE_SIZE_LIMIT = 250 * 1024
+const SUPPORTED_IMAGE_FORMATS = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
+const SUPPORTED_IMAGE_FORMATS_STRING = SUPPORTED_IMAGE_FORMATS.join(', ')
+const SUPPORTED_IMAGE_EXTENSTION_STRING = SUPPORTED_IMAGE_FORMATS.map((format) => format.split('/')[1]).join(', ')
 
 enum STEPS {
   FISRT = 0,
@@ -17,7 +24,10 @@ enum STEPS {
 
 const formSchema = z.object({
   profileSrc: z.string().optional(),
-  nickname: z.string({ required_error: '닉네임은 필수로 입력해주세요.' }).min(1, '닉네임은 필수로 입력해주세요.'),
+  nickname: z
+    .string({ required_error: '닉네임은 필수로 입력해주세요.' })
+    .min(1, '닉네임은 필수로 입력해주세요.')
+    .max(20, '닉네임은 20자 이하로 입력해주세요.'),
   privatePolicyAgreed: z.boolean(),
   emailReceiveAgreed: z.boolean(),
   pushReceiveAgreed: z.boolean(),
@@ -28,6 +38,7 @@ type SignupFormValues = z.infer<typeof formSchema>
 export default function SignupForm() {
   const [step, setStep] = useState(STEPS.FISRT)
   const [loading, setLoading] = useState(false)
+  const [attachedImage, setAttachedImage] = useState<File | undefined>()
   const inputRef = useRef<HTMLInputElement>(null)
 
   const {
@@ -35,6 +46,7 @@ export default function SignupForm() {
     setValue,
     formState: { errors },
     watch,
+    setError,
   } = useForm<SignupFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -81,46 +93,53 @@ export default function SignupForm() {
     }
   }, [step])
 
-  // const handleResumeFileAttached = useCallback(
-  //   (e: React.ChangeEvent<HTMLInputElement>) => {
-  //     const {
-  //       target: { files },
-  //     } = e
+  const handleProfileImgChanged = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const {
+        target: { files },
+      } = e
 
-  //     if (files && files.length) {
-  //       const [file] = files
+      if (files && files.length) {
+        const [file] = files
 
-  //       if (file.size > RESUME_FILE_SIZE) {
-  //         setError(
-  //           'resumeFile',
-  //           {
-  //             type: 'custom',
-  //             message: '이력서는 10MB 이하의 파일만 업로드 가능합니다.',
-  //           },
-  //           { shouldFocus: true },
-  //         )
-  //         return
-  //       }
+        if (file.size > PROFILE_IMAGE_SIZE_LIMIT) {
+          setError(
+            'profileSrc',
+            {
+              type: 'custom',
+              message: `이미지는 ${getSizeUnit(PROFILE_IMAGE_SIZE_LIMIT)} 이하의 파일만 업로드 가능합니다.`,
+            },
+            { shouldFocus: true },
+          )
+          return
+        }
 
-  //       if (!DEFAULT_SUPPORTED_RESUME_FORMATS.includes(file.type)) {
-  //         setError(
-  //           'resumeFile',
-  //           {
-  //             type: 'custom',
-  //             message: `이력서는 ${SUPPORTED_RESUME_EXTENSIONS_STRING} 파일만 업로드 가능합니다.`,
-  //           },
-  //           { shouldFocus: true },
-  //         )
-  //         return
-  //       }
+        if (!SUPPORTED_IMAGE_FORMATS.includes(file.type)) {
+          setError(
+            'profileSrc',
+            {
+              type: 'custom',
+              message: `이미지는 ${SUPPORTED_IMAGE_EXTENSTION_STRING} 파일만 업로드 가능합니다.`,
+            },
+            { shouldFocus: true },
+          )
+          return
+        }
 
-  //       setAttachedResume(file)
+        setAttachedImage(file)
+        {
+          /** FIXME: api 연결되면 s3 이미지 응답값으로 변경 */
+        }
+        setValue('profileSrc', 'file', { shouldDirty: true })
+      }
+    },
+    [setValue, setError],
+  )
 
-  //       setValue('resumeFile', file, { shouldDirty: true })
-  //     }
-  //   },
-  //   [setValue, setError],
-  // )
+  const handleProfileImgRemoved = useCallback(() => {
+    setAttachedImage(undefined)
+    setValue('profileSrc', undefined, { shouldDirty: true })
+  }, [setValue])
 
   const onSubmit: SubmitHandler<SignupFormValues> = (data) => {
     if (step !== STEPS.LAST) return onNext()
@@ -134,9 +153,30 @@ export default function SignupForm() {
     <div className='px-5 pt-4'>
       <h1 className='title-1 mb-11 text-gray-600'>프로필 설정하기</h1>
 
-      <div className='mb-9 flex flex-col items-center'>
-        <Image src={profileSrc || '/profile.svg'} width={96} height={96} alt='프로필' />
-        <input ref={inputRef} type='file' className='hidden' id='img' />
+      <div className='mb-4 flex flex-col items-center'>
+        {/** FIXME: api 연결되면 s3 이미지 url 로 변경 */}
+        <div className='relative'>
+          <Image
+            src={attachedImage ? URL.createObjectURL(attachedImage) : '/profile.svg'}
+            width={96}
+            height={96}
+            className='aspect-square rounded-full border border-gray-300 object-cover'
+            alt='프로필'
+          />
+          {attachedImage && (
+            <button onClick={handleProfileImgRemoved} className='absolute -right-3 top-1 rounded-full border border-gray-300 bg-white p-2'>
+              <StaticCloseIcon className='h-3 w-3' />
+            </button>
+          )}
+        </div>
+        <input
+          ref={inputRef}
+          type='file'
+          accept={SUPPORTED_IMAGE_FORMATS_STRING}
+          className='hidden'
+          id='img'
+          onChange={handleProfileImgChanged}
+        />
         <button onClick={() => inputRef.current?.click()} className='sub-body-1 cursor-pointer py-3 text-gray-700'>
           사진 추가
           <StaticEditIcon className='ml-1 inline h-4 w-4' />
@@ -144,15 +184,20 @@ export default function SignupForm() {
         <aside className='caption-3A text-center text-gray-400'>
           권장 사이즈 150px
           <br />
-          최대 250KB
+          최대 {getSizeUnit(PROFILE_IMAGE_SIZE_LIMIT)}
+          <br />
+          {SUPPORTED_IMAGE_EXTENSTION_STRING}
         </aside>
+        <div className='caption-3 text-red-warning mt-2 h-3'>{errors['profileSrc']?.message}</div>
       </div>
 
       <Input
         label='닉네임'
-        description='팔만코딩경에서 사용할 닉네임을 입력해 주세요.'
+        /** TODO: nickname 가능 여부에 따른 메시지 변경 */
+        description={nickname ? '사용 가능한 닉네임이에요.' : '팔만코딩경에서 사용할 닉네임을 입력해 주세요.'}
         errorMessage={errors['nickname']?.message}
         isInvalid={!!errors['nickname']}
+        isCorrect={!!nickname && !errors['nickname']}
         setValue={(value) => setCustomValue('nickname', value)}
         value={nickname}
         id='nickname'
@@ -183,7 +228,7 @@ export default function SignupForm() {
       secondayActionLabel={secondaryActionLabel}
       onSecondaryAction={step === STEPS.FISRT ? undefined : onBack}
       body={bodyContent}
-      disabled={loading}
+      disabled={loading || !nickname || !!errors['nickname'] || !!errors['profileSrc']}
       secondaryActionDisabled={loading}
     />
   )
