@@ -7,7 +7,7 @@ type IconChipProps = {
   categoryIconNames?: CategoryIconNames
 } & Omit<React.HTMLAttributes<HTMLSpanElement>, 'children'>
 
-const IconChip = ({ size = 'sm', categoryIconNames = 'AppleDeveloperAcademy-rounded', className, ...rest }: IconChipProps) => {
+const IconChip = ({ size = 'sm', categoryIconNames = 'AppleDeveloperAcademy', className, ...rest }: IconChipProps) => {
   const chipClassBySize = {
     sm: 'caption-3 pl-[23px] pr-[10px] py-[5px] bg-white',
     md: 'caption-1 pl-[34px] pr-[12px] py-[10.5px] bg-gray-100',

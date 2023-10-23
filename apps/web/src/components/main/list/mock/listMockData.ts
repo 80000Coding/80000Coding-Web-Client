@@ -56,7 +56,7 @@ export const listMockData: ContentListType = {
       category_tag_list: [
         {
           category_id: 1,
-          category_name: 'Microsoft-rounded',
+          category_name: 'Microsoft',
         },
         {
           category_id: 2,

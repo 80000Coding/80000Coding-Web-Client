@@ -1,6 +1,6 @@
-import type { CategoryIconNamesWithoutRounded } from './CategoryIcons.type'
+import type { CategoryIconNames } from './CategoryIcons.type'
 
-export const categoryIconDisplayName: Record<CategoryIconNamesWithoutRounded, string> = {
+export const categoryIconDisplayName: Record<CategoryIconNames, string> = {
   '42Seoul': '42Seoul',
   All: 'All',
   Algorithm: '알고리즘',
@@ -62,7 +62,7 @@ export const categoryIconDisplayName: Record<CategoryIconNamesWithoutRounded, st
   Xcode: 'Xcode',
 }
 export type categoryIconColor = {
-  [key in CategoryIconNamesWithoutRounded]: {
+  [key in CategoryIconNames]: {
     bg: string
     fg: string
   }
