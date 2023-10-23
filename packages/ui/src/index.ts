@@ -1,5 +1,6 @@
 import './tailwind.css'
 
+export * from './alert'
 export * from './animated'
 export * from './button'
 export * from './chip'
