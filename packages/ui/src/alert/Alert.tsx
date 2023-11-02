@@ -1,13 +1,12 @@
-import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/react'
+import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from '@nextui-org/react'
 import React from 'react'
 
 type Props = {
   isOpen: boolean
+  onClose: () => void
 }
 
-const Alert = ({ isOpen }: Props) => {
-  const { onOpen, onClose } = useDisclosure()
-
+const Alert = ({ isOpen, onClose }: Props) => {
   return (
     <>
       <Modal
@@ -23,7 +22,6 @@ const Alert = ({ isOpen }: Props) => {
           <ModalFooter></ModalFooter>
         </ModalContent>
       </Modal>
-      <div>hell</div>
     </>
   )
 }
