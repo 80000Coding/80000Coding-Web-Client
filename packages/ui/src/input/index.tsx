@@ -27,7 +27,7 @@ export function Input({
   const description = displayLength ? (
     <>
       <span className='absolute top-[12px]'>{description$1}</span>
-      <span className='absolute right-[12px] top-[12px]'>{value.length + '/20'}</span>
+      <span className='absolute right-[12px] top-[12px]'>{value && value.length + '/20'}</span>
     </>
   ) : (
     description$1
@@ -36,7 +36,7 @@ export function Input({
   const errorMessage = displayLength ? (
     <>
       <span className='absolute top-[12px]'>{errorMessage$1}</span>
-      <span className='absolute right-[12px] top-[12px] text-gray-400'>{value.length + '/20'}</span>
+      <span className='absolute right-[12px] top-[12px] text-gray-400'>{value && value.length + '/20'}</span>
     </>
   ) : (
     errorMessage$1

@@ -2,6 +2,7 @@
 
 import { Button } from '@80000coding/ui'
 import { CategoryGithubRoundedIcon, StaticLogoSymbolIcon } from '@80000coding/web-icons'
+import { Link } from '@nextui-org/react'
 import { useRouter } from 'next/navigation'
 import { useCallback } from 'react'
 
@@ -29,12 +30,14 @@ export default function SigninPage() {
           <br />
           당신의 지식을 공유해 주세요!
         </div>
-        <Button
-          onClick={handleGithubSignin}
-          leftIcon={<CategoryGithubRoundedIcon className='h-[30px] w-[30px]' />}
-          text='GitHub로 계속하기'
-          className='bg-black'
-        />
+        <Link href='[여기호스트넣기]/github/oauth/github'>
+          <Button
+            onClick={handleGithubSignin}
+            leftIcon={<CategoryGithubRoundedIcon className='h-[30px] w-[30px]' />}
+            text='GitHub로 계속하기'
+            className='bg-black'
+          />
+        </Link>
       </div>
       <div className='mb-[120px] space-y-2 text-center'>
         <aside className='body-3 text-gray-400'>아직 GitHub 회원이 아니신가요?</aside>
