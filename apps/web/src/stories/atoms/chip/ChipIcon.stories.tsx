@@ -24,13 +24,13 @@ type Story = StoryObj<typeof meta>
 export const Small: Story = {
   args: {
     size:'sm',
-    categoryIconNames: 'TypeScript-rounded',
+    categoryIconNames: 'TypeScript',
   },
 }
 
 export const Medium: Story = {
   args: {
     size:'md',
-    categoryIconNames: 'TypeScript-rounded',
+    categoryIconNames: 'TypeScript',
   },
 }

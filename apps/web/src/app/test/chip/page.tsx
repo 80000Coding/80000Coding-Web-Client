@@ -7,9 +7,9 @@ export default function Page() {
   return (
     <div className='flex h-screen w-screen flex-col items-start gap-2 bg-[#000] p-20'>
       <Chip text='#인증' />
-      <IconChip categoryIconNames='Swift-rounded' />
-      <IconChip categoryIconNames='TypeScript-rounded' />
-      <IconChip categoryIconNames='AppleDeveloperAcademy-rounded' size='md' />
+      <IconChip categoryIconNames='Swift' />
+      <IconChip categoryIconNames='TypeScript' />
+      <IconChip categoryIconNames='AppleDeveloperAcademy' size='md' />
     </div>
   )
 }

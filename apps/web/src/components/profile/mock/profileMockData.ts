@@ -23,11 +23,11 @@ export const profileMockData: ProfileType = {
   organizations: [
     {
       name: '42Seoul',
-      icon: '42Seoul-rounded',
+      icon: '42Seoul',
     },
     {
       name: 'Android',
-      icon: 'Android-rounded',
+      icon: 'Android',
     },
   ],
 }

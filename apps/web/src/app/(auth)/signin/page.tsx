@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@80000coding/ui'
-import { CategoryGithubRoundedIcon, StaticLogoSymbolIcon } from '@80000coding/web-icons'
+import { CategoryGithubIcon, StaticLogoSymbolIcon } from '@80000coding/web-icons'
 import { useRouter } from 'next/navigation'
 import { useCallback } from 'react'
 
@@ -31,7 +31,7 @@ export default function SigninPage() {
         </div>
         <Button
           onClick={handleGithubSignin}
-          leftIcon={<CategoryGithubRoundedIcon className='h-[30px] w-[30px]' />}
+          leftIcon={<CategoryGithubIcon className='h-[30px] w-[30px]' />}
           text='GitHub로 계속하기'
           className='bg-black'
         />
