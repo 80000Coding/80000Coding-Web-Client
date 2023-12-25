@@ -5,8 +5,9 @@ import { useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
 
 const baseUrl = '[여기호스트넣기]/api/v1/auth/login/github/code'
+
 const signin = async (code: string) => {
-  await fetch(`${baseUrl}?code=${code}`, {
+  return fetch(`${baseUrl}?code=${code}`, {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
     credentials: 'include',
