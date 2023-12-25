@@ -1,10 +1,10 @@
 import {
-  StaticLikeIcon,
-  StaticLikeWhiteIcon,
-  StaticPostIcon,
-  StaticPostWhiteIcon,
-  StaticProjectIcon,
-  StaticProjectWhiteIcon,
+  StaticLikeOffLightIcon,
+  StaticLikeOnLightIcon,
+  StaticPostOffLightIcon,
+  StaticPostOnLightIcon,
+  StaticProjectOffLightIcon,
+  StaticProjectOnLightIcon,
 } from '@80000coding/web-icons'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useCallback, useMemo } from 'react'
@@ -15,22 +15,22 @@ const tabs = [
   {
     label: '게시글',
     url: 'feeds',
-    selectedIcon: StaticPostIcon,
-    icon: StaticPostWhiteIcon,
+    selectedIcon: StaticPostOnLightIcon,
+    icon: StaticPostOffLightIcon,
     selected: false,
   },
   {
     label: '프로젝트',
     url: 'projects',
-    selectedIcon: StaticProjectIcon,
-    icon: StaticProjectWhiteIcon,
+    selectedIcon: StaticProjectOnLightIcon,
+    icon: StaticProjectOffLightIcon,
     selected: false,
   },
   {
     label: '좋아요',
     url: 'likes',
-    selectedIcon: StaticLikeIcon,
-    icon: StaticLikeWhiteIcon,
+    selectedIcon: StaticLikeOnLightIcon,
+    icon: StaticLikeOffLightIcon,
     selected: false,
   },
 ]

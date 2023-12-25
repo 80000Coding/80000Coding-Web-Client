@@ -1,5 +1,5 @@
 import { CategoryIconNames, categoryIcons, Chip } from '@80000coding/ui'
-import { StaticCommnetFlatIcon, StaticLikeFlatIcon, StaticScrapFlatIcon, StaticViewFlatIcon } from '@80000coding/web-icons'
+import { StaticCommentOnLightIcon, StaticLikeOnLightIcon, StaticScrapOnLightIcon, StaticViewOnLightIcon } from '@80000coding/web-icons'
 import Link from 'next/link'
 
 import { RefinedFeedsType } from './useFeedLists'
@@ -63,19 +63,19 @@ export default function Feed({ item }: { item: RefinedFeedsType }) {
 
         <div className='caption-3 flex items-center space-x-4 text-gray-600'>
           <div className='flex items-center gap-x-1'>
-            <StaticViewFlatIcon className='h-3 w-3' />
+            <StaticViewOnLightIcon className='h-3 w-3' />
             <span>{displayViewCount}</span>
           </div>
           <div className='flex items-center gap-x-1'>
-            <StaticCommnetFlatIcon className='h-3 w-3' />
+            <StaticCommentOnLightIcon className='h-3 w-3' />
             <span>{displayCommentCount}</span>
           </div>
           <div className='flex items-center gap-x-1'>
-            <StaticScrapFlatIcon className='h-3 w-3' />
+            <StaticScrapOnLightIcon className='h-3 w-3' />
             <span>{displayBookmarkCount}</span>
           </div>
           <div className='flex items-center gap-x-1'>
-            <StaticLikeFlatIcon className='h-3 w-3' />
+            <StaticLikeOnLightIcon className='h-3 w-3' />
             <span>{displayLikeCount}</span>
           </div>
         </div>

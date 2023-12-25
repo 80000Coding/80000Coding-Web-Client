@@ -1,5 +1,5 @@
 import { Dropdown } from '@80000coding/ui'
-import { StaticDeleteIcon, StaticEditIcon } from '@80000coding/web-icons'
+import { DynamicDeleteIcon, DynamicEditIcon } from '@80000coding/web-icons'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
@@ -19,7 +19,7 @@ export const SingleMenu: Story = {
     menus: [
       {
         title: '수정하기',
-        icon: StaticEditIcon,
+        icon: DynamicEditIcon,
         onClick: () => {
           console.log('수정하기')
         },
@@ -33,7 +33,7 @@ export const MultiMenu: Story = {
     menus: [
       {
         title: '수정하기',
-        icon: StaticEditIcon,
+        icon: DynamicEditIcon,
         onClick: () => {
           console.log('수정하기')
         },
@@ -41,7 +41,7 @@ export const MultiMenu: Story = {
       {
         title: '삭제하기',
         titleColor: 'text-red-warning',
-        icon: StaticDeleteIcon,
+        icon: DynamicDeleteIcon,
         onClick: () => {
           console.log('수정하기')
         },
