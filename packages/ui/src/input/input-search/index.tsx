@@ -1,4 +1,4 @@
-import { DynamicBackIcon, DynamicDeleteIcon, DynamicSearchIcon } from '@80000coding/web-icons'
+import { DynamicChevronIcon, DynamicDeleteIcon, DynamicSearchIcon } from '@80000coding/web-icons'
 import { Input as Input$1 } from '@nextui-org/react'
 import { Dispatch, SetStateAction, useState } from 'react'
 
@@ -30,7 +30,7 @@ export function InputSearch({ value, setValue, isInvalid = false, isBackBtn = fa
       labelPlacement='outside'
       value={value}
       label={label}
-      startContent={isBackBtn && <DynamicBackIcon onClick={onClickGoBack} className='text-gray-500' />}
+      startContent={isBackBtn && <DynamicChevronIcon onClick={onClickGoBack} className='text-gray-500' />}
       endContent={
         <div className='flex-column flex'>
           {value !== '' && <DynamicDeleteIcon className='text-gray-500' onClick={onClear}></DynamicDeleteIcon>}

@@ -1,11 +1,11 @@
-import { StaticLoadingPageIcon } from '@80000coding/web-icons'
+import { StaticLogoSymbolIcon } from '@80000coding/web-icons'
 import cn from 'classnames'
 import React from 'react'
 
-type Props = React.ComponentProps<typeof StaticLoadingPageIcon>
+type Props = React.ComponentProps<typeof StaticLogoSymbolIcon>
 
 const LoadingPageIcon = ({ className, ...props }: Props) => {
-  return <StaticLoadingPageIcon className={cn('animate-spin-with-delay', className)} {...props} />
+  return <StaticLogoSymbolIcon className={cn('animate-spin-with-delay', className)} {...props} />
 }
 
 export default LoadingPageIcon

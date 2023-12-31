@@ -1,4 +1,4 @@
-import { DynamicCloseIcon, StaticFilteringIcon } from '@80000coding/web-icons'
+import { DynamicNavCloseIcon, StaticFilteringIcon } from '@80000coding/web-icons'
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ScrollShadow, useDisclosure } from '@nextui-org/react'
 import classNames from 'classnames'
 import { useCallback, useState } from 'react'
@@ -87,7 +87,7 @@ export default function SortFilter() {
           {(onClose) => (
             <>
               <ModalHeader className='relative flex justify-center px-4 py-5'>
-                <DynamicCloseIcon onClick={onClose} className='mr-auto h-5 w-5' />
+                <DynamicNavCloseIcon onClick={onClose} className='mr-auto h-5 w-5' />
                 <span className='title-1 absolute'>정렬</span>
               </ModalHeader>
               <ModalBody>
