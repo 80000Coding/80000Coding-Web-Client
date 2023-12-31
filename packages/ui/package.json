@@ -1,6 +1,6 @@
 {
   "name": "@80000coding/ui",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -43,7 +43,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@80000coding/web-icons": "1.0.1",
+    "@80000coding/web-icons": "2.0.0",
     "@nextui-org/react": "^2.1.10",
     "classnames": "^2.3.2"
   }
