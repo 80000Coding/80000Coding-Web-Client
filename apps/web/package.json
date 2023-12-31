@@ -1,6 +1,6 @@
 {
   "name": "@80000coding/web",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -16,8 +16,8 @@
     "chromatic": "npx chromatic --project-token=chpt_e6e5c08f47b0947"
   },
   "dependencies": {
-    "@80000coding/ui": "0.0.0",
-    "@80000coding/web-icons": "^1.0.1",
+    "@80000coding/ui": "0.0.1",
+    "@80000coding/web-icons": "^2.0.0",
     "@nextui-org/react": "^2.0.24",
     "@remirror/pm": "^2.0.7",
     "@remirror/react": "^2.0.34",
