@@ -43,6 +43,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@80000coding/next-themes": "^0.0.1",
     "@80000coding/web-icons": "2.0.0",
     "@nextui-org/react": "^2.1.10",
     "classnames": "^2.3.2"

@@ -13,7 +13,10 @@ type DropdownProps = {
 
 const Dropdown = ({ menus, className, ...rest }: DropdownProps) => {
   return (
-    <div className={cn('absolute z-10 rounded-[12px] bg-white shadow-[0px_2px_20px_0px_rgba(198,198,198,0.5)]', className)} {...rest}>
+    <div
+      className={cn('absolute z-10 rounded-[12px] bg-white shadow-[0px_2px_20px_0px_rgba(198,198,198,0.5)] dark:bg-black', className)}
+      {...rest}
+    >
       {menus.map((menu, index) => (
         <div
           key={menu.title}

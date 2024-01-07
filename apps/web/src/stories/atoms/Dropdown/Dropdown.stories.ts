@@ -3,7 +3,7 @@ import { DynamicDeleteIcon, DynamicEditIcon } from '@80000coding/web-icons'
 import type { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
-  title: 'Atoms/Dropdown',
+  title: 'Atoms/Dropdown/Default',
   component: Dropdown,
   parameters: {
     layout: 'centered',
