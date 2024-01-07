@@ -15,7 +15,7 @@ const ThemeDropdown = () => {
     <Dropdown
       menus={[
         {
-          title: 'sadf',
+          title: '라이트모드',
           icon: StaticNewIcon,
           onClick: () => setTheme('light'),
         },
