@@ -8,6 +8,7 @@ html,
 body,
 :root {
   height: 100%;
+  transition: background-color 0.5s ease-in-out;
 }
 
 @layer base {
