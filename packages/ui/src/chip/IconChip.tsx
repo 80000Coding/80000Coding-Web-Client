@@ -1,5 +1,6 @@
 import cn from 'classnames'
 
+import colorBase from '../colorBase'
 import { CategoryIconNames, categoryIcons } from '../icon'
 
 type IconChipProps = {
@@ -9,8 +10,8 @@ type IconChipProps = {
 
 const IconChip = ({ size = 'sm', categoryIconNames = 'AppleDeveloperAcademy', className, ...rest }: IconChipProps) => {
   const chipClassBySize = {
-    sm: 'caption-3 pl-[23px] pr-[10px] py-[5px] bg-white',
-    md: 'caption-1 pl-[34px] pr-[12px] py-[10.5px] bg-gray-100',
+    sm: 'caption-3 pl-[23px] pr-[10px] py-[5px] ',
+    md: 'caption-1 pl-[34px] pr-[12px] py-[10.5px] ',
   }
 
   const iconClassBySize = {
@@ -20,7 +21,7 @@ const IconChip = ({ size = 'sm', categoryIconNames = 'AppleDeveloperAcademy', cl
   const chipStyle = { boxShadow: `inset 0 0 0 1px ${categoryIcons[categoryIconNames].bgColor}` }
 
   return (
-    <span className={cn('relative rounded-full text-gray-700', chipClassBySize[size], className)} style={chipStyle} {...rest}>
+    <span className={cn('relative rounded-full ', chipClassBySize[size], colorBase, className)} style={chipStyle} {...rest}>
       {categoryIcons[categoryIconNames].source({ className: 'absolute ' + iconClassBySize[size] })}
       {categoryIcons[categoryIconNames].displayName}
     </span>

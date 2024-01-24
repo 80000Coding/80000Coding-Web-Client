@@ -1,8 +1,10 @@
 import cn from 'classnames'
 import React from 'react'
 
-type ButtonStyleVariant = 'primary' | 'outline'
-type ButtonSize = 'sm' | 'md' | 'lg'
+import colorBase from '../colorBase'
+
+type ButtonStyleVariant = 'primary' | 'secondary' | 'warning' | 'symbol'
+type ButtonSize = 'full' | 'half' | 'small'
 
 type Props = {
   text?: string
@@ -19,45 +21,23 @@ const Button = ({
   variant = 'primary',
   warning = false,
   loading = false,
-  size = 'md',
+  size = 'full',
   leftIcon,
   rightIcon,
   className,
   children,
   ...rest
 }: Props) => {
-  const sizeToClass = {
-    sm: 'rounded-[16px] h-[32px] note-3',
-    md: 'rounded-[24px] h-[48px] body-1',
-    lg: 'rounded-[26px] h-[52px] title-1',
+  const buttonBase = {
+    'w-full': true,
+    'px-[20px]': true,
+    'py-[14px]': true,
+    'rounded-[16px]': true,
+    'body-1': true,
   }
 
-  const variantToClass = {
-    primary: `text-white`,
-    outline: `border bg-transparent`,
-  }
-
-  const disabledStyleVariantToClass = {
-    primary: `disabled:bg-gray-200`,
-    outline: `disabled:text-gray-200 disabled:border-gray-200`,
-  }
-
-  const warningStyleVariantToClass = {
-    primary: `bg-red-dark`,
-    outline: `border-red-dark text-red-dark`,
-  }
   return (
-    <button
-      className={cn(
-        'w-full px-[24px]',
-        sizeToClass[size],
-        variantToClass[variant],
-        disabledStyleVariantToClass[variant],
-        warning && warningStyleVariantToClass[variant],
-        className,
-      )}
-      {...rest}
-    >
+    <button className={cn(variant, buttonBase, colorBase, className)} {...rest}>
       <div className='align-center flex flex-row items-center justify-center gap-[2px]'>
         {leftIcon}
         <span className='overflow-hidden text-ellipsis whitespace-nowrap'>{text ?? children}</span>

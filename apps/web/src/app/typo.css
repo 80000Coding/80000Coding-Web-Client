@@ -34,7 +34,7 @@
 }
 
 .body-1 {
-  @apply leading text-lg font-bold;
+  @apply leading-A2 text-lg font-bold;
 }
 .body-1A {
   @apply leading-A2 text-lg font-bold;

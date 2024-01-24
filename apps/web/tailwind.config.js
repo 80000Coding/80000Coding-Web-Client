@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin')
 const { nextui } = require('@nextui-org/react')
 
 module.exports = {
@@ -94,5 +95,12 @@ module.exports = {
       },
     },
   },
-  plugins: [nextui()],
+  plugins: [nextui(),
+  plugin(function ({ addVariant }) {
+    addVariant('base', '&.base')
+    addVariant('primary', '&.primary')
+    addVariant('secondary', '&.secondary')
+    addVariant('warning', '&.warning')
+    addVariant('symbol', '&.symbol')
+  })],
 }
