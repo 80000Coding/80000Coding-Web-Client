@@ -5,28 +5,23 @@ const meta = {
   title: 'Atoms/Button',
   component: Button,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {
     size: {
-      options: ['sm', 'md', 'lg'],
+      options: ['full', 'half', 'alert-full', 'alert-half', 'alert-small'],
       control: {
         type: 'radio',
       },
     },
     variant: {
-      options: ['primary', 'outline'],
+      options: ['primary', 'secondary', 'warning', 'custom'],
       control: {
         type: 'select',
       },
     },
     disabled: {
-      control: {
-        type: 'boolean',
-      },
-    },
-    warning: {
       control: {
         type: 'boolean',
       },
@@ -46,10 +41,7 @@ export const Title: Story = {
   args: {
     variant: 'primary',
     disabled: false,
-    warning: false,
-    size: 'md',
+    size: 'full',
     text: '타이틀',
-    children: '탈퇴하기',
-    className: 'bg-green',
   },
 }
