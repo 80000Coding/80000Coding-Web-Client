@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const { nextui } = require('@nextui-org/react')
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   darkMode: 'class',
@@ -13,21 +14,21 @@ module.exports = {
   ],
   theme: {
     fontSize: {
-      '3xl': '22px',
-      '2xl': '20px',
-      xl: '18px',
-      lg: '16px',
-      base: '14px',
-      sm: '12px',
-      xs: '10px',
+      largeTitle: '22px',
+      title: '20px',
+      subTitle: '18px',
+      body: '16px',
+      subBody: '14px',
+      note: '12px',
+      caption: '10px',
+    },
+    fontWeight: {
+      bold: 700,
+      medium: 500,
+      regular: 400,
     },
     lineHeight: {
-      DEFAULT: 1,
-      A1: 1.4,
-      A2: 1.5,
-      A3: 1.55,
-      A4: 1.6,
-      B: 1.85,
+      DEFAULT: 150,
     },
     extend: {
       animation: {
@@ -94,5 +95,11 @@ module.exports = {
       },
     },
   },
-  plugins: [nextui()],
+  plugins: [
+    nextui(),
+    plugin(function ({ addVariant }) {
+      addVariant('primary', '&.primary')
+      addVariant('base', '&.base')
+    }),
+  ],
 }
