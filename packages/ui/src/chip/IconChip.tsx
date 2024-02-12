@@ -1,28 +1,25 @@
+import { DynamicClearIcon } from '@80000coding/web-icons'
 import cn from 'classnames'
 
 import { CategoryIconNames, categoryIcons } from '../icon'
 
 type IconChipProps = {
-  size?: 'sm' | 'md'
   categoryIconNames?: CategoryIconNames
+  deletable?: boolean
 } & Omit<React.HTMLAttributes<HTMLSpanElement>, 'children'>
 
-const IconChip = ({ size = 'sm', categoryIconNames = 'AppleDeveloperAcademy', className, ...rest }: IconChipProps) => {
-  const chipClassBySize = {
-    sm: 'caption-3 pl-[23px] pr-[10px] py-[5px] bg-white',
-    md: 'caption-1 pl-[34px] pr-[12px] py-[10.5px] bg-gray-100',
-  }
+const IconChip = ({ deletable = false, categoryIconNames = 'AppleDeveloperAcademy', className, ...rest }: IconChipProps) => {
+  const colorClass = 'text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border-[1px] border-gray-200 dark:border-gray-700'
 
-  const iconClassBySize = {
-    sm: 'w-[17px] h-[17px] left-[2px] top-[2px]',
-    md: 'w-[20px] h-[20px] left-[8px] top-[6px]',
-  }
-  const chipStyle = { boxShadow: `inset 0 0 0 1px ${categoryIcons[categoryIconNames].bgColor}` }
+  const sizeClass = deletable ? 'py-[6px] px-[6px]' : 'py-[6px] pr-[12px] pl-[6px]'
+
+  const iconClass = 'w-[20px] h-[20px]'
 
   return (
-    <span className={cn('relative rounded-full text-gray-700', chipClassBySize[size], className)} style={chipStyle} {...rest}>
-      {categoryIcons[categoryIconNames].source({ className: 'absolute ' + iconClassBySize[size] })}
+    <span className={cn('flex h-[32px] items-center gap-[8px] rounded-[16px]', sizeClass, colorClass, className)} {...rest}>
+      {categoryIcons[categoryIconNames].source({ className: iconClass })}
       {categoryIcons[categoryIconNames].displayName}
+      {deletable && <DynamicClearIcon className='text-gray-300 dark:text-gray-500' />}
     </span>
   )
 }

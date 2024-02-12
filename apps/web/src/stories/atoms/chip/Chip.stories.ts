@@ -7,12 +7,19 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  argTypes: {},
+  tags: ['autodocs'],
+  argTypes: {
+    size: {
+      options: ['sm', 'md'],
+      control: {
+        type: 'radio',
+      },
+    },
+  },
 } satisfies Meta<typeof Chip>
 
 export default meta
 type Story = StoryObj<typeof meta>
-
 
 export const Flat: Story = {
   args: {

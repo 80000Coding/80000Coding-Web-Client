@@ -2,13 +2,21 @@ import cn from 'classnames'
 
 type Props = {
   text: string
+  size?: 'sm' | 'md'
 } & Omit<React.HTMLAttributes<HTMLSpanElement>, 'children'>
 
-const Chip = ({ text, className, ...rest }: Props) => {
+const Chip = ({ text, size = 'md', className, ...rest }: Props) => {
+  const colorClass = 'text-gray-500 dark:text-gray-500 bg-gray-200 dark:bg-gray-700'
+
+  const sizeToClass = {
+    md: 'note-2 py-[7px] px-[16px] h-[32px] ',
+    sm: 'note-3 py-[2px] px-[12px] h-[22px] ',
+  }
+
   return (
-    <span className={cn('caption-3 rounded-full bg-gray-200 px-[10px] py-[5px] text-gray-600', className)} {...rest}>
+    <div className={cn('rounded-[16px]', colorClass, sizeToClass[size], className)} {...rest}>
       {text}
-    </span>
+    </div>
   )
 }
 

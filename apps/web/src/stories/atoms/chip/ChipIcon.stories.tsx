@@ -15,22 +15,20 @@ const meta: Meta<typeof IconChip> = {
         type: 'select',
       },
     },
+    deletable: {
+      control: {
+        type: 'boolean',
+      },
+    },
   },
 } satisfies Meta<typeof IconChip>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Small: Story = {
+export const Primary: Story = {
   args: {
-    size:'sm',
     categoryIconNames: 'TypeScript',
-  },
-}
-
-export const Medium: Story = {
-  args: {
-    size:'md',
-    categoryIconNames: 'TypeScript',
+    deletable: false,
   },
 }
