@@ -1,103 +1,103 @@
 /* Typo(Text Styles) */
 
 .large-title-1 {
-  @apply leading text-3xl font-bold;
+  @apply leading text-largeTitle font-bold;
 }
 
 .large-title-1A {
-  @apply leading-A3 text-3xl font-bold;
+  @apply leading text-largeTitle font-bold;
 }
 
 .title-1 {
-  @apply leading text-2xl font-bold;
+  @apply leading text-title font-bold;
 }
 .title-1A {
-  @apply leading-A4 text-2xl font-bold;
+  @apply leading text-title font-bold;
 }
 .sub-title-1 {
-  @apply leading text-xl font-bold;
+  @apply leading text-subTitle font-bold;
 }
 .sub-title-1A {
-  @apply leading-A3 text-xl font-bold;
+  @apply leading text-subTitle font-bold;
 }
 .sub-title-2 {
-  @apply leading text-xl font-medium;
+  @apply leading text-subTitle font-medium;
 }
 .sub-title-2A {
-  @apply leading-A3 text-xl font-medium;
+  @apply leading text-subTitle font-medium;
 }
 .sub-title-3 {
-  @apply leading text-xl font-normal;
+  @apply leading text-subTitle font-regular;
 }
 .sub-title-3A {
-  @apply leading-A3 text-xl font-normal;
+  @apply leading text-subTitle font-regular;
 }
 
 .body-1 {
-  @apply leading text-lg font-bold;
+  @apply leading text-body font-bold;
 }
 .body-1A {
-  @apply leading-A2 text-lg font-bold;
+  @apply leading text-body font-bold;
 }
 .body-2 {
-  @apply leading text-lg font-medium;
+  @apply leading text-body font-medium;
 }
 .body-2A {
-  @apply leading-A2 text-lg font-medium;
+  @apply leading text-body font-medium;
 }
 .body-3 {
-  @apply leading text-lg font-normal;
+  @apply leading text-body font-regular;
 }
 .body-3A {
-  @apply leading-A2 text-lg;
+  @apply leading text-body;
 }
 .body-3B {
-  @apply leading-B text-lg;
+  @apply leading text-body;
 }
 .sub-body-1 {
-  @apply leading text-base font-bold;
+  @apply leading text-subBody font-bold;
 }
 .sub-body-1A {
-  @apply leading-A1 text-base font-bold;
+  @apply leading text-subBody font-bold;
 }
 .sub-body-2 {
-  @apply leading text-base font-medium;
+  @apply leading text-subBody font-medium;
 }
 .sub-body-2A {
-  @apply leading-A1 text-base font-medium;
+  @apply leading text-subBody font-medium;
 }
 .sub-body-3 {
-  @apply leading text-base font-normal;
+  @apply leading text-subBody font-regular;
 }
 .sub-body-3A {
-  @apply leading-A1 text-base font-normal;
+  @apply leading text-subBody font-regular;
 }
 
 .note-1 {
-  @apply leading text-sm font-bold;
+  @apply leading text-note font-bold;
 }
 .note-2 {
-  @apply leading text-sm font-medium;
+  @apply leading text-note font-medium;
 }
 .note-3 {
-  @apply leading text-sm font-normal;
+  @apply leading text-note font-regular;
 }
 
 .caption-1 {
-  @apply leading text-xs font-bold;
+  @apply leading text-caption font-bold;
 }
 .caption-1A {
-  @apply leading-A1 text-xs font-bold;
+  @apply leading text-caption font-bold;
 }
 .caption-2 {
-  @apply leading text-xs font-medium;
+  @apply leading text-caption font-medium;
 }
 .caption-2A {
-  @apply leading-A1 text-xs font-medium;
+  @apply leading text-caption font-medium;
 }
 .caption-3 {
-  @apply leading text-xs font-normal;
+  @apply leading text-caption font-regular;
 }
 .caption-3A {
-  @apply leading-A1 text-xs font-normal;
+  @apply leading text-caption font-regular;
 }
