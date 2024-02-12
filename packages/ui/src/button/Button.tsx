@@ -33,9 +33,9 @@ const Button = ({
   }
 
   const variantToClass = {
-    primary: 'bg-green text-white dark:bg-green dark:text-white', // @TODO dark:text 색상 조절 필요
-    secondary: 'bg-gray-100 text-white dark:bg-gray-700 dark:text-white', // @TODO dark:text 색상 조절 필요
-    warning: 'bg-red text-white dark:bg-red dark:text-white', // @TODO dark:text 색상 조절 필요
+    primary: 'bg-green text-white dark:bg-green dark:text-white',
+    secondary: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200',
+    warning: 'bg-red text-white dark:bg-red dark:text-white',
     custom: '',
   }
 
