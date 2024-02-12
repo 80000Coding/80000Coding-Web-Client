@@ -28,7 +28,7 @@ module.exports = {
       regular: 400,
     },
     lineHeight: {
-      DEFAULT: 150,
+      DEFAULT: '150%',
     },
     extend: {
       animation: {
