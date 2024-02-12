@@ -40,49 +40,21 @@ module.exports = {
       },
       colors: {
         gray: {
-          dark: {
-            100: '#1A1A24',
-            200: '#272732',
-            300: '#31313E',
-            400: '#3C3C47',
-            500: '#75757F',
-            600: '#9A9AA4',
-            700: '#C0C0C8',
-            800: '#EAEAF0',
-            900: '#F5F5F9',
-          },
-          light: {
-            100: '#F5F5F9',
-            200: '#EAEAF0',
-            300: '#C0C0C8',
-            400: '#9A9AA4',
-            500: '#75757F',
-            600: '#3C3C47',
-            700: '#31313E',
-            800: '#272732',
-            900: '#1A1A24',
-          },
+          100: 'var(--pc-color-gray-100)',
+          200: 'var(--pc-color-gray-200)',
+          300: 'var(--pc-color-gray-300)',
+          400: 'var(--pc-color-gray-400)',
+          500: 'var(--pc-color-gray-500)',
+          600: 'var(--pc-color-gray-600)',
+          700: 'var(--pc-color-gray-700)',
+          800: 'var(--pc-color-gray-800)',
+          900: 'var(--pc-color-gray-900)',
         },
-        green: {
-          light: '#00D287',
-          dark: '#00DF8F',
-        },
-        blue: {
-          light: '#1C92FF',
-          dark: '#3DA2FF',
-        },
-        violet: {
-          light: '#9B8AFF',
-          dark: '#A495FF',
-        },
-        red: {
-          light: '#FF7562',
-          dark: '#FF8676',
-        },
-        warning: {
-          light: '#FFOD2A',
-          dark: '#FF3743',
-        },
+        green: 'var(--pc-color-green)',
+        blue: 'var(--pc-color-blue)',
+        violet: 'var(--pc-color-violet)',
+        red: 'var(--pc-color-red)',
+        warning: 'var(--pc-color-warning)',
       },
       keyframes: {
         'spin-quarter': {
